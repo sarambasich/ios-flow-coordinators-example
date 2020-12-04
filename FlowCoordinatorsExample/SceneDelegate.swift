@@ -13,6 +13,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private(set) var appCoordinator: ApplicationCoordinator?
 
+    private(set) var router: Router?
+
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -23,7 +25,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let window = window else { return }
 
         appCoordinator = ApplicationCoordinator(application: AppDelegate.shared.myTestApplication, window: window)
-        appCoordinator?.start()
+        router = Router(entryPoint: appCoordinator!)
+        let route = Route(scenes: [.first], userIntent: nil)
+        do {
+            try router?.start(with: route)
+        } catch {
+            fatalError("Unsupported initial route!")
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

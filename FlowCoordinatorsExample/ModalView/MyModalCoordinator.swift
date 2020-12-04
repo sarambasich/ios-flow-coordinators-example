@@ -33,14 +33,14 @@ class MyModalCoordinator: Coordinator {
         self.isSegue = true
     }
 
-    func start() {
+    func start(animated: Bool) {
         guard isSegue == false else {
             print("Only call this when you are NOT using storyboard segue tranistions")
             return
         }
 
         modalViewController.modalPresentationStyle = .formSheet
-        rootViewController.present(modalViewController, animated: true, completion: nil)
+        rootViewController.present(modalViewController, animated: animated, completion: nil)
     }
 
 }

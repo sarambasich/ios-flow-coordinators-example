@@ -12,7 +12,7 @@ class NavCoordinator: Coordinator {
 
     var childCoordinators: [Coordinator] = []
 
-    func start() {
+    func start(animated: Bool) {
 
     }
 

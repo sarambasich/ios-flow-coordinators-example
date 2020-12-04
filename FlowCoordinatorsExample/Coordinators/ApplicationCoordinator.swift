@@ -8,9 +8,13 @@
 import UIKit
 
 
-final class ApplicationCoordinator: Coordinator {
+final class ApplicationCoordinator: Coordinator, Routable {
 
     var childCoordinators: [Coordinator] = []
+
+    var associatedScenes: [Scene] {
+        return [.first]
+    }
 
     // MARK: - Private properties
 
@@ -29,7 +33,7 @@ final class ApplicationCoordinator: Coordinator {
 
     // MARK: - Coordinator
 
-    func start() {
+    func start(animated: Bool) {
         guard let vc = window.rootViewController as? FirstViewController else { return }
         let vm = FirstViewModel(application: application)
         vc.viewModel = vm
@@ -43,7 +47,7 @@ final class ApplicationCoordinator: Coordinator {
         guard let rootViewController = rootViewController else { return }
 
         let coordinator = MyModalCoordinator(rootViewController: rootViewController)
-        coordinator.start()
+        coordinator.start(animated: true)
 
         childCoordinators.append(coordinator)
     }
@@ -57,6 +61,26 @@ final class ApplicationCoordinator: Coordinator {
                                              fromSegueModalController: modalViewController)
 
         childCoordinators.append(coordinator)
+    }
+
+    // MARK: - Routable
+
+    func canSupportScenes(in route: Route) -> Bool {
+        return route.scenes == [.first]
+    }
+
+    func navigate(to route: Route) throws {
+        guard let scene = route.scenes.first, scene == .first else {
+            throw RoutingError.invalidScene
+        }
+
+        start(animated: true)
+
+        // Recursive case: since this coordinator is a special case and is the start, it only
+        // supports navigation to one scene, the initial scene. For subsequent coordinators,
+        // we may still have additional
+        guard let remainingRoute = route.remainingRoute() else { return }
+        try navigate(to: remainingRoute)
     }
 
 }

@@ -14,7 +14,8 @@ protocol Coordinator: AnyObject {
     var childCoordinators: [Coordinator] { get }
 
     /// Start the coordinator.
-    func start()
+    /// - Parameter animated: Whether to animate the transition.
+    func start(animated: Bool)
 
 }
 
