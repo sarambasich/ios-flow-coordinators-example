@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  CoordinatorsTest
+//  FlowCoordinatorsExample
 //
 //  Created by Stefan Arambasich on 10/8/20.
 //
@@ -11,7 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    var appCoordinator: ApplicationCoordinator?
+    private(set) var appCoordinator: ApplicationCoordinator?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {

@@ -37,10 +37,26 @@ final class ApplicationCoordinator: Coordinator {
         window.makeKeyAndVisible()
     }
 
-    // MARK: - Methods
+    // MARK: Programmatic child handling
 
+    func navigateToModalView() {
+        guard let rootViewController = rootViewController else { return }
 
+        let coordinator = MyModalCoordinator(rootViewController: rootViewController)
+        coordinator.start()
+
+        childCoordinators.append(coordinator)
+    }
+
+    // MARK: - Segue child handling
+
+    func didNavigateUsingModalSegue(_ modalViewController: MyModalViewController) {
+        guard let rootViewController = rootViewController else { return }
+
+        let coordinator = MyModalCoordinator(rootViewController: rootViewController,
+                                             fromSegueModalController: modalViewController)
+
+        childCoordinators.append(coordinator)
+    }
 
 }
-
-// MARK: - FirstViewModelDelegate

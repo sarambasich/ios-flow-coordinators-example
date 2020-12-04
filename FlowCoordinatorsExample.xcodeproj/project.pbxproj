@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F36A8822579392E0080BB34 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A8812579392E0080BB34 /* Router.swift */; };
+		3F36A88D257939560080BB34 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A88C257939560080BB34 /* Scene.swift */; };
+		3F36A90C257989C00080BB34 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A90B257989C00080BB34 /* Routable.swift */; };
+		3F36A91125798A660080BB34 /* DeepLinkConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A91025798A660080BB34 /* DeepLinkConvertible.swift */; };
+		3F36A91725798CD30080BB34 /* DeepLinkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A91625798CD30080BB34 /* DeepLinkParser.swift */; };
+		3F36A94C257A8A150080BB34 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A94B257A8A150080BB34 /* Route.swift */; };
 		3F81A077252F4EE3009D2950 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A076252F4EE3009D2950 /* AppDelegate.swift */; };
 		3F81A079252F4EE3009D2950 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A078252F4EE3009D2950 /* SceneDelegate.swift */; };
 		3F81A07B252F4EE3009D2950 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A07A252F4EE3009D2950 /* FirstViewController.swift */; };
 		3F81A07E252F4EE3009D2950 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F81A07C252F4EE3009D2950 /* Main.storyboard */; };
 		3F81A080252F4EE4009D2950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F81A07F252F4EE4009D2950 /* Assets.xcassets */; };
 		3F81A083252F4EE4009D2950 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F81A081252F4EE4009D2950 /* LaunchScreen.storyboard */; };
-		3F81A08E252F4EE4009D2950 /* CoordinatorsTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A08D252F4EE4009D2950 /* CoordinatorsTestTests.swift */; };
-		3F81A099252F4EE4009D2950 /* CoordinatorsTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A098252F4EE4009D2950 /* CoordinatorsTestUITests.swift */; };
+		3F81A08E252F4EE4009D2950 /* FlowCoordinatorsExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A08D252F4EE4009D2950 /* FlowCoordinatorsExampleTests.swift */; };
+		3F81A099252F4EE4009D2950 /* FlowCoordinatorsExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A098252F4EE4009D2950 /* FlowCoordinatorsExampleUITests.swift */; };
 		3F81A0AE252F4F58009D2950 /* MyTestApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A0A9252F4F58009D2950 /* MyTestApplication.swift */; };
 		3F81A0AF252F4F58009D2950 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A0AA252F4F58009D2950 /* FirstViewModel.swift */; };
 		3F81A0B0252F4F58009D2950 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A0AC252F4F58009D2950 /* ApplicationCoordinator.swift */; };
@@ -42,7 +48,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3F81A073252F4EE3009D2950 /* CoordinatorsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoordinatorsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F36A8812579392E0080BB34 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		3F36A88C257939560080BB34 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		3F36A90B257989C00080BB34 /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
+		3F36A91025798A660080BB34 /* DeepLinkConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkConvertible.swift; sourceTree = "<group>"; };
+		3F36A91625798CD30080BB34 /* DeepLinkParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkParser.swift; sourceTree = "<group>"; };
+		3F36A94B257A8A150080BB34 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		3F81A073252F4EE3009D2950 /* FlowCoordinatorsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowCoordinatorsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F81A076252F4EE3009D2950 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F81A078252F4EE3009D2950 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3F81A07A252F4EE3009D2950 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -50,11 +62,11 @@
 		3F81A07F252F4EE4009D2950 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F81A082252F4EE4009D2950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F81A084252F4EE4009D2950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F81A089252F4EE4009D2950 /* CoordinatorsTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoordinatorsTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F81A08D252F4EE4009D2950 /* CoordinatorsTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorsTestTests.swift; sourceTree = "<group>"; };
+		3F81A089252F4EE4009D2950 /* FlowCoordinatorsExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowCoordinatorsExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F81A08D252F4EE4009D2950 /* FlowCoordinatorsExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorsExampleTests.swift; sourceTree = "<group>"; };
 		3F81A08F252F4EE4009D2950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F81A094252F4EE4009D2950 /* CoordinatorsTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoordinatorsTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F81A098252F4EE4009D2950 /* CoordinatorsTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorsTestUITests.swift; sourceTree = "<group>"; };
+		3F81A094252F4EE4009D2950 /* FlowCoordinatorsExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowCoordinatorsExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F81A098252F4EE4009D2950 /* FlowCoordinatorsExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorsExampleUITests.swift; sourceTree = "<group>"; };
 		3F81A09A252F4EE4009D2950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F81A0A9252F4F58009D2950 /* MyTestApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTestApplication.swift; sourceTree = "<group>"; };
 		3F81A0AA252F4F58009D2950 /* FirstViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
@@ -90,6 +102,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F36A880257939280080BB34 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				3F36A91525798CC00080BB34 /* Deep Linking */,
+				3F36A8812579392E0080BB34 /* Router.swift */,
+				3F36A90B257989C00080BB34 /* Routable.swift */,
+				3F36A94B257A8A150080BB34 /* Route.swift */,
+				3F36A88C257939560080BB34 /* Scene.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		3F36A91525798CC00080BB34 /* Deep Linking */ = {
+			isa = PBXGroup;
+			children = (
+				3F36A91025798A660080BB34 /* DeepLinkConvertible.swift */,
+				3F36A91625798CD30080BB34 /* DeepLinkParser.swift */,
+			);
+			path = "Deep Linking";
+			sourceTree = "<group>";
+		};
 		3F690531252F61CE00AA6B1F /* FirstView */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,9 +135,9 @@
 		3F81A06A252F4EE3009D2950 = {
 			isa = PBXGroup;
 			children = (
-				3F81A075252F4EE3009D2950 /* CoordinatorsTest */,
-				3F81A08C252F4EE4009D2950 /* CoordinatorsTestTests */,
-				3F81A097252F4EE4009D2950 /* CoordinatorsTestUITests */,
+				3F81A075252F4EE3009D2950 /* FlowCoordinatorsExample */,
+				3F81A08C252F4EE4009D2950 /* FlowCoordinatorsExampleTests */,
+				3F81A097252F4EE4009D2950 /* FlowCoordinatorsExampleUITests */,
 				3F81A074252F4EE3009D2950 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,16 +145,17 @@
 		3F81A074252F4EE3009D2950 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3F81A073252F4EE3009D2950 /* CoordinatorsTest.app */,
-				3F81A089252F4EE4009D2950 /* CoordinatorsTestTests.xctest */,
-				3F81A094252F4EE4009D2950 /* CoordinatorsTestUITests.xctest */,
+				3F81A073252F4EE3009D2950 /* FlowCoordinatorsExample.app */,
+				3F81A089252F4EE4009D2950 /* FlowCoordinatorsExampleTests.xctest */,
+				3F81A094252F4EE4009D2950 /* FlowCoordinatorsExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3F81A075252F4EE3009D2950 /* CoordinatorsTest */ = {
+		3F81A075252F4EE3009D2950 /* FlowCoordinatorsExample */ = {
 			isa = PBXGroup;
 			children = (
+				3F36A880257939280080BB34 /* Routing */,
 				3F81A0AB252F4F58009D2950 /* Coordinators */,
 				3F690531252F61CE00AA6B1F /* FirstView */,
 				3FE8FCE3252F639400C82BF9 /* ModalView */,
@@ -134,25 +168,25 @@
 				3F81A081252F4EE4009D2950 /* LaunchScreen.storyboard */,
 				3F81A084252F4EE4009D2950 /* Info.plist */,
 			);
-			path = CoordinatorsTest;
+			path = FlowCoordinatorsExample;
 			sourceTree = "<group>";
 		};
-		3F81A08C252F4EE4009D2950 /* CoordinatorsTestTests */ = {
+		3F81A08C252F4EE4009D2950 /* FlowCoordinatorsExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				3F81A08D252F4EE4009D2950 /* CoordinatorsTestTests.swift */,
+				3F81A08D252F4EE4009D2950 /* FlowCoordinatorsExampleTests.swift */,
 				3F81A08F252F4EE4009D2950 /* Info.plist */,
 			);
-			path = CoordinatorsTestTests;
+			path = FlowCoordinatorsExampleTests;
 			sourceTree = "<group>";
 		};
-		3F81A097252F4EE4009D2950 /* CoordinatorsTestUITests */ = {
+		3F81A097252F4EE4009D2950 /* FlowCoordinatorsExampleUITests */ = {
 			isa = PBXGroup;
 			children = (
-				3F81A098252F4EE4009D2950 /* CoordinatorsTestUITests.swift */,
+				3F81A098252F4EE4009D2950 /* FlowCoordinatorsExampleUITests.swift */,
 				3F81A09A252F4EE4009D2950 /* Info.plist */,
 			);
-			path = CoordinatorsTestUITests;
+			path = FlowCoordinatorsExampleUITests;
 			sourceTree = "<group>";
 		};
 		3F81A0AB252F4F58009D2950 /* Coordinators */ = {
@@ -184,9 +218,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3F81A072252F4EE3009D2950 /* CoordinatorsTest */ = {
+		3F81A072252F4EE3009D2950 /* FlowCoordinatorsExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F81A09D252F4EE4009D2950 /* Build configuration list for PBXNativeTarget "CoordinatorsTest" */;
+			buildConfigurationList = 3F81A09D252F4EE4009D2950 /* Build configuration list for PBXNativeTarget "FlowCoordinatorsExample" */;
 			buildPhases = (
 				3F81A06F252F4EE3009D2950 /* Sources */,
 				3F81A070252F4EE3009D2950 /* Frameworks */,
@@ -196,14 +230,14 @@
 			);
 			dependencies = (
 			);
-			name = CoordinatorsTest;
+			name = FlowCoordinatorsExample;
 			productName = CoordinatorsTest;
-			productReference = 3F81A073252F4EE3009D2950 /* CoordinatorsTest.app */;
+			productReference = 3F81A073252F4EE3009D2950 /* FlowCoordinatorsExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3F81A088252F4EE4009D2950 /* CoordinatorsTestTests */ = {
+		3F81A088252F4EE4009D2950 /* FlowCoordinatorsExampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F81A0A0252F4EE4009D2950 /* Build configuration list for PBXNativeTarget "CoordinatorsTestTests" */;
+			buildConfigurationList = 3F81A0A0252F4EE4009D2950 /* Build configuration list for PBXNativeTarget "FlowCoordinatorsExampleTests" */;
 			buildPhases = (
 				3F81A085252F4EE4009D2950 /* Sources */,
 				3F81A086252F4EE4009D2950 /* Frameworks */,
@@ -214,14 +248,14 @@
 			dependencies = (
 				3F81A08B252F4EE4009D2950 /* PBXTargetDependency */,
 			);
-			name = CoordinatorsTestTests;
+			name = FlowCoordinatorsExampleTests;
 			productName = CoordinatorsTestTests;
-			productReference = 3F81A089252F4EE4009D2950 /* CoordinatorsTestTests.xctest */;
+			productReference = 3F81A089252F4EE4009D2950 /* FlowCoordinatorsExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3F81A093252F4EE4009D2950 /* CoordinatorsTestUITests */ = {
+		3F81A093252F4EE4009D2950 /* FlowCoordinatorsExampleUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F81A0A3252F4EE4009D2950 /* Build configuration list for PBXNativeTarget "CoordinatorsTestUITests" */;
+			buildConfigurationList = 3F81A0A3252F4EE4009D2950 /* Build configuration list for PBXNativeTarget "FlowCoordinatorsExampleUITests" */;
 			buildPhases = (
 				3F81A090252F4EE4009D2950 /* Sources */,
 				3F81A091252F4EE4009D2950 /* Frameworks */,
@@ -232,9 +266,9 @@
 			dependencies = (
 				3F81A096252F4EE4009D2950 /* PBXTargetDependency */,
 			);
-			name = CoordinatorsTestUITests;
+			name = FlowCoordinatorsExampleUITests;
 			productName = CoordinatorsTestUITests;
-			productReference = 3F81A094252F4EE4009D2950 /* CoordinatorsTestUITests.xctest */;
+			productReference = 3F81A094252F4EE4009D2950 /* FlowCoordinatorsExampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -259,7 +293,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3F81A06E252F4EE3009D2950 /* Build configuration list for PBXProject "CoordinatorsTest" */;
+			buildConfigurationList = 3F81A06E252F4EE3009D2950 /* Build configuration list for PBXProject "FlowCoordinatorsExample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -272,9 +306,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3F81A072252F4EE3009D2950 /* CoordinatorsTest */,
-				3F81A088252F4EE4009D2950 /* CoordinatorsTestTests */,
-				3F81A093252F4EE4009D2950 /* CoordinatorsTestUITests */,
+				3F81A072252F4EE3009D2950 /* FlowCoordinatorsExample */,
+				3F81A088252F4EE4009D2950 /* FlowCoordinatorsExampleTests */,
+				3F81A093252F4EE4009D2950 /* FlowCoordinatorsExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -311,14 +345,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F36A8822579392E0080BB34 /* Router.swift in Sources */,
 				3FE8FCE5252F63A700C82BF9 /* MyModalViewController.swift in Sources */,
+				3F36A90C257989C00080BB34 /* Routable.swift in Sources */,
 				3F81A0AE252F4F58009D2950 /* MyTestApplication.swift in Sources */,
 				3F81A0AF252F4F58009D2950 /* FirstViewModel.swift in Sources */,
+				3F36A94C257A8A150080BB34 /* Route.swift in Sources */,
 				3F81A07B252F4EE3009D2950 /* FirstViewController.swift in Sources */,
+				3F36A91725798CD30080BB34 /* DeepLinkParser.swift in Sources */,
 				3F81A077252F4EE3009D2950 /* AppDelegate.swift in Sources */,
 				3F81A079252F4EE3009D2950 /* SceneDelegate.swift in Sources */,
 				3FE8FCF4252F6F8900C82BF9 /* NavCoordinator.swift in Sources */,
+				3F36A88D257939560080BB34 /* Scene.swift in Sources */,
 				3F81A0B0252F4F58009D2950 /* ApplicationCoordinator.swift in Sources */,
+				3F36A91125798A660080BB34 /* DeepLinkConvertible.swift in Sources */,
 				3FE8FCEA252F69E900C82BF9 /* MyModalCoordinator.swift in Sources */,
 				3F81A0B1252F4F58009D2950 /* BaseCoordinator.swift in Sources */,
 			);
@@ -328,7 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F81A08E252F4EE4009D2950 /* CoordinatorsTestTests.swift in Sources */,
+				3F81A08E252F4EE4009D2950 /* FlowCoordinatorsExampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F81A099252F4EE4009D2950 /* CoordinatorsTestUITests.swift in Sources */,
+				3F81A099252F4EE4009D2950 /* FlowCoordinatorsExampleUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,12 +385,12 @@
 /* Begin PBXTargetDependency section */
 		3F81A08B252F4EE4009D2950 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3F81A072252F4EE3009D2950 /* CoordinatorsTest */;
+			target = 3F81A072252F4EE3009D2950 /* FlowCoordinatorsExample */;
 			targetProxy = 3F81A08A252F4EE4009D2950 /* PBXContainerItemProxy */;
 		};
 		3F81A096252F4EE4009D2950 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3F81A072252F4EE3009D2950 /* CoordinatorsTest */;
+			target = 3F81A072252F4EE3009D2950 /* FlowCoordinatorsExample */;
 			targetProxy = 3F81A095252F4EE4009D2950 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -497,7 +537,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CoordinatorsTest/Info.plist;
+				INFOPLIST_FILE = FlowCoordinatorsExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -515,7 +555,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CoordinatorsTest/Info.plist;
+				INFOPLIST_FILE = FlowCoordinatorsExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -533,7 +573,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CoordinatorsTestTests/Info.plist;
+				INFOPLIST_FILE = FlowCoordinatorsExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -544,7 +584,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoordinatorsTest.app/CoordinatorsTest";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlowCoordinatorsExample.app/FlowCoordinatorsExample";
 			};
 			name = Debug;
 		};
@@ -554,7 +594,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CoordinatorsTestTests/Info.plist;
+				INFOPLIST_FILE = FlowCoordinatorsExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -565,7 +605,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoordinatorsTest.app/CoordinatorsTest";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlowCoordinatorsExample.app/FlowCoordinatorsExample";
 			};
 			name = Release;
 		};
@@ -574,7 +614,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CoordinatorsTestUITests/Info.plist;
+				INFOPLIST_FILE = FlowCoordinatorsExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -593,7 +633,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CoordinatorsTestUITests/Info.plist;
+				INFOPLIST_FILE = FlowCoordinatorsExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -610,7 +650,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3F81A06E252F4EE3009D2950 /* Build configuration list for PBXProject "CoordinatorsTest" */ = {
+		3F81A06E252F4EE3009D2950 /* Build configuration list for PBXProject "FlowCoordinatorsExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F81A09B252F4EE4009D2950 /* Debug */,
@@ -619,7 +659,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F81A09D252F4EE4009D2950 /* Build configuration list for PBXNativeTarget "CoordinatorsTest" */ = {
+		3F81A09D252F4EE4009D2950 /* Build configuration list for PBXNativeTarget "FlowCoordinatorsExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F81A09E252F4EE4009D2950 /* Debug */,
@@ -628,7 +668,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F81A0A0252F4EE4009D2950 /* Build configuration list for PBXNativeTarget "CoordinatorsTestTests" */ = {
+		3F81A0A0252F4EE4009D2950 /* Build configuration list for PBXNativeTarget "FlowCoordinatorsExampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F81A0A1252F4EE4009D2950 /* Debug */,
@@ -637,7 +677,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F81A0A3252F4EE4009D2950 /* Build configuration list for PBXNativeTarget "CoordinatorsTestUITests" */ = {
+		3F81A0A3252F4EE4009D2950 /* Build configuration list for PBXNativeTarget "FlowCoordinatorsExampleUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F81A0A4252F4EE4009D2950 /* Debug */,

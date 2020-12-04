@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  CoordinatorsTest
+//  FlowCoordinatorsExample
 //
 //  Created by Stefan Arambasich on 10/8/20.
 //

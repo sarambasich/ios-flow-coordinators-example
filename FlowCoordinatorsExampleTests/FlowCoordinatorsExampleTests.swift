@@ -1,14 +1,14 @@
 //
-//  CoordinatorsTestTests.swift
-//  CoordinatorsTestTests
+//  FlowCoordinatorsExampleTests.swift
+//  FlowCoordinatorsExampleTests
 //
 //  Created by Stefan Arambasich on 10/8/20.
 //
 
 import XCTest
-@testable import CoordinatorsTest
+@testable import FlowCoordinatorsExample
 
-class CoordinatorsTestTests: XCTestCase {
+class FlowCoordinatorsExampleTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

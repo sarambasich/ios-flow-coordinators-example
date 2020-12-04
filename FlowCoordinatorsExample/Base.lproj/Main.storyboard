@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +11,7 @@
         <!--First View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="CoordinatorsTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="FlowCoordinatorsExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,10 +25,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEV-ho-55H">
                                 <rect key="frame" x="192" y="454" width="30" height="30"/>
                                 <state key="normal" title="Nav"/>
+                                <connections>
+                                    <action selector="didSelectPresentNavButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XdA-AM-irO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSV-YY-Ubk">
                                 <rect key="frame" x="185.5" y="422" width="43" height="30"/>
                                 <state key="normal" title="Modal"/>
+                                <connections>
+                                    <action selector="didSelectPresentModalButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bGo-YX-VH5"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Programmatic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aay-EF-6gG">
                                 <rect key="frame" x="156" y="386" width="102" height="20"/>
@@ -40,14 +46,14 @@
                                 <rect key="frame" x="192" y="614" width="30" height="30"/>
                                 <state key="normal" title="Nav"/>
                                 <connections>
-                                    <segue destination="v2o-dX-AXz" kind="show" id="iiO-a6-EzV"/>
+                                    <segue destination="v2o-dX-AXz" kind="show" identifier="navSegue" id="iiO-a6-EzV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MiF-SP-yyh">
                                 <rect key="frame" x="185.5" y="584" width="43" height="30"/>
                                 <state key="normal" title="Modal"/>
                                 <connections>
-                                    <segue destination="rMS-nQ-iMX" kind="show" id="NrO-oZ-8Om"/>
+                                    <segue destination="rMS-nQ-iMX" kind="show" identifier="modalSegue" id="NrO-oZ-8Om"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Segue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BS8-20-e4L">
@@ -95,7 +101,7 @@
         <!--My Modal View Controller-->
         <scene sceneID="a0Q-ya-c1f">
             <objects>
-                <viewController storyboardIdentifier="MyModalViewController" id="rMS-nQ-iMX" customClass="MyModalViewController" customModule="CoordinatorsTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyModalViewController" id="rMS-nQ-iMX" customClass="MyModalViewController" customModule="FlowCoordinatorsExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1ZK-2C-ICn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
