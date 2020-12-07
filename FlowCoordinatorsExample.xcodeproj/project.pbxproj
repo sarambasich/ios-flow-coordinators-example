@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F36A8822579392E0080BB34 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A8812579392E0080BB34 /* Router.swift */; };
-		3F36A88D257939560080BB34 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A88C257939560080BB34 /* Scene.swift */; };
-		3F36A90C257989C00080BB34 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A90B257989C00080BB34 /* Routable.swift */; };
-		3F36A91125798A660080BB34 /* DeepLinkConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A91025798A660080BB34 /* DeepLinkConvertible.swift */; };
-		3F36A91725798CD30080BB34 /* DeepLinkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A91625798CD30080BB34 /* DeepLinkParser.swift */; };
-		3F36A94C257A8A150080BB34 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A94B257A8A150080BB34 /* Route.swift */; };
 		3F81A077252F4EE3009D2950 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A076252F4EE3009D2950 /* AppDelegate.swift */; };
 		3F81A079252F4EE3009D2950 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A078252F4EE3009D2950 /* SceneDelegate.swift */; };
 		3F81A07B252F4EE3009D2950 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A07A252F4EE3009D2950 /* FirstViewController.swift */; };
@@ -48,12 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3F36A8812579392E0080BB34 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		3F36A88C257939560080BB34 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
-		3F36A90B257989C00080BB34 /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
-		3F36A91025798A660080BB34 /* DeepLinkConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkConvertible.swift; sourceTree = "<group>"; };
-		3F36A91625798CD30080BB34 /* DeepLinkParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkParser.swift; sourceTree = "<group>"; };
-		3F36A94B257A8A150080BB34 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		3F81A073252F4EE3009D2950 /* FlowCoordinatorsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowCoordinatorsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F81A076252F4EE3009D2950 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F81A078252F4EE3009D2950 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,27 +90,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F36A880257939280080BB34 /* Routing */ = {
-			isa = PBXGroup;
-			children = (
-				3F36A91525798CC00080BB34 /* Deep Linking */,
-				3F36A8812579392E0080BB34 /* Router.swift */,
-				3F36A90B257989C00080BB34 /* Routable.swift */,
-				3F36A94B257A8A150080BB34 /* Route.swift */,
-				3F36A88C257939560080BB34 /* Scene.swift */,
-			);
-			path = Routing;
-			sourceTree = "<group>";
-		};
-		3F36A91525798CC00080BB34 /* Deep Linking */ = {
-			isa = PBXGroup;
-			children = (
-				3F36A91025798A660080BB34 /* DeepLinkConvertible.swift */,
-				3F36A91625798CD30080BB34 /* DeepLinkParser.swift */,
-			);
-			path = "Deep Linking";
-			sourceTree = "<group>";
-		};
 		3F690531252F61CE00AA6B1F /* FirstView */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +122,6 @@
 		3F81A075252F4EE3009D2950 /* FlowCoordinatorsExample */ = {
 			isa = PBXGroup;
 			children = (
-				3F36A880257939280080BB34 /* Routing */,
 				3F81A0AB252F4F58009D2950 /* Coordinators */,
 				3F690531252F61CE00AA6B1F /* FirstView */,
 				3FE8FCE3252F639400C82BF9 /* ModalView */,
@@ -345,20 +311,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F36A8822579392E0080BB34 /* Router.swift in Sources */,
 				3FE8FCE5252F63A700C82BF9 /* MyModalViewController.swift in Sources */,
-				3F36A90C257989C00080BB34 /* Routable.swift in Sources */,
 				3F81A0AE252F4F58009D2950 /* MyTestApplication.swift in Sources */,
 				3F81A0AF252F4F58009D2950 /* FirstViewModel.swift in Sources */,
-				3F36A94C257A8A150080BB34 /* Route.swift in Sources */,
 				3F81A07B252F4EE3009D2950 /* FirstViewController.swift in Sources */,
-				3F36A91725798CD30080BB34 /* DeepLinkParser.swift in Sources */,
 				3F81A077252F4EE3009D2950 /* AppDelegate.swift in Sources */,
 				3F81A079252F4EE3009D2950 /* SceneDelegate.swift in Sources */,
 				3FE8FCF4252F6F8900C82BF9 /* NavCoordinator.swift in Sources */,
-				3F36A88D257939560080BB34 /* Scene.swift in Sources */,
 				3F81A0B0252F4F58009D2950 /* ApplicationCoordinator.swift in Sources */,
-				3F36A91125798A660080BB34 /* DeepLinkConvertible.swift in Sources */,
 				3FE8FCEA252F69E900C82BF9 /* MyModalCoordinator.swift in Sources */,
 				3F81A0B1252F4F58009D2950 /* BaseCoordinator.swift in Sources */,
 			);
