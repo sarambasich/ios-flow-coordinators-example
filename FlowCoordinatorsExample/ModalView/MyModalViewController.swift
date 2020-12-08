@@ -8,8 +8,8 @@
 import UIKit
 
 
-class MyModalViewController: UIViewController {
+class MyModalViewController: ViewController<MyModalViewModel> {
 
-    
+    static let identifier = "MyModalViewController"
 
 }

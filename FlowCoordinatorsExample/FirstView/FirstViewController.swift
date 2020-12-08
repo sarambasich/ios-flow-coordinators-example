@@ -9,29 +9,18 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
-    @IBOutlet private var bodyLabel: UILabel?
-
     var viewModel: FirstViewModel? {
         didSet {
             setupView()
         }
     }
 
+    @IBOutlet private var bodyLabel: UILabel?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupView()
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "modalSegue" where segue.destination is MyModalViewController:
-            break
-        case "navSegue" where segue.destination is UINavigationController:
-            break
-        default:
-            break
-        }
     }
 
 }
@@ -41,11 +30,11 @@ class FirstViewController: UIViewController {
 private extension FirstViewController {
 
     @IBAction func didSelectPresentModalButton(_ sender: UIButton) {
-
+        viewModel?.selectModalButton()
     }
 
     @IBAction func didSelectPresentNavButton(_ sender: UIButton) {
-
+        viewModel?.selectNavButton()
     }
 
 }

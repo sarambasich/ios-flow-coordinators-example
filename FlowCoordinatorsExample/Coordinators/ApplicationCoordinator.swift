@@ -8,9 +8,9 @@
 import UIKit
 
 
-final class ApplicationCoordinator: Coordinator, Routable {
+final class ApplicationCoordinator: Coordinator {
 
-    var childCoordinators: [Coordinator] = []
+    private var childCoordinators: [Coordinator] = []
 
     var associatedScenes: [Scene] {
         return [.first]
@@ -33,54 +33,75 @@ final class ApplicationCoordinator: Coordinator, Routable {
 
     // MARK: - Coordinator
 
-    func start(animated: Bool) {
-        guard let vc = window.rootViewController as? FirstViewController else { return }
-        let vm = FirstViewModel(application: application)
-        vc.viewModel = vm
-        rootViewController = vc
+    func navigate(to route: Route, animated: Bool) throws {
+        guard let scene = route.firstScene, scene == .first else {
+            throw RoutingError.invalidScene
+        }
+
+        rootViewController = window.rootViewController as? FirstViewController
+        rootViewController?.viewModel = FirstViewModel(application: application, flowDelegate: self)
         window.makeKeyAndVisible()
+
+        // Recursive case: since this coordinator is a special case and is the start, it only
+        // supports navigation to one scene, the initial scene. For subsequent coordinators,
+        // we may still have additional scenes to go to.
+        guard let remainingRoute = route.remainingRoute() else { return }
+        try navigate(to: remainingRoute, animated: animated)
     }
 
-    // MARK: Programmatic child handling
+    func start(animated: Bool) {
+        let route = Route(scenes: [.first], userIntent: nil)
+        try! navigate(to: route, animated: true)
+    }
 
-    func navigateToModalView() {
+    func dismiss(animated: Bool) {
+        print("Invalid call to `dismiss` - can't dismiss root application coordinator!")
+    }
+
+    // MARK: Navigation handling
+
+    func navigateToNavView() {
         guard let rootViewController = rootViewController else { return }
 
-        let coordinator = MyModalCoordinator(rootViewController: rootViewController)
+        let coordinator = MyNavCoordinator(rootViewController: rootViewController, delegate: self)
         coordinator.start(animated: true)
 
         childCoordinators.append(coordinator)
     }
 
-    // MARK: - Segue child handling
-
-    func didNavigateUsingModalSegue(_ modalViewController: MyModalViewController) {
+    func navigateToModalView() {
         guard let rootViewController = rootViewController else { return }
 
-        let coordinator = MyModalCoordinator(rootViewController: rootViewController,
-                                             fromSegueModalController: modalViewController)
+        let coordinator = MyModalCoordinator(rootViewController: rootViewController, delegate: self)
+        coordinator.start(animated: true)
 
         childCoordinators.append(coordinator)
     }
 
-    // MARK: - Routable
+}
 
-    func canSupportScenes(in route: Route) -> Bool {
-        return route.scenes == [.first]
+// MARK: - FirstViewModelFlowDelegate
+
+extension ApplicationCoordinator: FirstViewModelFlowDelegate {
+
+    func didSelectNavButton() {
+        navigateToNavView()
     }
 
-    func navigate(to route: Route) throws {
-        guard let scene = route.scenes.first, scene == .first else {
-            throw RoutingError.invalidScene
+    func didSelectModalButton() {
+        navigateToModalView()
+    }
+
+}
+
+// MARK: - Coordinator delegates
+
+extension ApplicationCoordinator: MyNavCoordinatorDelegate, MyModalCoordinatorDelegate {
+
+    func coordinatorDidFinish(_ coordinator: Coordinator) {
+        if let index = childCoordinators.firstIndex(where: { $0 === coordinator }) {
+            childCoordinators.remove(at: index)
         }
-
-        start(animated: true)
-
-        // Recursive case: since this coordinator is a special case and is the start, it only
-        // supports navigation to one scene, the initial scene. For subsequent coordinators,
-        // we may still have additional
-        guard let remainingRoute = route.remainingRoute() else { return }
-        try navigate(to: remainingRoute)
     }
 
 }

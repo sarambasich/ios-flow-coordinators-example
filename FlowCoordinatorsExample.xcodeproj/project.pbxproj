@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F36A8822579392E0080BB34 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A8812579392E0080BB34 /* Router.swift */; };
 		3F36A88D257939560080BB34 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A88C257939560080BB34 /* Scene.swift */; };
-		3F36A90C257989C00080BB34 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A90B257989C00080BB34 /* Routable.swift */; };
 		3F36A91125798A660080BB34 /* DeepLinkConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A91025798A660080BB34 /* DeepLinkConvertible.swift */; };
 		3F36A91725798CD30080BB34 /* DeepLinkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A91625798CD30080BB34 /* DeepLinkParser.swift */; };
 		3F36A94C257A8A150080BB34 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A94B257A8A150080BB34 /* Route.swift */; };
@@ -24,10 +22,19 @@
 		3F81A0AE252F4F58009D2950 /* MyTestApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A0A9252F4F58009D2950 /* MyTestApplication.swift */; };
 		3F81A0AF252F4F58009D2950 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A0AA252F4F58009D2950 /* FirstViewModel.swift */; };
 		3F81A0B0252F4F58009D2950 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A0AC252F4F58009D2950 /* ApplicationCoordinator.swift */; };
-		3F81A0B1252F4F58009D2950 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A0AD252F4F58009D2950 /* BaseCoordinator.swift */; };
+		3F81A0B1252F4F58009D2950 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A0AD252F4F58009D2950 /* Coordinator.swift */; };
+		3FBEA154257FEE4A00FCE6F6 /* NavAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA153257FEE4A00FCE6F6 /* NavAViewController.swift */; };
+		3FBEA159257FEE7000FCE6F6 /* NavAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA158257FEE7000FCE6F6 /* NavAViewModel.swift */; };
+		3FBEA161257FF0D400FCE6F6 /* NavBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA15D257FF0D300FCE6F6 /* NavBViewModel.swift */; };
+		3FBEA162257FF0D400FCE6F6 /* NavCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA15E257FF0D300FCE6F6 /* NavCViewController.swift */; };
+		3FBEA163257FF0D400FCE6F6 /* NavBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA15F257FF0D300FCE6F6 /* NavBViewController.swift */; };
+		3FBEA164257FF0D400FCE6F6 /* NavCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA160257FF0D400FCE6F6 /* NavCViewModel.swift */; };
+		3FBEA1AA258017A200FCE6F6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA1A9258017A200FCE6F6 /* ViewModel.swift */; };
+		3FBEA1B2258018DF00FCE6F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA1B1258018DF00FCE6F6 /* ViewController.swift */; };
+		3FBEA1C025801D4C00FCE6F6 /* MyModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA1BF25801D4C00FCE6F6 /* MyModalViewModel.swift */; };
 		3FE8FCE5252F63A700C82BF9 /* MyModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8FCE4252F63A700C82BF9 /* MyModalViewController.swift */; };
 		3FE8FCEA252F69E900C82BF9 /* MyModalCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8FCE9252F69E900C82BF9 /* MyModalCoordinator.swift */; };
-		3FE8FCF4252F6F8900C82BF9 /* NavCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8FCF3252F6F8900C82BF9 /* NavCoordinator.swift */; };
+		3FE8FCF4252F6F8900C82BF9 /* MyNavCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8FCF3252F6F8900C82BF9 /* MyNavCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3F36A8812579392E0080BB34 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3F36A88C257939560080BB34 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
-		3F36A90B257989C00080BB34 /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		3F36A91025798A660080BB34 /* DeepLinkConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkConvertible.swift; sourceTree = "<group>"; };
 		3F36A91625798CD30080BB34 /* DeepLinkParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkParser.swift; sourceTree = "<group>"; };
 		3F36A94B257A8A150080BB34 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -71,10 +76,19 @@
 		3F81A0A9252F4F58009D2950 /* MyTestApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTestApplication.swift; sourceTree = "<group>"; };
 		3F81A0AA252F4F58009D2950 /* FirstViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
 		3F81A0AC252F4F58009D2950 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
-		3F81A0AD252F4F58009D2950 /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		3F81A0AD252F4F58009D2950 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		3FBEA153257FEE4A00FCE6F6 /* NavAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavAViewController.swift; sourceTree = "<group>"; };
+		3FBEA158257FEE7000FCE6F6 /* NavAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavAViewModel.swift; sourceTree = "<group>"; };
+		3FBEA15D257FF0D300FCE6F6 /* NavBViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBViewModel.swift; sourceTree = "<group>"; };
+		3FBEA15E257FF0D300FCE6F6 /* NavCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavCViewController.swift; sourceTree = "<group>"; };
+		3FBEA15F257FF0D300FCE6F6 /* NavBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBViewController.swift; sourceTree = "<group>"; };
+		3FBEA160257FF0D400FCE6F6 /* NavCViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavCViewModel.swift; sourceTree = "<group>"; };
+		3FBEA1A9258017A200FCE6F6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3FBEA1B1258018DF00FCE6F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FBEA1BF25801D4C00FCE6F6 /* MyModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModalViewModel.swift; sourceTree = "<group>"; };
 		3FE8FCE4252F63A700C82BF9 /* MyModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModalViewController.swift; sourceTree = "<group>"; };
 		3FE8FCE9252F69E900C82BF9 /* MyModalCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModalCoordinator.swift; sourceTree = "<group>"; };
-		3FE8FCF3252F6F8900C82BF9 /* NavCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavCoordinator.swift; sourceTree = "<group>"; };
+		3FE8FCF3252F6F8900C82BF9 /* MyNavCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				3F36A91525798CC00080BB34 /* Deep Linking */,
-				3F36A8812579392E0080BB34 /* Router.swift */,
-				3F36A90B257989C00080BB34 /* Routable.swift */,
 				3F36A94B257A8A150080BB34 /* Route.swift */,
 				3F36A88C257939560080BB34 /* Scene.swift */,
 			);
@@ -160,6 +172,7 @@
 				3F690531252F61CE00AA6B1F /* FirstView */,
 				3FE8FCE3252F639400C82BF9 /* ModalView */,
 				3FE8FCE2252F639400C82BF9 /* NavView */,
+				3FBEA1A82580179B00FCE6F6 /* Utility */,
 				3F81A0A9252F4F58009D2950 /* MyTestApplication.swift */,
 				3F81A076252F4EE3009D2950 /* AppDelegate.swift */,
 				3F81A078252F4EE3009D2950 /* SceneDelegate.swift */,
@@ -192,16 +205,31 @@
 		3F81A0AB252F4F58009D2950 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				3F81A0AD252F4F58009D2950 /* BaseCoordinator.swift */,
+				3F81A0AD252F4F58009D2950 /* Coordinator.swift */,
 				3F81A0AC252F4F58009D2950 /* ApplicationCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		3FBEA1A82580179B00FCE6F6 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				3FBEA1A9258017A200FCE6F6 /* ViewModel.swift */,
+				3FBEA1B1258018DF00FCE6F6 /* ViewController.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		3FE8FCE2252F639400C82BF9 /* NavView */ = {
 			isa = PBXGroup;
 			children = (
-				3FE8FCF3252F6F8900C82BF9 /* NavCoordinator.swift */,
+				3FE8FCF3252F6F8900C82BF9 /* MyNavCoordinator.swift */,
+				3FBEA153257FEE4A00FCE6F6 /* NavAViewController.swift */,
+				3FBEA158257FEE7000FCE6F6 /* NavAViewModel.swift */,
+				3FBEA15F257FF0D300FCE6F6 /* NavBViewController.swift */,
+				3FBEA15D257FF0D300FCE6F6 /* NavBViewModel.swift */,
+				3FBEA15E257FF0D300FCE6F6 /* NavCViewController.swift */,
+				3FBEA160257FF0D400FCE6F6 /* NavCViewModel.swift */,
 			);
 			path = NavView;
 			sourceTree = "<group>";
@@ -210,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				3FE8FCE4252F63A700C82BF9 /* MyModalViewController.swift */,
+				3FBEA1BF25801D4C00FCE6F6 /* MyModalViewModel.swift */,
 				3FE8FCE9252F69E900C82BF9 /* MyModalCoordinator.swift */,
 			);
 			path = ModalView;
@@ -345,22 +374,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F36A8822579392E0080BB34 /* Router.swift in Sources */,
 				3FE8FCE5252F63A700C82BF9 /* MyModalViewController.swift in Sources */,
-				3F36A90C257989C00080BB34 /* Routable.swift in Sources */,
+				3FBEA1AA258017A200FCE6F6 /* ViewModel.swift in Sources */,
+				3FBEA1B2258018DF00FCE6F6 /* ViewController.swift in Sources */,
 				3F81A0AE252F4F58009D2950 /* MyTestApplication.swift in Sources */,
 				3F81A0AF252F4F58009D2950 /* FirstViewModel.swift in Sources */,
 				3F36A94C257A8A150080BB34 /* Route.swift in Sources */,
 				3F81A07B252F4EE3009D2950 /* FirstViewController.swift in Sources */,
+				3FBEA1C025801D4C00FCE6F6 /* MyModalViewModel.swift in Sources */,
 				3F36A91725798CD30080BB34 /* DeepLinkParser.swift in Sources */,
 				3F81A077252F4EE3009D2950 /* AppDelegate.swift in Sources */,
+				3FBEA164257FF0D400FCE6F6 /* NavCViewModel.swift in Sources */,
+				3FBEA154257FEE4A00FCE6F6 /* NavAViewController.swift in Sources */,
+				3FBEA163257FF0D400FCE6F6 /* NavBViewController.swift in Sources */,
 				3F81A079252F4EE3009D2950 /* SceneDelegate.swift in Sources */,
-				3FE8FCF4252F6F8900C82BF9 /* NavCoordinator.swift in Sources */,
+				3FE8FCF4252F6F8900C82BF9 /* MyNavCoordinator.swift in Sources */,
+				3FBEA162257FF0D400FCE6F6 /* NavCViewController.swift in Sources */,
+				3FBEA159257FEE7000FCE6F6 /* NavAViewModel.swift in Sources */,
 				3F36A88D257939560080BB34 /* Scene.swift in Sources */,
 				3F81A0B0252F4F58009D2950 /* ApplicationCoordinator.swift in Sources */,
 				3F36A91125798A660080BB34 /* DeepLinkConvertible.swift in Sources */,
+				3FBEA161257FF0D400FCE6F6 /* NavBViewModel.swift in Sources */,
 				3FE8FCEA252F69E900C82BF9 /* MyModalCoordinator.swift in Sources */,
-				3F81A0B1252F4F58009D2950 /* BaseCoordinator.swift in Sources */,
+				3F81A0B1252F4F58009D2950 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +573,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K264Q648FK;
 				INFOPLIST_FILE = FlowCoordinatorsExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -555,6 +592,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K264Q648FK;
 				INFOPLIST_FILE = FlowCoordinatorsExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

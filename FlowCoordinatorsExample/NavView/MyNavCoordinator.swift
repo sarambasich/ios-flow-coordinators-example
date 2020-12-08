@@ -8,11 +8,13 @@
 import UIKit
 
 
-class MyNavCoordinator: Coordinator {
+class MyNavCoordinator: NSObject, Coordinator {
 
     private var childCoordinators: [Coordinator] = []
 
-    private let rootNavigationController: UINavigationController
+    private let rootViewController: UIViewController
+
+    private let navigationController: UINavigationController
 
     private weak var delegate: MyNavCoordinatorDelegate?
 
@@ -22,8 +24,10 @@ class MyNavCoordinator: Coordinator {
 
     // MARK: - Initialization
 
-    init(rootNavigationController: UINavigationController, delegate: MyNavCoordinatorDelegate? = nil) {
-        self.rootNavigationController = rootNavigationController
+    init(rootViewController: UIViewController, delegate: MyNavCoordinatorDelegate? = nil) {
+        self.rootViewController = rootViewController
+        self.navigationController = UINavigationController()
+        self.delegate = delegate
     }
 
     // MARK: - Coordinator
@@ -34,7 +38,9 @@ class MyNavCoordinator: Coordinator {
         }
 
         let vc = try makeViewController(with: scene)
-        rootNavigationController.pushViewController(vc, animated: animated)
+        navigationController.viewControllers = [vc]
+        navigationController.presentationController?.delegate = self
+        rootViewController.present(navigationController, animated: animated, completion: nil)
 
         guard let nextRoute = route.remainingRoute() else { return }
         try navigate(to: nextRoute, animated: animated)
@@ -45,9 +51,19 @@ class MyNavCoordinator: Coordinator {
     }
 
     func dismiss(animated: Bool) {
-        rootNavigationController.dismiss(animated: animated) {
+        navigationController.dismiss(animated: animated) {
             self.delegate?.coordinatorDidFinish(self)
         }
+    }
+
+}
+
+// MARK: - UIAdaptivePresentationControllerDelegate
+
+extension MyNavCoordinator: UIAdaptivePresentationControllerDelegate {
+
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        delegate?.coordinatorDidFinish(self)
     }
 
 }

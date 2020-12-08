@@ -8,45 +8,76 @@
 import UIKit
 
 
-class MyModalCoordinator: Coordinator {
+class MyModalCoordinator: NSObject, Coordinator {
 
-    var childCoordinators: [Coordinator] = []
+    private let rootViewController: UIViewController
 
-    let rootViewController: UIViewController
+    private let navigationController: UINavigationController
 
-    let modalViewController: MyModalViewController
+    private var myModalViewController: MyModalViewController?
 
-    /// Whether or not we transitioned here using a storyboard segue
-    private let isSegue: Bool
+    let associatedScenes: [Scene] = [.myModal]
+
+    weak var delegate: MyModalCoordinatorDelegate?
+
+    private var childCoordinators: [Coordinator] = []
 
     /// Init with root vc for presentation.
-    init(rootViewController: UIViewController) {
+    init(rootViewController: UIViewController, delegate: MyModalCoordinatorDelegate? = nil) {
         self.rootViewController = rootViewController
-        self.modalViewController = getModalViewControllFromStoryboard()
-        self.isSegue = false
+        self.navigationController = UINavigationController()
+        self.myModalViewController = getModalViewControllFromStoryboard()
+        self.delegate = delegate
     }
 
-    /// Init with root vc and existing MyModal VC already presented - for storyboard segues only.
-    init(rootViewController: UIViewController, fromSegueModalController modalViewController: MyModalViewController) {
-        self.rootViewController = rootViewController
-        self.modalViewController = modalViewController
-        self.isSegue = true
+    // MARK: - Coordinator
+
+    func navigate(to route: Route, animated: Bool) throws {
+        guard let scene = route.firstScene, scene == associatedScenes.first else {
+            throw RoutingError.unsupportedRoute
+        }
+
+        guard let vc = myModalViewController else {
+            fatalError()
+        }
+
+        navigationController.presentationController?.delegate = self
+        navigationController.viewControllers = [vc]
+        rootViewController.present(navigationController, animated: animated, completion: nil)
+    }
+
+    func dismiss(animated: Bool) {
+        myModalViewController?.dismiss(animated: animated) {
+            self.delegate?.coordinatorDidFinish(self)
+        }
     }
 
     func start(animated: Bool) {
-        guard isSegue == false else {
-            print("Only call this when you are NOT using storyboard segue tranistions")
-            return
-        }
-
-        modalViewController.modalPresentationStyle = .formSheet
-        rootViewController.present(modalViewController, animated: animated, completion: nil)
+        try! navigate(to: Route(scenes: [.myModal], userIntent: nil), animated: animated)
     }
 
 }
 
+// MARK: - UIAdaptivePresentationControllerDelegate
+
+extension MyModalCoordinator: UIAdaptivePresentationControllerDelegate {
+
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        delegate?.coordinatorDidFinish(self)
+    }
+
+}
+
+// MARK: - Private
 
 private func getModalViewControllFromStoryboard() -> MyModalViewController {
     let sb = UIStoryboard(name: "Main", bundle: .main)
-    return sb.instantiateViewController(identifier: "MyModalCoordinator") as! MyModalViewController
+    return sb.instantiateViewController(identifier: MyModalViewController.identifier) { (coder) -> MyModalViewController? in
+        let vm = MyModalViewModel()
+        return MyModalViewController(coder: coder, viewModel: vm)
+    }
 }
+
+// MARK: - Delegate
+
+protocol MyModalCoordinatorDelegate: CoordinatorDelegate { }
