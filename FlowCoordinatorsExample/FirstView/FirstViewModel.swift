@@ -41,6 +41,16 @@ class FirstViewModel {
         flowDelegate?.didSelectNavButton()
     }
 
+    /// Call this when the user selects the button to navigate to the B scene in the nav flow.
+    func selectNavBButton() {
+        flowDelegate?.didSelectNavBButton()
+    }
+
+    /// Call this when the user selects the button to navigate to the C scene in the nav flow.
+    func selectNavCButton() {
+        flowDelegate?.didSelectNavCButton()
+    }
+
 }
 
 
@@ -51,7 +61,13 @@ protocol FirstViewModelFlowDelegate: AnyObject {
     /// Called when the user selects the button to navigate to a modal.
     func didSelectModalButton()
 
-    /// Called zwhen the user selects the button to navigate to another navigation controller.
+    /// Called when the user selects the button to navigate to another navigation controller.
     func didSelectNavButton()
+
+    /// Called when the user selects the button to navigate to the B scene in the nav flow.
+    func didSelectNavBButton()
+
+    /// Called when the user selects the button to navigate to the C scene in the nav flow.
+    func didSelectNavCButton()
 
 }

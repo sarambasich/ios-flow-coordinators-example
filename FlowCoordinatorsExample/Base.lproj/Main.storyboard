@@ -36,8 +36,8 @@
                                     <action selector="didSelectPresentModalButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bGo-YX-VH5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Programmatic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aay-EF-6gG">
-                                <rect key="frame" x="156" y="386" width="102" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go somewhere:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aay-EF-6gG">
+                                <rect key="frame" x="150" y="386" width="114" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,20 +48,46 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go to child:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbH-h6-ipH">
+                                <rect key="frame" x="165.5" y="516" width="83" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWN-A3-OVe">
+                                <rect key="frame" x="186" y="582" width="42" height="30"/>
+                                <state key="normal" title="Nav C"/>
+                                <connections>
+                                    <action selector="didSelectNavCButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2VF-AR-TNz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNO-E4-2G5">
+                                <rect key="frame" x="186.5" y="544" width="41" height="30"/>
+                                <state key="normal" title="Nav B"/>
+                                <connections>
+                                    <action selector="didSelectNavBButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rza-oc-Wbh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TEV-ho-55H" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="16" id="2HQ-5K-18B"/>
                             <constraint firstItem="RSV-YY-Ubk" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-16" id="4iG-tG-fC3"/>
+                            <constraint firstItem="DNO-E4-2G5" firstAttribute="top" secondItem="sbH-h6-ipH" secondAttribute="bottom" constant="8" symbolic="YES" id="58z-4B-Kgj"/>
+                            <constraint firstItem="pWN-A3-OVe" firstAttribute="top" secondItem="DNO-E4-2G5" secondAttribute="bottom" constant="8" symbolic="YES" id="5Jk-Dr-0mw"/>
+                            <constraint firstItem="pWN-A3-OVe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="F0f-uO-val"/>
                             <constraint firstItem="TEV-ho-55H" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="HSA-v5-Wyq"/>
                             <constraint firstItem="eFp-qr-hpG" firstAttribute="top" secondItem="gqf-Mj-Sjm" secondAttribute="bottom" constant="32" id="I0b-T5-MHA"/>
                             <constraint firstItem="aay-EF-6gG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Qnv-Mi-ZW8"/>
+                            <constraint firstItem="DNO-E4-2G5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Wio-fK-s2V"/>
                             <constraint firstItem="gqf-Mj-Sjm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="dFP-ef-fTK"/>
                             <constraint firstItem="RSV-YY-Ubk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dyo-lz-ISx"/>
                             <constraint firstItem="eFp-qr-hpG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hmm-qD-Xvb"/>
+                            <constraint firstItem="sbH-h6-ipH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nnv-XM-YWm"/>
                             <constraint firstItem="RSV-YY-Ubk" firstAttribute="top" secondItem="aay-EF-6gG" secondAttribute="bottom" constant="16" id="p7Z-D3-SfO"/>
                             <constraint firstItem="gqf-Mj-Sjm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="t8T-nq-6Ju"/>
+                            <constraint firstItem="sbH-h6-ipH" firstAttribute="top" secondItem="TEV-ho-55H" secondAttribute="bottom" constant="32" id="yXK-eT-hDs"/>
                         </constraints>
                     </view>
                     <connections>
@@ -162,9 +188,7 @@
                             <constraint firstItem="zCu-3r-e5j" firstAttribute="centerX" secondItem="vQf-E3-dz1" secondAttribute="centerX" id="iwK-Ut-TXy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="k0P-gv-lgI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="bPV-C6-IVx"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="k0P-gv-lgI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MKy-55-bu3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

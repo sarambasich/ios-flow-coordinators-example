@@ -28,6 +28,10 @@ class MyNavCoordinator: NSObject, Coordinator {
         self.rootViewController = rootViewController
         self.navigationController = UINavigationController()
         self.delegate = delegate
+
+        super.init()
+
+        self.navigationController.presentationController?.delegate = self
     }
 
     // MARK: - Coordinator
@@ -38,9 +42,11 @@ class MyNavCoordinator: NSObject, Coordinator {
         }
 
         let vc = try makeViewController(with: scene)
-        navigationController.viewControllers = [vc]
-        navigationController.presentationController?.delegate = self
-        rootViewController.present(navigationController, animated: animated, completion: nil)
+        navigationController.pushViewController(vc, animated: false)
+
+        if route.scenes.count == 1 {
+            rootViewController.present(navigationController, animated: animated, completion: nil)
+        }
 
         guard let nextRoute = route.remainingRoute() else { return }
         try navigate(to: nextRoute, animated: animated)

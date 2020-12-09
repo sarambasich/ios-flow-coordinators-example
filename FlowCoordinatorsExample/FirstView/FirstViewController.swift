@@ -37,6 +37,14 @@ private extension FirstViewController {
         viewModel?.selectNavButton()
     }
 
+    @IBAction func didSelectNavBButton(_ sender: UIButton) {
+        viewModel?.selectNavBButton()
+    }
+
+    @IBAction func didSelectNavCButton(_ sender: UIButton) {
+        viewModel?.selectNavCButton()
+    }
+
 }
 
 

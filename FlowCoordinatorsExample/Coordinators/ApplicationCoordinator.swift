@@ -78,6 +78,24 @@ final class ApplicationCoordinator: Coordinator {
         childCoordinators.append(coordinator)
     }
 
+    func navigateToNavViewChild(_ scene: Scene) {
+        guard let rootViewController = rootViewController else { return }
+
+        var scenes: [Scene] = [.navA]
+        switch scene {
+        case .navB:
+            scenes += [.navB]
+        case .navC:
+            scenes += [.navB, .navC]
+        default:
+            break
+        }
+        let coordinator = MyNavCoordinator(rootViewController: rootViewController, delegate: self)
+        try! coordinator.navigate(to: Route(scenes: scenes, userIntent: nil), animated: true)
+
+        childCoordinators.append(coordinator)
+    }
+
 }
 
 // MARK: - FirstViewModelFlowDelegate
@@ -90,6 +108,14 @@ extension ApplicationCoordinator: FirstViewModelFlowDelegate {
 
     func didSelectModalButton() {
         navigateToModalView()
+    }
+
+    func didSelectNavBButton() {
+        navigateToNavViewChild(.navB)
+    }
+
+    func didSelectNavCButton() {
+        navigateToNavViewChild(.navC)
     }
 
 }
