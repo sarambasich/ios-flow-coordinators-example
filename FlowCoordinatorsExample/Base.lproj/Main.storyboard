@@ -178,6 +178,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kh7-z2-wS7">
                                 <rect key="frame" x="150.5" y="229.5" width="113" height="30"/>
                                 <state key="normal" title="Manually push B"/>
+                                <connections>
+                                    <action selector="didSelectPushBButton:" destination="IXF-rU-xcI" eventType="touchUpInside" id="N3L-pa-jnn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NMa-G5-IzK"/>
@@ -212,6 +215,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCu-3r-e5j">
                                 <rect key="frame" x="150" y="229.5" width="114" height="30"/>
                                 <state key="normal" title="Manually push C"/>
+                                <connections>
+                                    <action selector="didSelectPushCButton:" destination="COK-ML-gIj" eventType="touchUpInside" id="jwu-HA-hCX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vQf-E3-dz1"/>
@@ -246,6 +252,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpL-uy-OUP">
                                 <rect key="frame" x="165" y="229.5" width="84" height="30"/>
                                 <state key="normal" title="Back to root"/>
+                                <connections>
+                                    <action selector="didSelectPopToRootButton:" destination="4sh-dC-hXb" eventType="touchUpInside" id="n5v-BC-bKN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tr7-hB-qh6"/>

@@ -42,9 +42,9 @@ class MyNavCoordinator: NSObject, Coordinator {
         }
 
         let vc = try makeViewController(with: scene)
-        navigationController.pushViewController(vc, animated: false)
+        navigationController.pushViewController(vc, animated: route.scenes.count == 1)
 
-        if route.scenes.count == 1 {
+        if route.scenes.count == 1 && rootViewController.presentedViewController != navigationController {
             rootViewController.present(navigationController, animated: animated, completion: nil)
         }
 
@@ -64,6 +64,30 @@ class MyNavCoordinator: NSObject, Coordinator {
 
 }
 
+// MARK: - View model delegates
+
+extension MyNavCoordinator: NavAViewModelFlowDelegate, NavBViewModelFlowDelegate, NavCViewModelFlowDelegate {
+
+    // MARK: NavAViewModelFlowDelegate
+
+    func didSelectPushBButton() {
+        try! navigate(to: Route(scenes: [.navB], userIntent: nil), animated: true)
+    }
+
+    // MARK: NavBViewModelFlowDelegate
+
+    func didSelectPushCButton() {
+        try! navigate(to: Route(scenes: [.navC], userIntent: nil), animated: true)
+    }
+
+    // MARK: NavCViewModelFlowDelegate
+
+    func didSelectPopToRootButton() {
+        navigationController.popToRootViewController(animated: true)
+    }
+
+}
+
 // MARK: - UIAdaptivePresentationControllerDelegate
 
 extension MyNavCoordinator: UIAdaptivePresentationControllerDelegate {
@@ -76,26 +100,30 @@ extension MyNavCoordinator: UIAdaptivePresentationControllerDelegate {
 
 // MARK: - Private
 
-private func makeViewController(with scene: Scene) throws -> UIViewController {
-    let sb = UIStoryboard(name: "Main", bundle: .main)
-    switch scene {
-    case .navA:
-        return sb.instantiateViewController(identifier: NavAViewController.identifier) { (coder) -> NavAViewController? in
-            let vm = NavAViewModel()
-            return NavAViewController(coder: coder, viewModel: vm)
+private extension MyNavCoordinator {
+
+    func makeViewController(with scene: Scene) throws -> UIViewController {
+        let sb = UIStoryboard(name: "Main", bundle: .main)
+        switch scene {
+        case .navA:
+            return sb.instantiateViewController(identifier: NavAViewController.identifier) { (coder) -> NavAViewController? in
+                let vm = NavAViewModel(flowDelegate: self)
+                return NavAViewController(coder: coder, viewModel: vm)
+            }
+        case .navB:
+            return sb.instantiateViewController(identifier: NavBViewController.identifier) { (coder) -> NavBViewController? in
+                let vm = NavBViewModel(flowDelegate: self)
+                return NavBViewController(coder: coder, viewModel: vm)
+            }
+        case .navC:
+            return sb.instantiateViewController(identifier: NavCViewController.identifier) { (coder) -> NavCViewController? in
+                let vm = NavCViewModel(flowDelegate: self)
+                return NavCViewController(coder: coder, viewModel: vm)
+            }
+        default: throw RoutingError.invalidScene
         }
-    case .navB:
-        return sb.instantiateViewController(identifier: NavBViewController.identifier) { (coder) -> NavBViewController? in
-            let vm = NavBViewModel()
-            return NavBViewController(coder: coder, viewModel: vm)
-        }
-    case .navC:
-        return sb.instantiateViewController(identifier: NavCViewController.identifier) { (coder) -> NavCViewController? in
-            let vm = NavCViewModel()
-            return NavCViewController(coder: coder, viewModel: vm)
-        }
-    default: throw RoutingError.invalidScene
     }
+
 }
 
 // MARK: - Delegate
