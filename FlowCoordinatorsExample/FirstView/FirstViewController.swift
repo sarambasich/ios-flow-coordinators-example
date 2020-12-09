@@ -45,6 +45,14 @@ private extension FirstViewController {
         viewModel?.selectNavCButton()
     }
 
+    @IBAction func didSelectNavAButtonOutOfOrder(_ sender: UIButton) {
+        viewModel?.selectNavAButtonOutOfOrder()
+    }
+
+    @IBAction func didSelectNavCButtonOutOfOrder(_ sender: UIButton) {
+        viewModel?.selectNavCButtonOutOfOrder()
+    }
+
 }
 
 

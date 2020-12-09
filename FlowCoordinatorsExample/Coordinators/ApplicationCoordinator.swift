@@ -78,15 +78,17 @@ final class ApplicationCoordinator: Coordinator {
         childCoordinators.append(coordinator)
     }
 
-    func navigateToNavViewChild(_ scene: Scene) {
+    func navigateToNavViewChild(_ scene: Scene, isOutOfOrder: Bool = false) {
         guard let rootViewController = rootViewController else { return }
 
-        var scenes: [Scene] = [.navA]
+        var scenes: [Scene] = isOutOfOrder ? [.navB] : [.navA]
         switch scene {
+        case .navA where isOutOfOrder:
+            scenes += [.navA]
         case .navB:
             scenes += [.navB]
         case .navC:
-            scenes += [.navB, .navC]
+            scenes += isOutOfOrder ? [.navA, .navC] : [.navB, .navC]
         default:
             break
         }
@@ -116,6 +118,14 @@ extension ApplicationCoordinator: FirstViewModelFlowDelegate {
 
     func didSelectNavCButton() {
         navigateToNavViewChild(.navC)
+    }
+
+    func didSelectNavAButtonOutOfOrder() {
+        navigateToNavViewChild(.navA, isOutOfOrder: true)
+    }
+
+    func didSelectNavCButtonOutOfOrder() {
+        navigateToNavViewChild(.navC, isOutOfOrder: true)
     }
 
 }

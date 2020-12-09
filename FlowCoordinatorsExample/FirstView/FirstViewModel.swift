@@ -51,6 +51,16 @@ class FirstViewModel {
         flowDelegate?.didSelectNavCButton()
     }
 
+    /// Call this when the user selects the button to navigate to the A scene in the nav flow, in reverse order.
+    func selectNavAButtonOutOfOrder() {
+        flowDelegate?.didSelectNavAButtonOutOfOrder()
+    }
+
+    /// Call this when the user selects the button to navigate to the C scene in the nav flow, in reverse order.
+    func selectNavCButtonOutOfOrder() {
+        flowDelegate?.didSelectNavCButtonOutOfOrder()
+    }
+
 }
 
 
@@ -69,5 +79,11 @@ protocol FirstViewModelFlowDelegate: AnyObject {
 
     /// Called when the user selects the button to navigate to the C scene in the nav flow.
     func didSelectNavCButton()
+
+    /// Called when the user selects the button to navigate to the A scene in the nav flow, in out of order with B first.
+    func didSelectNavAButtonOutOfOrder()
+
+    /// Called when the user selects the button to navigate to the C scene in the nav flow, out of order.
+    func didSelectNavCButtonOutOfOrder()
 
 }
