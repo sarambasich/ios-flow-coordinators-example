@@ -155,6 +155,16 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		3F57753325828AC500E0B0C8 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3F690531252F61CE00AA6B1F /* FirstView */,
+				3FE8FCE3252F639400C82BF9 /* ModalView */,
+				3FE8FCE2252F639400C82BF9 /* NavView */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		3F690531252F61CE00AA6B1F /* FirstView */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,11 +197,9 @@
 		3F81A075252F4EE3009D2950 /* FlowCoordinatorsExample */ = {
 			isa = PBXGroup;
 			children = (
-				3F36A880257939280080BB34 /* Routing */,
 				3F81A0AB252F4F58009D2950 /* Coordinators */,
-				3F690531252F61CE00AA6B1F /* FirstView */,
-				3FE8FCE3252F639400C82BF9 /* ModalView */,
-				3FE8FCE2252F639400C82BF9 /* NavView */,
+				3F57753325828AC500E0B0C8 /* Scenes */,
+				3F36A880257939280080BB34 /* Routing */,
 				3FBEA1A82580179B00FCE6F6 /* Utility */,
 				3F81A0A9252F4F58009D2950 /* MyTestApplication.swift */,
 				3F81A076252F4EE3009D2950 /* AppDelegate.swift */,
