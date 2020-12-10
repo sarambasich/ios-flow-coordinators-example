@@ -12,6 +12,7 @@
 		3F36A91725798CD30080BB34 /* DeepLinkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A91625798CD30080BB34 /* DeepLinkParser.swift */; };
 		3F36A94C257A8A150080BB34 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A94B257A8A150080BB34 /* Route.swift */; };
 		3F5775202582827800E0B0C8 /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57751F2582827800E0B0C8 /* RouteTests.swift */; };
+		3F5775292582844E00E0B0C8 /* ApplicationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775282582844E00E0B0C8 /* ApplicationCoordinatorTests.swift */; };
 		3F81A077252F4EE3009D2950 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A076252F4EE3009D2950 /* AppDelegate.swift */; };
 		3F81A079252F4EE3009D2950 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A078252F4EE3009D2950 /* SceneDelegate.swift */; };
 		3F81A07B252F4EE3009D2950 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A07A252F4EE3009D2950 /* FirstViewController.swift */; };
@@ -61,6 +62,7 @@
 		3F36A91625798CD30080BB34 /* DeepLinkParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkParser.swift; sourceTree = "<group>"; };
 		3F36A94B257A8A150080BB34 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		3F57751F2582827800E0B0C8 /* RouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTests.swift; sourceTree = "<group>"; };
+		3F5775282582844E00E0B0C8 /* ApplicationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorTests.swift; sourceTree = "<group>"; };
 		3F81A073252F4EE3009D2950 /* FlowCoordinatorsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowCoordinatorsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F81A076252F4EE3009D2950 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F81A078252F4EE3009D2950 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,14 @@
 			path = Routing;
 			sourceTree = "<group>";
 		};
+		3F5775272582843E00E0B0C8 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				3F5775282582844E00E0B0C8 /* ApplicationCoordinatorTests.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		3F690531252F61CE00AA6B1F /* FirstView */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				3F57751E2582826900E0B0C8 /* Routing */,
+				3F5775272582843E00E0B0C8 /* Coordinators */,
 				3F81A08D252F4EE4009D2950 /* FlowCoordinatorsExampleTests.swift */,
 				3F81A08F252F4EE4009D2950 /* Info.plist */,
 			);
@@ -416,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F81A08E252F4EE4009D2950 /* FlowCoordinatorsExampleTests.swift in Sources */,
+				3F5775292582844E00E0B0C8 /* ApplicationCoordinatorTests.swift in Sources */,
 				3F5775202582827800E0B0C8 /* RouteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
