@@ -15,11 +15,14 @@ class ApplicationCoordinatorTests: XCTestCase {
 
     private var subject: ApplicationCoordinator!
 
-    private let window = UIWindow()
-
     private let testApp = MyTestApplication()
 
-    // MARK: - Test setuop
+    private var window: UIWindow {
+        let sceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+        return sceneDelegate.window!
+    }
+
+    // MARK: - Test setup
 
     override func tearDown() {
         subject = nil
@@ -48,7 +51,12 @@ class ApplicationCoordinatorTests: XCTestCase {
         subject = ApplicationCoordinator(application: testApp, window: window)
 
         let route = Route(scenes: [.navA], userIntent: nil)
-        XCTAssertThrowsError(try subject.navigate(to: route, animated: true))
+        XCTAssertThrowsError(try subject.navigate(to: route, animated: true)) { (error) in
+            guard case RoutingError.invalidScene = error else {
+                XCTFail("Unexpected error thrown: \(error)")
+                return
+            }
+        }
     }
 
     func testStartSucceeds() {

@@ -10,13 +10,13 @@ import UIKit
 
 class MyModalCoordinator: NSObject, Coordinator {
 
+    let associatedScenes: [Scene] = [.myModal]
+
     private let rootViewController: UIViewController
 
     private let navigationController: UINavigationController
 
     private var myModalViewController: MyModalViewController?
-
-    let associatedScenes: [Scene] = [.myModal]
 
     weak var delegate: MyModalCoordinatorDelegate?
 
@@ -26,7 +26,7 @@ class MyModalCoordinator: NSObject, Coordinator {
     init(rootViewController: UIViewController, delegate: MyModalCoordinatorDelegate? = nil) {
         self.rootViewController = rootViewController
         self.navigationController = UINavigationController()
-        self.myModalViewController = getModalViewControllFromStoryboard()
+        self.myModalViewController = getModalViewControllerFromStoryboard()
         self.delegate = delegate
     }
 
@@ -46,14 +46,14 @@ class MyModalCoordinator: NSObject, Coordinator {
         rootViewController.present(navigationController, animated: animated, completion: nil)
     }
 
-    func dismiss(animated: Bool) {
-        myModalViewController?.dismiss(animated: animated) {
-            self.delegate?.coordinatorDidFinish(self)
-        }
-    }
-
     func start(animated: Bool) {
         try! navigate(to: Route(scenes: [.myModal], userIntent: nil), animated: animated)
+    }
+
+    func dismiss(animated: Bool) {
+        navigationController.dismiss(animated: animated) {
+            self.delegate?.coordinatorDidFinish(self)
+        }
     }
 
 }
@@ -70,7 +70,7 @@ extension MyModalCoordinator: UIAdaptivePresentationControllerDelegate {
 
 // MARK: - Private
 
-private func getModalViewControllFromStoryboard() -> MyModalViewController {
+private func getModalViewControllerFromStoryboard() -> MyModalViewController {
     let sb = UIStoryboard(name: "Main", bundle: .main)
     return sb.instantiateViewController(identifier: MyModalViewController.identifier) { (coder) -> MyModalViewController? in
         let vm = MyModalViewModel()

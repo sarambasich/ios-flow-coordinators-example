@@ -16,6 +16,7 @@
 		3F57753A25828C9900E0B0C8 /* FirstViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57753925828C9900E0B0C8 /* FirstViewModelTests.swift */; };
 		3F577542258290BE00E0B0C8 /* FirstViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F577541258290BE00E0B0C8 /* FirstViewControllerTests.swift */; };
 		3F5775482582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775472582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift */; };
+		3F6CB6CE2582A12D00DFFA01 /* MyModalCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CB6CD2582A12D00DFFA01 /* MyModalCoordinatorTests.swift */; };
 		3F81A077252F4EE3009D2950 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A076252F4EE3009D2950 /* AppDelegate.swift */; };
 		3F81A079252F4EE3009D2950 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A078252F4EE3009D2950 /* SceneDelegate.swift */; };
 		3F81A07B252F4EE3009D2950 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A07A252F4EE3009D2950 /* FirstViewController.swift */; };
@@ -68,6 +69,7 @@
 		3F57753925828C9900E0B0C8 /* FirstViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewModelTests.swift; sourceTree = "<group>"; };
 		3F577541258290BE00E0B0C8 /* FirstViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewControllerTests.swift; sourceTree = "<group>"; };
 		3F5775472582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFirstViewModelFlowDelegate.swift; sourceTree = "<group>"; };
+		3F6CB6CD2582A12D00DFFA01 /* MyModalCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModalCoordinatorTests.swift; sourceTree = "<group>"; };
 		3F81A073252F4EE3009D2950 /* FlowCoordinatorsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowCoordinatorsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F81A076252F4EE3009D2950 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F81A078252F4EE3009D2950 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				3F57753825828C6400E0B0C8 /* FirstView */,
+				3F6CB6CB2582979700DFFA01 /* ModalView */,
+				3F6CB6CC2582979C00DFFA01 /* NavView */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -201,6 +205,21 @@
 				3F81A07A252F4EE3009D2950 /* FirstViewController.swift */,
 			);
 			path = FirstView;
+			sourceTree = "<group>";
+		};
+		3F6CB6CB2582979700DFFA01 /* ModalView */ = {
+			isa = PBXGroup;
+			children = (
+				3F6CB6CD2582A12D00DFFA01 /* MyModalCoordinatorTests.swift */,
+			);
+			path = ModalView;
+			sourceTree = "<group>";
+		};
+		3F6CB6CC2582979C00DFFA01 /* NavView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NavView;
 			sourceTree = "<group>";
 		};
 		3F81A06A252F4EE3009D2950 = {
@@ -297,9 +316,9 @@
 		3FE8FCE3252F639400C82BF9 /* ModalView */ = {
 			isa = PBXGroup;
 			children = (
+				3FE8FCE9252F69E900C82BF9 /* MyModalCoordinator.swift */,
 				3FE8FCE4252F63A700C82BF9 /* MyModalViewController.swift */,
 				3FBEA1BF25801D4C00FCE6F6 /* MyModalViewModel.swift */,
-				3FE8FCE9252F69E900C82BF9 /* MyModalCoordinator.swift */,
 			);
 			path = ModalView;
 			sourceTree = "<group>";
@@ -468,6 +487,7 @@
 				3F5775482582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift in Sources */,
 				3F5775292582844E00E0B0C8 /* ApplicationCoordinatorTests.swift in Sources */,
 				3F5775202582827800E0B0C8 /* RouteTests.swift in Sources */,
+				3F6CB6CE2582A12D00DFFA01 /* MyModalCoordinatorTests.swift in Sources */,
 				3F577542258290BE00E0B0C8 /* FirstViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
