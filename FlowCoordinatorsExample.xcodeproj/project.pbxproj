@@ -19,7 +19,6 @@
 		3F81A07E252F4EE3009D2950 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F81A07C252F4EE3009D2950 /* Main.storyboard */; };
 		3F81A080252F4EE4009D2950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F81A07F252F4EE4009D2950 /* Assets.xcassets */; };
 		3F81A083252F4EE4009D2950 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F81A081252F4EE4009D2950 /* LaunchScreen.storyboard */; };
-		3F81A08E252F4EE4009D2950 /* FlowCoordinatorsExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A08D252F4EE4009D2950 /* FlowCoordinatorsExampleTests.swift */; };
 		3F81A099252F4EE4009D2950 /* FlowCoordinatorsExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A098252F4EE4009D2950 /* FlowCoordinatorsExampleUITests.swift */; };
 		3F81A0AE252F4F58009D2950 /* MyTestApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A0A9252F4F58009D2950 /* MyTestApplication.swift */; };
 		3F81A0AF252F4F58009D2950 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A0AA252F4F58009D2950 /* FirstViewModel.swift */; };
@@ -72,7 +71,6 @@
 		3F81A082252F4EE4009D2950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F81A084252F4EE4009D2950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F81A089252F4EE4009D2950 /* FlowCoordinatorsExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowCoordinatorsExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F81A08D252F4EE4009D2950 /* FlowCoordinatorsExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorsExampleTests.swift; sourceTree = "<group>"; };
 		3F81A08F252F4EE4009D2950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F81A094252F4EE4009D2950 /* FlowCoordinatorsExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowCoordinatorsExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F81A098252F4EE4009D2950 /* FlowCoordinatorsExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorsExampleUITests.swift; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 			children = (
 				3F57751E2582826900E0B0C8 /* Routing */,
 				3F5775272582843E00E0B0C8 /* Coordinators */,
-				3F81A08D252F4EE4009D2950 /* FlowCoordinatorsExampleTests.swift */,
 				3F81A08F252F4EE4009D2950 /* Info.plist */,
 			);
 			path = FlowCoordinatorsExampleTests;
@@ -434,7 +431,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F81A08E252F4EE4009D2950 /* FlowCoordinatorsExampleTests.swift in Sources */,
 				3F5775292582844E00E0B0C8 /* ApplicationCoordinatorTests.swift in Sources */,
 				3F5775202582827800E0B0C8 /* RouteTests.swift in Sources */,
 			);
