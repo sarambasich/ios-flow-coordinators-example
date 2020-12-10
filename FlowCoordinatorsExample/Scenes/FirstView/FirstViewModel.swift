@@ -31,6 +31,8 @@ class FirstViewModel {
         self.flowDelegate = flowDelegate
     }
 
+    // MARK: - Methods
+
     /// Call this when the user selects the button to navigate to a modal.
     func selectModalButton() {
         flowDelegate?.didSelectModalButton()
