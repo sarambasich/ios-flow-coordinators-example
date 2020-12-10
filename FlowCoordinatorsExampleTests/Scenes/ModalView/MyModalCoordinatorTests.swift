@@ -15,15 +15,19 @@ class MyModalCoordinatorTests: XCTestCase {
 
     private var subject: MyModalCoordinator!
 
-    private var rootViewController: UIViewController {
-        let sceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
-        return sceneDelegate.window!.rootViewController!
-    }
+    private var rootViewController: UIViewController!
 
     // MARK: - Test setup
 
+    override func setUp() {
+        let sceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+        rootViewController = sceneDelegate.window!.rootViewController
+    }
+
     override func tearDown() {
         subject = nil
+        let sceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+        sceneDelegate.window?.rootViewController?.presentedViewController?.dismiss(animated: false, completion: nil)
     }
 
     // MARK: - Test cases
@@ -41,12 +45,7 @@ class MyModalCoordinatorTests: XCTestCase {
         let route = Route(scenes: [.myModal], userIntent: nil)
         XCTAssertNoThrow(try subject.navigate(to: route, animated: true))
 
-        guard let navController = rootViewController.presentedViewController as? UINavigationController else {
-            XCTFail("Couldn't find navigation controller")
-            return
-        }
-
-        XCTAssertTrue(navController.viewControllers.first is MyModalViewController)
+        XCTAssertTrue(rootViewController.presentedViewController is MyModalViewController)
     }
 
     func testNavigateWithInvalidScene() {
@@ -65,12 +64,7 @@ class MyModalCoordinatorTests: XCTestCase {
         subject = MyModalCoordinator(rootViewController: rootViewController)
         subject.start(animated: true)
 
-        guard let navController = rootViewController.presentedViewController as? UINavigationController else {
-            XCTFail("Couldn't find navigation controller")
-            return
-        }
-
-        XCTAssertTrue(navController.viewControllers.first is MyModalViewController)
+        XCTAssertTrue(rootViewController.presentedViewController is MyModalViewController)
     }
 
     func testDismissSucceeds() {

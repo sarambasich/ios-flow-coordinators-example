@@ -14,9 +14,7 @@ class MyModalCoordinator: NSObject, Coordinator {
 
     private let rootViewController: UIViewController
 
-    private let navigationController: UINavigationController
-
-    private var myModalViewController: MyModalViewController?
+    private let myModalViewController: MyModalViewController
 
     weak var delegate: MyModalCoordinatorDelegate?
 
@@ -25,7 +23,6 @@ class MyModalCoordinator: NSObject, Coordinator {
     /// Init with root vc for presentation.
     init(rootViewController: UIViewController, delegate: MyModalCoordinatorDelegate? = nil) {
         self.rootViewController = rootViewController
-        self.navigationController = UINavigationController()
         self.myModalViewController = getModalViewControllerFromStoryboard()
         self.delegate = delegate
     }
@@ -37,13 +34,8 @@ class MyModalCoordinator: NSObject, Coordinator {
             throw RoutingError.unsupportedRoute
         }
 
-        guard let vc = myModalViewController else {
-            fatalError()
-        }
-
-        navigationController.presentationController?.delegate = self
-        navigationController.viewControllers = [vc]
-        rootViewController.present(navigationController, animated: animated, completion: nil)
+        myModalViewController.presentationController?.delegate = self
+        rootViewController.present(myModalViewController, animated: animated, completion: nil)
     }
 
     func start(animated: Bool) {
@@ -51,7 +43,7 @@ class MyModalCoordinator: NSObject, Coordinator {
     }
 
     func dismiss(animated: Bool) {
-        navigationController.dismiss(animated: animated) {
+        myModalViewController.dismiss(animated: animated) {
             self.delegate?.coordinatorDidFinish(self)
         }
     }

@@ -17,14 +17,17 @@ class ApplicationCoordinatorTests: XCTestCase {
 
     private let testApp = MyTestApplication()
 
-    private var window: UIWindow {
-        let sceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
-        return sceneDelegate.window!
-    }
+    private var window: UIWindow!
 
     // MARK: - Test setup
 
+    override func setUp() {
+        window = UIWindow()
+        window.rootViewController = FirstViewController()
+    }
+
     override func tearDown() {
+        window = nil
         subject = nil
     }
 
@@ -77,5 +80,36 @@ class ApplicationCoordinatorTests: XCTestCase {
     // Same for `CoordinatorDelegate` methods.
     //
     // I think there's some iteration here that still needs to happen.
+
+    func testNavigateToNavViewSucceeds() {
+        subject = ApplicationCoordinator(application: testApp, window: window)
+        subject.start(animated: false)
+        subject.navigateToNavView()
+
+        guard let firstViewController = window.rootViewController as? FirstViewController else {
+            XCTFail("Couldn't get first VC")
+            return
+        }
+
+        guard let navController = firstViewController.presentedViewController as? UINavigationController else {
+            XCTFail("Couldn't get nav controller")
+            return
+        }
+
+        XCTAssertTrue(navController.viewControllers.first is NavAViewController)
+    }
+
+    func testNavigateToModalViewSucceeds() {
+        subject = ApplicationCoordinator(application: testApp, window: window)
+        subject.start(animated: false)
+        subject.navigateToModalView()
+
+        guard let firstViewController = window.rootViewController as? FirstViewController else {
+            XCTFail("Couldn't get first VC")
+            return
+        }
+
+        XCTAssertTrue(firstViewController.presentedViewController is MyModalViewController)
+    }
 
 }
