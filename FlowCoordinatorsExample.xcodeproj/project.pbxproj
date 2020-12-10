@@ -14,6 +14,8 @@
 		3F5775202582827800E0B0C8 /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57751F2582827800E0B0C8 /* RouteTests.swift */; };
 		3F5775292582844E00E0B0C8 /* ApplicationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775282582844E00E0B0C8 /* ApplicationCoordinatorTests.swift */; };
 		3F57753A25828C9900E0B0C8 /* FirstViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57753925828C9900E0B0C8 /* FirstViewModelTests.swift */; };
+		3F577542258290BE00E0B0C8 /* FirstViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F577541258290BE00E0B0C8 /* FirstViewControllerTests.swift */; };
+		3F5775482582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775472582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift */; };
 		3F81A077252F4EE3009D2950 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A076252F4EE3009D2950 /* AppDelegate.swift */; };
 		3F81A079252F4EE3009D2950 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A078252F4EE3009D2950 /* SceneDelegate.swift */; };
 		3F81A07B252F4EE3009D2950 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A07A252F4EE3009D2950 /* FirstViewController.swift */; };
@@ -64,6 +66,8 @@
 		3F57751F2582827800E0B0C8 /* RouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTests.swift; sourceTree = "<group>"; };
 		3F5775282582844E00E0B0C8 /* ApplicationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorTests.swift; sourceTree = "<group>"; };
 		3F57753925828C9900E0B0C8 /* FirstViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewModelTests.swift; sourceTree = "<group>"; };
+		3F577541258290BE00E0B0C8 /* FirstViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewControllerTests.swift; sourceTree = "<group>"; };
+		3F5775472582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFirstViewModelFlowDelegate.swift; sourceTree = "<group>"; };
 		3F81A073252F4EE3009D2950 /* FlowCoordinatorsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowCoordinatorsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F81A076252F4EE3009D2950 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F81A078252F4EE3009D2950 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,8 +181,17 @@
 			isa = PBXGroup;
 			children = (
 				3F57753925828C9900E0B0C8 /* FirstViewModelTests.swift */,
+				3F577541258290BE00E0B0C8 /* FirstViewControllerTests.swift */,
 			);
 			path = FirstView;
+			sourceTree = "<group>";
+		};
+		3F577546258290E800E0B0C8 /* Test Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3F5775472582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift */,
+			);
+			path = "Test Helpers";
 			sourceTree = "<group>";
 		};
 		3F690531252F61CE00AA6B1F /* FirstView */ = {
@@ -231,6 +244,7 @@
 		3F81A08C252F4EE4009D2950 /* FlowCoordinatorsExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				3F577546258290E800E0B0C8 /* Test Helpers */,
 				3F5775272582843E00E0B0C8 /* Coordinators */,
 				3F57751E2582826900E0B0C8 /* Routing */,
 				3F57753725828B4000E0B0C8 /* Scenes */,
@@ -451,8 +465,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F57753A25828C9900E0B0C8 /* FirstViewModelTests.swift in Sources */,
+				3F5775482582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift in Sources */,
 				3F5775292582844E00E0B0C8 /* ApplicationCoordinatorTests.swift in Sources */,
 				3F5775202582827800E0B0C8 /* RouteTests.swift in Sources */,
+				3F577542258290BE00E0B0C8 /* FirstViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
