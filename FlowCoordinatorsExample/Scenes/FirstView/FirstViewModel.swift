@@ -33,14 +33,19 @@ class FirstViewModel {
 
     // MARK: - Methods
 
+    /// Call this when the user selects the button to navigate to another navigation controller.
+    func selectNavButton() {
+        flowDelegate?.didSelectNavButton()
+    }
+
     /// Call this when the user selects the button to navigate to a modal.
     func selectModalButton() {
         flowDelegate?.didSelectModalButton()
     }
 
-    /// Call this when the user selects the button to navigate to another navigation controller.
-    func selectNavButton() {
-        flowDelegate?.didSelectNavButton()
+    /// Call this when the user selects the button to navigate to a modal child.
+    func selectModalChildButton() {
+        flowDelegate?.didSelectModalChildButton()
     }
 
     /// Call this when the user selects the button to navigate to the B scene in the nav flow.
@@ -70,11 +75,14 @@ class FirstViewModel {
 
 protocol FirstViewModelFlowDelegate: AnyObject {
 
+    /// Called when the user selects the button to navigate to another navigation controller.
+    func didSelectNavButton()
+
     /// Called when the user selects the button to navigate to a modal.
     func didSelectModalButton()
 
-    /// Called when the user selects the button to navigate to another navigation controller.
-    func didSelectNavButton()
+    /// Called when the user selects the button to navigate to a modal child.
+    func didSelectModalChildButton()
 
     /// Called when the user selects the button to navigate to the B scene in the nav flow.
     func didSelectNavBButton()

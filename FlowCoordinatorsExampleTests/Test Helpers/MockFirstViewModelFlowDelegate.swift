@@ -11,9 +11,11 @@ import Foundation
 
 final class MockFirstViewModelFlowDelegate: FirstViewModelFlowDelegate {
 
+    private(set) var didSelectNavButtonWasCalled = false
+
     private(set) var didSelectModalButtonWasCalled = false
 
-    private(set) var didSelectNavButtonWasCalled = false
+    private(set) var didSelectModalChildButtonWasCalled = false
 
     private(set) var didSelectNavBButtonWasCalled = false
 
@@ -26,12 +28,16 @@ final class MockFirstViewModelFlowDelegate: FirstViewModelFlowDelegate {
 
     // MARK: - FirstViewModelFlowDelegate
 
+    func didSelectNavButton() {
+        didSelectNavButtonWasCalled = true
+    }
+
     func didSelectModalButton() {
         didSelectModalButtonWasCalled = true
     }
 
-    func didSelectNavButton() {
-        didSelectNavButtonWasCalled = true
+    func didSelectModalChildButton() {
+        didSelectModalChildButtonWasCalled = true
     }
 
     func didSelectNavBButton() {

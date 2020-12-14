@@ -29,10 +29,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="wlh-fO-ZOQ">
-                                <rect key="frame" x="103" y="341.5" width="208" height="223"/>
+                                <rect key="frame" x="103" y="322.5" width="208" height="261"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uqd-5z-GsZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="208" height="95.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="208" height="133.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go somewhere:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aay-EF-6gG">
                                                 <rect key="frame" x="0.0" y="0.0" width="208" height="19.5"/>
@@ -47,17 +47,24 @@
                                                     <action selector="didSelectPresentNavButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XdA-AM-irO"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSV-YY-Ubk">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1my-en-SJf">
                                                 <rect key="frame" x="0.0" y="65.5" width="208" height="30"/>
                                                 <state key="normal" title="Modal"/>
                                                 <connections>
-                                                    <action selector="didSelectPresentModalButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bGo-YX-VH5"/>
+                                                    <action selector="didSelectPresentModalButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4JI-Wr-VeI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSV-YY-Ubk">
+                                                <rect key="frame" x="0.0" y="103.5" width="208" height="30"/>
+                                                <state key="normal" title="Modal Child (nested view)"/>
+                                                <connections>
+                                                    <action selector="didSelectPresentModalChildButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="01V-OJ-FC2"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="XOQ-sf-iiI">
-                                        <rect key="frame" x="0.0" y="127.5" width="208" height="95.5"/>
+                                        <rect key="frame" x="0.0" y="165.5" width="208" height="95.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iOA-oZ-IVY">
                                                 <rect key="frame" x="0.0" y="0.0" width="83" height="95.5"/>
@@ -147,10 +154,20 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Kg-zo-FVF">
+                                <rect key="frame" x="146.5" y="229.5" width="121" height="30"/>
+                                <state key="normal" title="Go to modal child"/>
+                                <connections>
+                                    <action selector="didSelectGoToModalChildButton:" destination="rMS-nQ-iMX" eventType="touchUpInside" id="zkW-Q8-a1J"/>
+                                    <action selector="didSelectPushBButton:" destination="IXF-rU-xcI" eventType="touchUpInside" id="JIn-zN-rep"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GLm-QS-6mE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="0Kg-zo-FVF" firstAttribute="top" secondItem="dGu-Xy-7uD" secondAttribute="bottom" constant="64" id="0OB-zc-rYx"/>
+                            <constraint firstItem="0Kg-zo-FVF" firstAttribute="centerX" secondItem="GLm-QS-6mE" secondAttribute="centerX" id="1Lq-do-8Zc"/>
                             <constraint firstItem="dGu-Xy-7uD" firstAttribute="top" secondItem="GLm-QS-6mE" secondAttribute="top" constant="64" id="Rnn-L7-chk"/>
                             <constraint firstItem="dGu-Xy-7uD" firstAttribute="centerX" secondItem="GLm-QS-6mE" secondAttribute="centerX" id="zdP-PP-u5H"/>
                         </constraints>
@@ -160,6 +177,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Emz-gs-bTp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="909" y="-253"/>
+        </scene>
+        <!--My Modal Child View Controller-->
+        <scene sceneID="E0y-EK-Lvj">
+            <objects>
+                <viewController storyboardIdentifier="MyModalChildViewController" id="JdG-jm-4z4" customClass="MyModalChildViewController" customModule="FlowCoordinatorsExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wpI-DR-h50">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modal Child" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGX-rz-Gt8">
+                                <rect key="frame" x="84.5" y="108" width="245" height="57.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ELj-Oz-Dme"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ELj-Oz-Dme" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vGX-rz-Gt8" secondAttribute="trailing" constant="16" id="CdN-I3-j3g"/>
+                            <constraint firstItem="vGX-rz-Gt8" firstAttribute="top" secondItem="ELj-Oz-Dme" secondAttribute="top" constant="64" id="LNo-Mb-ySG"/>
+                            <constraint firstItem="vGX-rz-Gt8" firstAttribute="centerX" secondItem="ELj-Oz-Dme" secondAttribute="centerX" id="k9a-PP-yuN"/>
+                            <constraint firstItem="vGX-rz-Gt8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ELj-Oz-Dme" secondAttribute="leading" constant="16" id="pI5-nY-id2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ciz-tl-fni"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hA9-Kg-TFc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1683" y="-917"/>
         </scene>
         <!--NavA View Controller-->
         <scene sceneID="Ek2-Mm-Nry">

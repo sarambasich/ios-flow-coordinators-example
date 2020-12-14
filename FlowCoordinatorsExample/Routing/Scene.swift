@@ -20,19 +20,13 @@ enum Scene: String {
 
     case myModal = "my_modal"
 
+    case myModalChild = "my_modal_child"
+
     case navA = "nav_a"
 
     case navB = "nav_b"
 
     case navC = "nav_c"
-
-    func getCoordinatorType() -> Coordinator.Type {
-        switch self {
-        case .first: return ApplicationCoordinator.self
-        case .myModal: return MyModalCoordinator.self
-        case .navA, .navB, .navC: return MyNavCoordinator.self
-        }
-    }
 
 }
 

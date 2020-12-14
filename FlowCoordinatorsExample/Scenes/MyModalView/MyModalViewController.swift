@@ -13,3 +13,11 @@ class MyModalViewController: ViewController<MyModalViewModel> {
     static let identifier = "MyModalViewController"
 
 }
+
+private extension MyModalViewController {
+
+    @IBAction func didSelectGoToModalChildButton(_ sender: UIButton) {
+        viewModel.selectGoToModalChildButton()
+    }
+
+}

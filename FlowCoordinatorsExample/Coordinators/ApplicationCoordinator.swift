@@ -43,13 +43,13 @@ final class ApplicationCoordinator: Coordinator {
         case .first:
             rootViewController.viewModel = FirstViewModel(application: application, flowDelegate: self)
             window.makeKeyAndVisible()
-        case _ where MyModalCoordinator.associatedScenes.contains(scene):
-            myModalCoordinator = MyModalCoordinator(rootViewController: rootViewController, delegate: self)
-            try myModalCoordinator?.navigate(to: route, animated: animated)
-            return
         case _ where MyNavCoordinator.associatedScenes.contains(scene):
             myNavCoordinator = MyNavCoordinator(rootViewController: rootViewController, delegate: self)
             try myNavCoordinator?.navigate(to: route, animated: animated)
+            return
+        case _ where MyModalCoordinator.associatedScenes.contains(scene):
+            myModalCoordinator = MyModalCoordinator(rootViewController: rootViewController, delegate: self)
+            try myModalCoordinator?.navigate(to: route, animated: animated)
             return
         default:
             throw RoutingError.invalidScene
@@ -97,6 +97,10 @@ extension ApplicationCoordinator: FirstViewModelFlowDelegate {
 
     func didSelectModalButton() {
         try! navigate(to: Route(scenes: [.myModal], userIntent: nil), animated: true)
+    }
+
+    func didSelectModalChildButton() {
+        try! navigate(to: Route(scenes: [.myModal, .myModalChild], userIntent: nil), animated: true)
     }
 
     func didSelectNavBButton() {
