@@ -52,6 +52,7 @@ class MyModalCoordinator: NSObject, Coordinator {
 
             myModalChildCoordinator = MyModalChildCoordinator(rootViewController: myModalViewController!, delegate: self)
             try myModalChildCoordinator?.navigate(to: route, animated: animated)
+            return
         default:
             throw RoutingError.invalidScene
         }
