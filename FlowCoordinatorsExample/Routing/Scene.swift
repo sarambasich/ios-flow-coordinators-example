@@ -10,9 +10,11 @@ import Foundation
 
 /// A scene represents one view of a screen at a time.
 /// This could also be represented using a struct for more dynamic behavior such as hot swapping screens and to facilitate
-/// (de-)serialization for representation on disk for example. This would  have the advantage of de-coupling the exhaustive list of
+/// (de-)serialization for representation on disk for example. This would have the advantage of de-coupling the exhaustive list of
 /// screens from a hard-coded enumeration, which may not be desirable or scalable for large apps.
 enum Scene: String {
+
+    // MARK: - Cases
 
     case first
 
@@ -23,6 +25,14 @@ enum Scene: String {
     case navB = "nav_b"
 
     case navC = "nav_c"
+
+    func getCoordinatorType() -> Coordinator.Type {
+        switch self {
+        case .first: return ApplicationCoordinator.self
+        case .myModal: return MyModalCoordinator.self
+        case .navA, .navB, .navC: return MyNavCoordinator.self
+        }
+    }
 
 }
 

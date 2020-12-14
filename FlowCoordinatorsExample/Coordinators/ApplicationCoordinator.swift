@@ -10,41 +10,51 @@ import UIKit
 
 final class ApplicationCoordinator: Coordinator {
 
-    private var childCoordinators: [Coordinator] = []
-
-    var associatedScenes: [Scene] {
-        return [.first]
+    static var associatedScenes: [Scene] {
+        [.first]
     }
 
     // MARK: - Private properties
+
+    private var myModalCoordinator: MyModalCoordinator?
+
+    private var myNavCoordinator: MyNavCoordinator?
 
     private let application: MyTestApplication
 
     private let window: UIWindow
 
-    private var rootViewController: FirstViewController?
+    private let rootViewController: FirstViewController
 
     // MARK: - Initialization
 
     init(application: MyTestApplication, window: UIWindow) {
         self.application = application
         self.window = window
+        self.rootViewController = window.rootViewController as! FirstViewController
     }
 
     // MARK: - Coordinator
 
     func navigate(to route: Route, animated: Bool) throws {
-        guard let scene = route.firstScene, scene == .first else {
+        guard let scene = route.firstScene else { return }
+
+        switch scene {
+        case .first:
+            rootViewController.viewModel = FirstViewModel(application: application, flowDelegate: self)
+            window.makeKeyAndVisible()
+        case _ where MyModalCoordinator.associatedScenes.contains(scene):
+            myModalCoordinator = MyModalCoordinator(rootViewController: rootViewController, delegate: self)
+            try myModalCoordinator?.navigate(to: route, animated: animated)
+            return
+        case _ where MyNavCoordinator.associatedScenes.contains(scene):
+            myNavCoordinator = MyNavCoordinator(rootViewController: rootViewController, delegate: self)
+            try myNavCoordinator?.navigate(to: route, animated: animated)
+            return
+        default:
             throw RoutingError.invalidScene
         }
 
-        rootViewController = window.rootViewController as? FirstViewController
-        rootViewController?.viewModel = FirstViewModel(application: application, flowDelegate: self)
-        window.makeKeyAndVisible()
-
-        // Recursive case: since this coordinator is a special case and is the start, it only
-        // supports navigation to one scene, the initial scene. For subsequent coordinators,
-        // we may still have additional scenes to go to.
         guard let remainingRoute = route.remainingRoute() else { return }
         try navigate(to: remainingRoute, animated: animated)
     }
@@ -58,30 +68,9 @@ final class ApplicationCoordinator: Coordinator {
         print("Invalid call to `dismiss` - can't dismiss root application coordinator!")
     }
 
-    // MARK: Navigation handling
-
-    func navigateToNavView() {
-        guard let rootViewController = rootViewController else { return }
-
-        let coordinator = MyNavCoordinator(rootViewController: rootViewController, delegate: self)
-        coordinator.start(animated: true)
-
-        childCoordinators.append(coordinator)
-    }
-
-    func navigateToModalView() {
-        guard let rootViewController = rootViewController else { return }
-
-        let coordinator = MyModalCoordinator(rootViewController: rootViewController, delegate: self)
-        coordinator.start(animated: true)
-
-        childCoordinators.append(coordinator)
-    }
-
     func navigateToNavViewChild(_ scene: Scene, isOutOfOrder: Bool = false) {
-        guard let rootViewController = rootViewController else { return }
-
         var scenes: [Scene] = isOutOfOrder ? [.navB] : [.navA]
+
         switch scene {
         case .navA where isOutOfOrder:
             scenes += [.navA]
@@ -92,10 +81,8 @@ final class ApplicationCoordinator: Coordinator {
         default:
             break
         }
-        let coordinator = MyNavCoordinator(rootViewController: rootViewController, delegate: self)
-        try! coordinator.navigate(to: Route(scenes: scenes, userIntent: nil), animated: true)
 
-        childCoordinators.append(coordinator)
+        try! navigate(to: Route(scenes: scenes, userIntent: nil), animated: true)
     }
 
 }
@@ -105,11 +92,11 @@ final class ApplicationCoordinator: Coordinator {
 extension ApplicationCoordinator: FirstViewModelFlowDelegate {
 
     func didSelectNavButton() {
-        navigateToNavView()
+        try! navigate(to: Route(scenes: [.navA], userIntent: nil), animated: true)
     }
 
     func didSelectModalButton() {
-        navigateToModalView()
+        try! navigate(to: Route(scenes: [.myModal], userIntent: nil), animated: true)
     }
 
     func didSelectNavBButton() {
@@ -135,8 +122,13 @@ extension ApplicationCoordinator: FirstViewModelFlowDelegate {
 extension ApplicationCoordinator: MyNavCoordinatorDelegate, MyModalCoordinatorDelegate {
 
     func coordinatorDidFinish(_ coordinator: Coordinator) {
-        if let index = childCoordinators.firstIndex(where: { $0 === coordinator }) {
-            childCoordinators.remove(at: index)
+        switch coordinator {
+        case is MyModalCoordinator:
+            myModalCoordinator = nil
+        case is MyNavCoordinator:
+            myNavCoordinator = nil
+        default:
+            break
         }
     }
 

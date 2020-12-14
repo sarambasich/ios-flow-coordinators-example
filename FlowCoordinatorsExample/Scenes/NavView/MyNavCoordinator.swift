@@ -10,17 +10,17 @@ import UIKit
 
 class MyNavCoordinator: NSObject, Coordinator {
 
-    private var childCoordinators: [Coordinator] = []
+    static var associatedScenes: [Scene] {
+        [.navA, .navB, .navC]
+    }
+
+    weak var delegate: MyNavCoordinatorDelegate?
+
+    // MARK: - Private properties
 
     private let rootViewController: UIViewController
 
     private let navigationController: UINavigationController
-
-    private weak var delegate: MyNavCoordinatorDelegate?
-
-    var associatedScenes: [Scene] {
-        return [.navA, .navB, .navC]
-    }
 
     // MARK: - Initialization
 
@@ -37,12 +37,12 @@ class MyNavCoordinator: NSObject, Coordinator {
     // MARK: - Coordinator
 
     func navigate(to route: Route, animated: Bool) throws {
-        guard let scene = route.firstScene, associatedScenes.contains(scene) else {
+        guard let scene = route.firstScene, MyNavCoordinator.associatedScenes.contains(scene) else {
             throw RoutingError.unsupportedRoute
         }
 
         let vc = try makeViewController(with: scene)
-        navigationController.pushViewController(vc, animated: route.scenes.count == 1)
+        navigationController.pushViewController(vc, animated: (animated && route.scenes.count == 1))
 
         if route.scenes.count == 1 && rootViewController.presentedViewController != navigationController {
             rootViewController.present(navigationController, animated: animated, completion: nil)

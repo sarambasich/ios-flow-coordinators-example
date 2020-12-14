@@ -34,10 +34,8 @@ class ApplicationCoordinatorTests: XCTestCase {
     // MARK: - Test cases
 
     func testAssociatedScenes() {
-        subject = ApplicationCoordinator(application: testApp, window: window)
-
-        XCTAssertEqual(subject.associatedScenes.count, 1)
-        XCTAssertEqual(subject.associatedScenes, [.first])
+        XCTAssertEqual(ApplicationCoordinator.associatedScenes.count, 1)
+        XCTAssertEqual(ApplicationCoordinator.associatedScenes, [.first])
     }
 
     func testNavigateWithValidScene() {
@@ -84,7 +82,12 @@ class ApplicationCoordinatorTests: XCTestCase {
     func testNavigateToNavViewSucceeds() {
         subject = ApplicationCoordinator(application: testApp, window: window)
         subject.start(animated: false)
-        subject.navigateToNavView()
+        do {
+            try subject.navigate(to: Route(scenes: [.navA], userIntent: nil), animated: false)
+        } catch let error {
+            XCTFail("Could not navigate due to error: \(error)")
+            return
+        }
 
         guard let firstViewController = window.rootViewController as? FirstViewController else {
             XCTFail("Couldn't get first VC")
@@ -102,7 +105,12 @@ class ApplicationCoordinatorTests: XCTestCase {
     func testNavigateToModalViewSucceeds() {
         subject = ApplicationCoordinator(application: testApp, window: window)
         subject.start(animated: false)
-        subject.navigateToModalView()
+        do {
+            try subject.navigate(to: Route(scenes: [.myModal], userIntent: nil), animated: false)
+        } catch let error {
+            XCTFail("Could not navigate due to error: \(error)")
+            return
+        }
 
         guard let firstViewController = window.rootViewController as? FirstViewController else {
             XCTFail("Couldn't get first VC")

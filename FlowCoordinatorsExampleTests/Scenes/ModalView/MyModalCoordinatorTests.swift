@@ -33,10 +33,8 @@ class MyModalCoordinatorTests: XCTestCase {
     // MARK: - Test cases
 
     func testAssociatedScenes() {
-        subject = MyModalCoordinator(rootViewController: rootViewController)
-
-        XCTAssertEqual(subject.associatedScenes.count, 1)
-        XCTAssertEqual(subject.associatedScenes, [.myModal])
+        XCTAssertEqual(MyModalCoordinator.associatedScenes.count, 1)
+        XCTAssertEqual(MyModalCoordinator.associatedScenes, [.myModal])
     }
 
     func testNavigateWithValidScene() {

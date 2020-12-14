@@ -10,31 +10,37 @@ import UIKit
 
 class MyModalCoordinator: NSObject, Coordinator {
 
-    let associatedScenes: [Scene] = [.myModal]
+    static var associatedScenes: [Scene] {
+        [.myModal]
+    }
+
+    weak var delegate: MyModalCoordinatorDelegate?
+
+    // MARK: - Private properties
 
     private let rootViewController: UIViewController
 
     private let myModalViewController: MyModalViewController
 
-    weak var delegate: MyModalCoordinatorDelegate?
+    // MARK: - Initialization
 
-    private var childCoordinators: [Coordinator] = []
-
-    /// Init with root vc for presentation.
     init(rootViewController: UIViewController, delegate: MyModalCoordinatorDelegate? = nil) {
         self.rootViewController = rootViewController
         self.myModalViewController = getModalViewControllerFromStoryboard()
         self.delegate = delegate
+
+        super.init()
+
+        myModalViewController.presentationController?.delegate = self
     }
 
     // MARK: - Coordinator
 
     func navigate(to route: Route, animated: Bool) throws {
-        guard let scene = route.firstScene, scene == associatedScenes.first else {
+        guard let scene = route.firstScene, scene == MyModalCoordinator.associatedScenes.first else {
             throw RoutingError.unsupportedRoute
         }
 
-        myModalViewController.presentationController?.delegate = self
         rootViewController.present(myModalViewController, animated: animated, completion: nil)
     }
 
