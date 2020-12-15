@@ -65,9 +65,20 @@ class MyModalCoordinator: NSObject, Coordinator {
         try! navigate(to: Route(scenes: [.myModal], userIntent: nil), animated: animated)
     }
 
-    func dismiss(animated: Bool) {
-        myModalViewController?.dismiss(animated: animated) {
-            self.delegate?.coordinatorDidFinish(self)
+    func dismiss(animated: Bool, completion: (() -> Void)? = nil) {
+        let dismiss: ((Bool) -> Void) = { [self] (animated: Bool) in
+            myModalViewController?.dismiss(animated: animated) { [self] in
+                delegate?.coordinatorDidFinish(self)
+                completion?()
+            }
+        }
+
+        if let child = myModalChildCoordinator {
+            child.dismiss(animated: false) {
+                dismiss(animated)
+            }
+        } else {
+            dismiss(animated)
         }
     }
 

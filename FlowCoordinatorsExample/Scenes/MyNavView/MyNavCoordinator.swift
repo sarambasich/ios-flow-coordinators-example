@@ -60,9 +60,10 @@ class MyNavCoordinator: NSObject, Coordinator {
         try! navigate(to: Route(scenes: [.navA], userIntent: nil), animated: animated)
     }
 
-    func dismiss(animated: Bool) {
+    func dismiss(animated: Bool, completion: (() -> Void)? = nil) {
         navigationController.dismiss(animated: animated) {
             self.delegate?.coordinatorDidFinish(self)
+            completion?()
         }
     }
 

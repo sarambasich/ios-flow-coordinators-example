@@ -192,12 +192,21 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgJ-hH-Xga">
+                                <rect key="frame" x="98.5" y="197.5" width="217" height="30"/>
+                                <state key="normal" title="Trigger app coordinator dismiss"/>
+                                <connections>
+                                    <action selector="didSelectTriggerDismiss:" destination="JdG-jm-4z4" eventType="touchUpInside" id="0eV-0A-UpP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ELj-Oz-Dme"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ELj-Oz-Dme" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vGX-rz-Gt8" secondAttribute="trailing" constant="16" id="CdN-I3-j3g"/>
+                            <constraint firstItem="mgJ-hH-Xga" firstAttribute="centerX" secondItem="ELj-Oz-Dme" secondAttribute="centerX" id="Jbb-eK-U8M"/>
                             <constraint firstItem="vGX-rz-Gt8" firstAttribute="top" secondItem="ELj-Oz-Dme" secondAttribute="top" constant="64" id="LNo-Mb-ySG"/>
+                            <constraint firstItem="mgJ-hH-Xga" firstAttribute="top" secondItem="vGX-rz-Gt8" secondAttribute="bottom" constant="32" id="k6w-8C-qLu"/>
                             <constraint firstItem="vGX-rz-Gt8" firstAttribute="centerX" secondItem="ELj-Oz-Dme" secondAttribute="centerX" id="k9a-PP-yuN"/>
                             <constraint firstItem="vGX-rz-Gt8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ELj-Oz-Dme" secondAttribute="leading" constant="16" id="pI5-nY-id2"/>
                         </constraints>

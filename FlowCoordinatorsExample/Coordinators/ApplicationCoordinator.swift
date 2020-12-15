@@ -64,8 +64,31 @@ final class ApplicationCoordinator: Coordinator {
         try! navigate(to: route, animated: true)
     }
 
-    func dismiss(animated: Bool) {
-        print("Invalid call to `dismiss` - can't dismiss root application coordinator!")
+    func dismiss(animated: Bool, completion: (() -> Void)? = nil) {
+        var dismissalCount = 0
+        let expectedCount =
+            (myNavCoordinator != nil ? 1 : 0) +
+            (myModalCoordinator != nil ? 1 : 0)
+
+        let dismissalCompletion = { [self] in
+            dismissalCount += 1
+            if dismissalCount == expectedCount {
+                do {
+                    print("Finished! Navigating to route afterwards")
+
+                    let route = Route(scenes: [.navA, .navB], userIntent: nil)
+                    try navigate(to: route, animated: true)
+                    completion?()
+                }
+                catch let error {
+                    print("ERROR: \(error)")
+                }
+            }
+        }
+
+        ([myNavCoordinator, myModalCoordinator] as [Coordinator?]).forEach {
+            $0?.dismiss(animated: animated, completion: dismissalCompletion)
+        }
     }
 
     func navigateToNavViewChild(_ scene: Scene, isOutOfOrder: Bool = false) {

@@ -24,7 +24,8 @@ protocol Coordinator: AnyObject {
 
     /// Finishes the coordinator and dismisses its views from the view hierarchy.
     /// - Parameter animated: Whether to animate the transition.
-    func dismiss(animated: Bool)
+    /// - Parameter completion: A completion block invoked when the dismissal completes.
+    func dismiss(animated: Bool, completion: (() -> Void)?)
 
 }
 
