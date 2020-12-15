@@ -25,7 +25,7 @@ struct DeepLinkParser {
             throw DeepLinkParserError.emptyPath
         }
 
-        guard URL.host == "onemainfinancial.com" else {
+        guard URL.host == "mydomain.com" else {
             throw DeepLinkParserError.invalidHost
         }
 
