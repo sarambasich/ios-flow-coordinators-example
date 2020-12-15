@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let window = window else { return }
 
         appCoordinator = ApplicationCoordinator(application: AppDelegate.shared.myTestApplication, window: window)
-        appCoordinator?.start()
+        appCoordinator?.start(animated: true)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
