@@ -37,8 +37,12 @@ class MyNavCoordinator: NSObject, Coordinator {
     // MARK: - Coordinator
 
     func navigate(to route: Route, animated: Bool) throws {
-        guard let scene = route.firstScene, MyNavCoordinator.associatedScenes.contains(scene) else {
+        guard let scene = route.firstScene else {
             throw RoutingError.unsupportedRoute
+        }
+
+        guard MyNavCoordinator.associatedScenes.contains(scene) else {
+            throw RoutingError.invalidScene
         }
 
         let vc = try makeViewController(with: scene)

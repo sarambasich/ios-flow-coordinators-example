@@ -21,13 +21,12 @@ class MyModalCoordinatorTests: XCTestCase {
 
     override func setUp() {
         let sceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+        sceneDelegate.window?.rootViewController = FirstViewController()
         rootViewController = sceneDelegate.window!.rootViewController
     }
 
     override func tearDown() {
         subject = nil
-        let sceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
-        sceneDelegate.window?.rootViewController?.presentedViewController?.dismiss(animated: false, completion: nil)
     }
 
     // MARK: - Test cases
@@ -118,7 +117,7 @@ class MyModalCoordinatorTests: XCTestCase {
 
 // MARK: - Mock delegate
 
-class MockDelegate: MyModalCoordinatorDelegate {
+private class MockDelegate: MyModalCoordinatorDelegate {
     var coordinatorDidFinishCallbackBlock: ((Coordinator) -> Void)?
 
     func coordinatorDidFinish(_ coordinator: Coordinator) {
