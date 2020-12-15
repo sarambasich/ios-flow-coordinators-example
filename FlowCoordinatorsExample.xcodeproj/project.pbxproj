@@ -13,6 +13,7 @@
 		3F36A94C257A8A150080BB34 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A94B257A8A150080BB34 /* Route.swift */; };
 		3F52A9C425890B32001A76FE /* MyNavCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9C325890B32001A76FE /* MyNavCoordinatorTests.swift */; };
 		3F52A9D325891A6B001A76FE /* MyModalChildCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9D225891A6B001A76FE /* MyModalChildCoordinatorTests.swift */; };
+		3F52A9D825891F24001A76FE /* MyModalViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9D725891F24001A76FE /* MyModalViewModelTests.swift */; };
 		3F5775202582827800E0B0C8 /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57751F2582827800E0B0C8 /* RouteTests.swift */; };
 		3F5775292582844E00E0B0C8 /* ApplicationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775282582844E00E0B0C8 /* ApplicationCoordinatorTests.swift */; };
 		3F57753A25828C9900E0B0C8 /* FirstViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57753925828C9900E0B0C8 /* FirstViewModelTests.swift */; };
@@ -71,6 +72,7 @@
 		3F36A94B257A8A150080BB34 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		3F52A9C325890B32001A76FE /* MyNavCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavCoordinatorTests.swift; sourceTree = "<group>"; };
 		3F52A9D225891A6B001A76FE /* MyModalChildCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModalChildCoordinatorTests.swift; sourceTree = "<group>"; };
+		3F52A9D725891F24001A76FE /* MyModalViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModalViewModelTests.swift; sourceTree = "<group>"; };
 		3F57751F2582827800E0B0C8 /* RouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTests.swift; sourceTree = "<group>"; };
 		3F5775282582844E00E0B0C8 /* ApplicationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorTests.swift; sourceTree = "<group>"; };
 		3F57753925828C9900E0B0C8 /* FirstViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewModelTests.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				3F6CB6CD2582A12D00DFFA01 /* MyModalCoordinatorTests.swift */,
+				3F52A9D725891F24001A76FE /* MyModalViewModelTests.swift */,
 			);
 			path = MyModalView;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F52A9D825891F24001A76FE /* MyModalViewModelTests.swift in Sources */,
 				3F57753A25828C9900E0B0C8 /* FirstViewModelTests.swift in Sources */,
 				3F5775482582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift in Sources */,
 				3F5775292582844E00E0B0C8 /* ApplicationCoordinatorTests.swift in Sources */,
