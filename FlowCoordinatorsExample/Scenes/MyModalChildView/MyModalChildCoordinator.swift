@@ -37,7 +37,11 @@ class MyModalChildCoordinator: NSObject, Coordinator {
     // MARK: - Coordinator
 
     func navigate(to route: Route, animated: Bool) throws {
-        guard let scene = route.firstScene, scene == MyModalChildCoordinator.associatedScenes.first else {
+        guard let scene = route.firstScene else {
+            throw RoutingError.unsupportedRoute
+        }
+
+        guard scene == MyModalChildCoordinator.associatedScenes.first else {
             throw RoutingError.invalidScene
         }
 
@@ -49,7 +53,7 @@ class MyModalChildCoordinator: NSObject, Coordinator {
     }
 
     func dismiss(animated: Bool) {
-        myModalChildViewController.dismiss(animated: true) {
+        myModalChildViewController.dismiss(animated: animated) {
             self.delegate?.coordinatorDidFinish(self)
         }
     }

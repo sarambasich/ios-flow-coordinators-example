@@ -207,7 +207,7 @@ class MyNavCoordinatorTests: XCTestCase {
             exp.fulfill()
         }
 
-        subject.presentationControllerDidDismiss(UIPresentationController.init(presentedViewController: rootViewController, presenting: nil))
+        subject.presentationControllerDidDismiss(UIPresentationController(presentedViewController: rootViewController, presenting: nil))
 
         wait(for: [exp], timeout: 1.0)
     }
