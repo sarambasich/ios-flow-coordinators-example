@@ -45,18 +45,6 @@ class MyModalCoordinatorTests: XCTestCase {
         XCTAssertTrue(rootViewController.presentedViewController is MyModalViewController)
     }
 
-    func testNavigateWithInvalidScene() {
-        subject = MyModalCoordinator(rootViewController: rootViewController)
-
-        let route = Route(scenes: [.navA], userIntent: nil)
-        XCTAssertThrowsError(try subject.navigate(to: route, animated: true)) { (error) in
-            guard case RoutingError.invalidScene = error else {
-                XCTFail("Unexpected error thrown: \(error)")
-                return
-            }
-        }
-    }
-
     func testNavigateWithMultipleScenes() {
         subject = MyModalCoordinator(rootViewController: rootViewController)
 
@@ -72,6 +60,42 @@ class MyModalCoordinatorTests: XCTestCase {
         }
 
         wait(for: [exp], timeout: 1.0)
+    }
+
+    func testNavigateWithEmptyRouteThrowsUnsupportedError() {
+        subject = MyModalCoordinator(rootViewController: rootViewController)
+
+        let route = Route(scenes: [], userIntent: nil)
+        XCTAssertThrowsError(try subject.navigate(to: route, animated: false)) { (error) in
+            guard case RoutingError.unsupportedRoute = error else {
+                XCTFail("Unexpected error thrown: \(error)")
+                return
+            }
+        }
+    }
+
+    func testNavigateWithInvalidScene_throwsInvalidError() {
+        subject = MyModalCoordinator(rootViewController: rootViewController)
+
+        let route = Route(scenes: [.navA], userIntent: nil)
+        XCTAssertThrowsError(try subject.navigate(to: route, animated: true)) { (error) in
+            guard case RoutingError.invalidScene = error else {
+                XCTFail("Unexpected error thrown: \(error)")
+                return
+            }
+        }
+    }
+
+    func testNavigateWithChildSceneBeforeParentScene_throwsUnsupportedError() {
+        subject = MyModalCoordinator(rootViewController: rootViewController)
+
+        let route = Route(scenes: [.myModalChild], userIntent: nil)
+        XCTAssertThrowsError(try subject.navigate(to: route, animated: true)) { (error) in
+            guard case RoutingError.unsupportedRoute = error else {
+                XCTFail("Unexpected error thrown: \(error)")
+                return
+            }
+        }
     }
 
     func testStartSucceeds() {
@@ -109,6 +133,24 @@ class MyModalCoordinatorTests: XCTestCase {
         }
 
         subject.presentationControllerDidDismiss(UIPresentationController.init(presentedViewController: rootViewController, presenting: nil))
+
+        wait(for: [exp], timeout: 1.0)
+    }
+
+    // MARK: Delegate methods
+
+    func testDidSelectGoToModalChildButton_navigatesToChild() {
+        subject = MyModalCoordinator(rootViewController: rootViewController)
+        subject.start(animated: false)
+
+        subject.didSelectGoToModalChildButton()
+
+        // Workaround: as above, this takes time, plus `animated` is set to true
+        let exp = expectation(description: "wait for presented view controller to be set")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            XCTAssertTrue(self.rootViewController.presentedViewController?.presentedViewController is MyModalChildViewController)
+            exp.fulfill()
+        }
 
         wait(for: [exp], timeout: 1.0)
     }

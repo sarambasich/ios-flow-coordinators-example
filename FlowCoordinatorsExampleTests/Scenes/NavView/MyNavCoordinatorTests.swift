@@ -89,7 +89,7 @@ class MyNavCoordinatorTests: XCTestCase {
         XCTAssertTrue(navController.viewControllers[2] is NavBViewController)
     }
 
-    func testNavigateWithEmptyRouteThrowsUnsupportedError() {
+    func testNavigateWithEmptyRoute_throwsUnsupportedError() {
         subject = MyNavCoordinator(rootViewController: rootViewController)
 
         let route = Route(scenes: [], userIntent: nil)
@@ -101,7 +101,7 @@ class MyNavCoordinatorTests: XCTestCase {
         }
     }
 
-    func testNavigateWithInvalidSceneThrowsInvalidError() {
+    func testNavigateWithInvalidScene_throwsInvalidError() {
         subject = MyNavCoordinator(rootViewController: rootViewController)
 
         let route = Route(scenes: [.myModal], userIntent: nil)
@@ -146,7 +146,7 @@ class MyNavCoordinatorTests: XCTestCase {
 
     // MARK: Nav view model delegate methods
 
-    func testDidSelectPushBButton_navigateToNavBScene() {
+    func testDidSelectPushBButton_navigatesToNavBScene() {
         subject = MyNavCoordinator(rootViewController: rootViewController)
         subject.didSelectPushBButton()
 
@@ -160,7 +160,7 @@ class MyNavCoordinatorTests: XCTestCase {
         XCTAssertTrue(navController.viewControllers[0] is NavBViewController)
     }
 
-    func testDidSelectPushCButton_navigateToNavCScene() {
+    func testDidSelectPushCButton_navigatesToNavCScene() {
         subject = MyNavCoordinator(rootViewController: rootViewController)
         subject.didSelectPushCButton()
 

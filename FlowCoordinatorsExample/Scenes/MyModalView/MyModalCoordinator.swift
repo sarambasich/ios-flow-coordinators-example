@@ -46,7 +46,7 @@ class MyModalCoordinator: NSObject, Coordinator {
             myModalViewController?.presentationController?.delegate = self
             rootViewController.present(myModalViewController!, animated: animated && route.scenes.count == 1, completion: nil)
         case _ where MyModalChildCoordinator.associatedScenes.contains(scene):
-            guard rootViewController.presentedViewController == myModalViewController else {
+            guard myModalViewController != nil && rootViewController.presentedViewController == myModalViewController else {
                 throw RoutingError.unsupportedRoute
             }
 
