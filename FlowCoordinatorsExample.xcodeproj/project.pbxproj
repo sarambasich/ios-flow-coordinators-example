@@ -37,6 +37,9 @@
 		3FBEA1AA258017A200FCE6F6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA1A9258017A200FCE6F6 /* ViewModel.swift */; };
 		3FBEA1B2258018DF00FCE6F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA1B1258018DF00FCE6F6 /* ViewController.swift */; };
 		3FBEA1C025801D4C00FCE6F6 /* MyModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA1BF25801D4C00FCE6F6 /* MyModalViewModel.swift */; };
+		3FDC7FF92587F97C00F043F4 /* MyModalChildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC7FF62587F97C00F043F4 /* MyModalChildViewModel.swift */; };
+		3FDC7FFA2587F97C00F043F4 /* MyModalChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC7FF72587F97C00F043F4 /* MyModalChildViewController.swift */; };
+		3FDC7FFB2587F97C00F043F4 /* MyModalChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC7FF82587F97C00F043F4 /* MyModalChildCoordinator.swift */; };
 		3FE8FCE5252F63A700C82BF9 /* MyModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8FCE4252F63A700C82BF9 /* MyModalViewController.swift */; };
 		3FE8FCEA252F69E900C82BF9 /* MyModalCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8FCE9252F69E900C82BF9 /* MyModalCoordinator.swift */; };
 		3FE8FCF4252F6F8900C82BF9 /* MyNavCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8FCF3252F6F8900C82BF9 /* MyNavCoordinator.swift */; };
@@ -96,6 +99,9 @@
 		3FBEA1A9258017A200FCE6F6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3FBEA1B1258018DF00FCE6F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3FBEA1BF25801D4C00FCE6F6 /* MyModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModalViewModel.swift; sourceTree = "<group>"; };
+		3FDC7FF62587F97C00F043F4 /* MyModalChildViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyModalChildViewModel.swift; sourceTree = "<group>"; };
+		3FDC7FF72587F97C00F043F4 /* MyModalChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyModalChildViewController.swift; sourceTree = "<group>"; };
+		3FDC7FF82587F97C00F043F4 /* MyModalChildCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyModalChildCoordinator.swift; sourceTree = "<group>"; };
 		3FE8FCE4252F63A700C82BF9 /* MyModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModalViewController.swift; sourceTree = "<group>"; };
 		3FE8FCE9252F69E900C82BF9 /* MyModalCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModalCoordinator.swift; sourceTree = "<group>"; };
 		3FE8FCF3252F6F8900C82BF9 /* MyNavCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavCoordinator.swift; sourceTree = "<group>"; };
@@ -165,8 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				3F690531252F61CE00AA6B1F /* FirstView */,
-				3FE8FCE3252F639400C82BF9 /* ModalView */,
-				3FE8FCE2252F639400C82BF9 /* NavView */,
+				3FE8FCE3252F639400C82BF9 /* MyModalView */,
+				3FDC7FF52587F97C00F043F4 /* MyModalChildView */,
+				3FE8FCE2252F639400C82BF9 /* MyNavView */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -299,7 +306,17 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		3FE8FCE2252F639400C82BF9 /* NavView */ = {
+		3FDC7FF52587F97C00F043F4 /* MyModalChildView */ = {
+			isa = PBXGroup;
+			children = (
+				3FDC7FF82587F97C00F043F4 /* MyModalChildCoordinator.swift */,
+				3FDC7FF62587F97C00F043F4 /* MyModalChildViewModel.swift */,
+				3FDC7FF72587F97C00F043F4 /* MyModalChildViewController.swift */,
+			);
+			path = MyModalChildView;
+			sourceTree = "<group>";
+		};
+		3FE8FCE2252F639400C82BF9 /* MyNavView */ = {
 			isa = PBXGroup;
 			children = (
 				3FE8FCF3252F6F8900C82BF9 /* MyNavCoordinator.swift */,
@@ -310,17 +327,17 @@
 				3FBEA15E257FF0D300FCE6F6 /* NavCViewController.swift */,
 				3FBEA160257FF0D400FCE6F6 /* NavCViewModel.swift */,
 			);
-			path = NavView;
+			path = MyNavView;
 			sourceTree = "<group>";
 		};
-		3FE8FCE3252F639400C82BF9 /* ModalView */ = {
+		3FE8FCE3252F639400C82BF9 /* MyModalView */ = {
 			isa = PBXGroup;
 			children = (
 				3FE8FCE9252F69E900C82BF9 /* MyModalCoordinator.swift */,
 				3FE8FCE4252F63A700C82BF9 /* MyModalViewController.swift */,
 				3FBEA1BF25801D4C00FCE6F6 /* MyModalViewModel.swift */,
 			);
-			path = ModalView;
+			path = MyModalView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FE8FCE5252F63A700C82BF9 /* MyModalViewController.swift in Sources */,
+				3FDC7FF92587F97C00F043F4 /* MyModalChildViewModel.swift in Sources */,
 				3FBEA1AA258017A200FCE6F6 /* ViewModel.swift in Sources */,
 				3FBEA1B2258018DF00FCE6F6 /* ViewController.swift in Sources */,
 				3F81A0AE252F4F58009D2950 /* MyTestApplication.swift in Sources */,
@@ -472,8 +490,10 @@
 				3FBEA159257FEE7000FCE6F6 /* NavAViewModel.swift in Sources */,
 				3F36A88D257939560080BB34 /* Scene.swift in Sources */,
 				3F81A0B0252F4F58009D2950 /* ApplicationCoordinator.swift in Sources */,
+				3FDC7FFA2587F97C00F043F4 /* MyModalChildViewController.swift in Sources */,
 				3F36A91125798A660080BB34 /* DeepLinkConvertible.swift in Sources */,
 				3FBEA161257FF0D400FCE6F6 /* NavBViewModel.swift in Sources */,
+				3FDC7FFB2587F97C00F043F4 /* MyModalChildCoordinator.swift in Sources */,
 				3FE8FCEA252F69E900C82BF9 /* MyModalCoordinator.swift in Sources */,
 				3F81A0B1252F4F58009D2950 /* Coordinator.swift in Sources */,
 			);

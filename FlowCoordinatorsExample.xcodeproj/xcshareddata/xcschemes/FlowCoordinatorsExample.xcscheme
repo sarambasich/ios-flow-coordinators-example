@@ -38,6 +38,11 @@
                BlueprintName = "FlowCoordinatorsExampleTests"
                ReferencedContainer = "container:FlowCoordinatorsExample.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "ApplicationCoordinatorTests/testNavigateWithInvalidScene()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO">

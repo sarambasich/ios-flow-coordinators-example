@@ -33,10 +33,8 @@ class MyModalCoordinatorTests: XCTestCase {
     // MARK: - Test cases
 
     func testAssociatedScenes() {
-        subject = MyModalCoordinator(rootViewController: rootViewController)
-
-        XCTAssertEqual(subject.associatedScenes.count, 1)
-        XCTAssertEqual(subject.associatedScenes, [.myModal])
+        XCTAssertEqual(MyModalCoordinator.associatedScenes.count, 1)
+        XCTAssertEqual(MyModalCoordinator.associatedScenes, [.myModal])
     }
 
     func testNavigateWithValidScene() {
@@ -53,11 +51,28 @@ class MyModalCoordinatorTests: XCTestCase {
 
         let route = Route(scenes: [.navA], userIntent: nil)
         XCTAssertThrowsError(try subject.navigate(to: route, animated: true)) { (error) in
-            guard case RoutingError.unsupportedRoute = error else {
+            guard case RoutingError.invalidScene = error else {
                 XCTFail("Unexpected error thrown: \(error)")
                 return
             }
         }
+    }
+
+    func testNavigateWithMultipleScenes() {
+        subject = MyModalCoordinator(rootViewController: rootViewController)
+
+        let route = Route(scenes: [.myModal, .myModalChild], userIntent: nil)
+        XCTAssertNoThrow(try subject.navigate(to: route, animated: false))
+
+        // Workaround: seems like it takes some time after the presentation for the presented view controller
+        // to register on iOS's side
+        let exp = expectation(description: "wait for presented view controller to be set")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            XCTAssertTrue(self.rootViewController.presentedViewController?.presentedViewController is MyModalChildViewController)
+            exp.fulfill()
+        }
+
+        wait(for: [exp], timeout: 1.0)
     }
 
     func testStartSucceeds() {

@@ -30,12 +30,16 @@ class FirstViewController: UIViewController {
 
 private extension FirstViewController {
 
+    @IBAction func didSelectPresentNavButton(_ sender: UIButton) {
+        viewModel?.selectNavButton()
+    }
+
     @IBAction func didSelectPresentModalButton(_ sender: UIButton) {
         viewModel?.selectModalButton()
     }
 
-    @IBAction func didSelectPresentNavButton(_ sender: UIButton) {
-        viewModel?.selectNavButton()
+    @IBAction func didSelectPresentModalChildButton(_ sender: UIButton) {
+        viewModel?.selectModalChildButton()
     }
 
     @IBAction func didSelectNavBButton(_ sender: UIButton) {

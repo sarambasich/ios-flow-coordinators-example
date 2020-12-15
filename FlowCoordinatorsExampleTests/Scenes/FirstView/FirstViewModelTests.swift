@@ -37,6 +37,14 @@ class FirstViewModelTests: XCTestCase {
         XCTAssertEqual(subject.bodyText, "Hello, I am some fake body text.")
     }
 
+    func testSelectNavButton() {
+        let delegate = MockFirstViewModelFlowDelegate()
+        subject = FirstViewModel(application: testApp, flowDelegate: delegate)
+        subject.selectNavButton()
+
+        XCTAssertTrue(delegate.didSelectNavButtonWasCalled)
+    }
+
     func testSelectModalButton() {
         let delegate = MockFirstViewModelFlowDelegate()
         subject = FirstViewModel(application: testApp, flowDelegate: delegate)
@@ -45,12 +53,12 @@ class FirstViewModelTests: XCTestCase {
         XCTAssertTrue(delegate.didSelectModalButtonWasCalled)
     }
 
-    func testSelectNavButton() {
+    func testSelectModalChildButton() {
         let delegate = MockFirstViewModelFlowDelegate()
         subject = FirstViewModel(application: testApp, flowDelegate: delegate)
-        subject.selectNavButton()
+        subject.selectModalChildButton()
 
-        XCTAssertTrue(delegate.didSelectNavButtonWasCalled)
+        XCTAssertTrue(delegate.didSelectModalChildButtonWasCalled)
     }
 
     func testSelectNavBButton() {

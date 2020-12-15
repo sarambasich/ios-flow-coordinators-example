@@ -10,8 +10,8 @@ import Foundation
 
 protocol Coordinator: AnyObject {
 
-    /// The scenes associated with this `Routable` instance
-    var associatedScenes: [Scene] { get }
+    /// The scenes associated with this `Routable` type.
+    static var associatedScenes: [Scene] { get }
 
     /// Start the coordinator and navigate to the provided route, if possible.
     /// - Parameter route: The route to navigate.
