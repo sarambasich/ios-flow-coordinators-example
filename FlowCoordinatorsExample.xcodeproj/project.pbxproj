@@ -14,6 +14,15 @@
 		3F52A9C425890B32001A76FE /* MyNavCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9C325890B32001A76FE /* MyNavCoordinatorTests.swift */; };
 		3F52A9D325891A6B001A76FE /* MyModalChildCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9D225891A6B001A76FE /* MyModalChildCoordinatorTests.swift */; };
 		3F52A9D825891F24001A76FE /* MyModalViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9D725891F24001A76FE /* MyModalViewModelTests.swift */; };
+		3F52A9E22589211F001A76FE /* NavBViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9DC2589211E001A76FE /* NavBViewModelTests.swift */; };
+		3F52A9E32589211F001A76FE /* NavAViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9DD2589211E001A76FE /* NavAViewControllerTests.swift */; };
+		3F52A9E42589211F001A76FE /* NavCViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9DE2589211E001A76FE /* NavCViewModelTests.swift */; };
+		3F52A9E52589211F001A76FE /* NavBViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9DF2589211E001A76FE /* NavBViewControllerTests.swift */; };
+		3F52A9E62589211F001A76FE /* NavCViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9E02589211E001A76FE /* NavCViewControllerTests.swift */; };
+		3F52A9E72589211F001A76FE /* NavAViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9E12589211E001A76FE /* NavAViewModelTests.swift */; };
+		3F52A9EF25892D8B001A76FE /* MockNavAViewModelFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9EE25892D8B001A76FE /* MockNavAViewModelFlowDelegate.swift */; };
+		3F52A9F425892DBF001A76FE /* MockNavBViewModelFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9F325892DBF001A76FE /* MockNavBViewModelFlowDelegate.swift */; };
+		3F52A9F925892E2C001A76FE /* MockNavCViewModelFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9F825892E2C001A76FE /* MockNavCViewModelFlowDelegate.swift */; };
 		3F5775202582827800E0B0C8 /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57751F2582827800E0B0C8 /* RouteTests.swift */; };
 		3F5775292582844E00E0B0C8 /* ApplicationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775282582844E00E0B0C8 /* ApplicationCoordinatorTests.swift */; };
 		3F57753A25828C9900E0B0C8 /* FirstViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57753925828C9900E0B0C8 /* FirstViewModelTests.swift */; };
@@ -73,6 +82,15 @@
 		3F52A9C325890B32001A76FE /* MyNavCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavCoordinatorTests.swift; sourceTree = "<group>"; };
 		3F52A9D225891A6B001A76FE /* MyModalChildCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModalChildCoordinatorTests.swift; sourceTree = "<group>"; };
 		3F52A9D725891F24001A76FE /* MyModalViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModalViewModelTests.swift; sourceTree = "<group>"; };
+		3F52A9DC2589211E001A76FE /* NavBViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBViewModelTests.swift; sourceTree = "<group>"; };
+		3F52A9DD2589211E001A76FE /* NavAViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavAViewControllerTests.swift; sourceTree = "<group>"; };
+		3F52A9DE2589211E001A76FE /* NavCViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavCViewModelTests.swift; sourceTree = "<group>"; };
+		3F52A9DF2589211E001A76FE /* NavBViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBViewControllerTests.swift; sourceTree = "<group>"; };
+		3F52A9E02589211E001A76FE /* NavCViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavCViewControllerTests.swift; sourceTree = "<group>"; };
+		3F52A9E12589211E001A76FE /* NavAViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavAViewModelTests.swift; sourceTree = "<group>"; };
+		3F52A9EE25892D8B001A76FE /* MockNavAViewModelFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavAViewModelFlowDelegate.swift; sourceTree = "<group>"; };
+		3F52A9F325892DBF001A76FE /* MockNavBViewModelFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavBViewModelFlowDelegate.swift; sourceTree = "<group>"; };
+		3F52A9F825892E2C001A76FE /* MockNavCViewModelFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavCViewModelFlowDelegate.swift; sourceTree = "<group>"; };
 		3F57751F2582827800E0B0C8 /* RouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTests.swift; sourceTree = "<group>"; };
 		3F5775282582844E00E0B0C8 /* ApplicationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorTests.swift; sourceTree = "<group>"; };
 		3F57753925828C9900E0B0C8 /* FirstViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewModelTests.swift; sourceTree = "<group>"; };
@@ -216,6 +234,9 @@
 			isa = PBXGroup;
 			children = (
 				3F5775472582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift */,
+				3F52A9EE25892D8B001A76FE /* MockNavAViewModelFlowDelegate.swift */,
+				3F52A9F325892DBF001A76FE /* MockNavBViewModelFlowDelegate.swift */,
+				3F52A9F825892E2C001A76FE /* MockNavCViewModelFlowDelegate.swift */,
 			);
 			path = "Test Helpers";
 			sourceTree = "<group>";
@@ -242,6 +263,12 @@
 			isa = PBXGroup;
 			children = (
 				3F52A9C325890B32001A76FE /* MyNavCoordinatorTests.swift */,
+				3F52A9DD2589211E001A76FE /* NavAViewControllerTests.swift */,
+				3F52A9E12589211E001A76FE /* NavAViewModelTests.swift */,
+				3F52A9DF2589211E001A76FE /* NavBViewControllerTests.swift */,
+				3F52A9DC2589211E001A76FE /* NavBViewModelTests.swift */,
+				3F52A9E02589211E001A76FE /* NavCViewControllerTests.swift */,
+				3F52A9DE2589211E001A76FE /* NavCViewModelTests.swift */,
 			);
 			path = MyNavView;
 			sourceTree = "<group>";
@@ -522,13 +549,22 @@
 			files = (
 				3F52A9D825891F24001A76FE /* MyModalViewModelTests.swift in Sources */,
 				3F57753A25828C9900E0B0C8 /* FirstViewModelTests.swift in Sources */,
+				3F52A9F425892DBF001A76FE /* MockNavBViewModelFlowDelegate.swift in Sources */,
 				3F5775482582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift in Sources */,
 				3F5775292582844E00E0B0C8 /* ApplicationCoordinatorTests.swift in Sources */,
 				3F5775202582827800E0B0C8 /* RouteTests.swift in Sources */,
+				3F52A9EF25892D8B001A76FE /* MockNavAViewModelFlowDelegate.swift in Sources */,
+				3F52A9E52589211F001A76FE /* NavBViewControllerTests.swift in Sources */,
 				3F52A9C425890B32001A76FE /* MyNavCoordinatorTests.swift in Sources */,
+				3F52A9E42589211F001A76FE /* NavCViewModelTests.swift in Sources */,
 				3F6CB6CE2582A12D00DFFA01 /* MyModalCoordinatorTests.swift in Sources */,
 				3F577542258290BE00E0B0C8 /* FirstViewControllerTests.swift in Sources */,
 				3F52A9D325891A6B001A76FE /* MyModalChildCoordinatorTests.swift in Sources */,
+				3F52A9F925892E2C001A76FE /* MockNavCViewModelFlowDelegate.swift in Sources */,
+				3F52A9E32589211F001A76FE /* NavAViewControllerTests.swift in Sources */,
+				3F52A9E62589211F001A76FE /* NavCViewControllerTests.swift in Sources */,
+				3F52A9E22589211F001A76FE /* NavBViewModelTests.swift in Sources */,
+				3F52A9E72589211F001A76FE /* NavAViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
