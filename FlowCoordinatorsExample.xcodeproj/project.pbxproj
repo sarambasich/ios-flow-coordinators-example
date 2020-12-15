@@ -153,6 +153,13 @@
 			path = "Deep Linking";
 			sourceTree = "<group>";
 		};
+		3F52A9C825891A23001A76FE /* MyModalChildView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyModalChildView;
+			sourceTree = "<group>";
+		};
 		3F57751E2582826900E0B0C8 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,8 +191,9 @@
 			isa = PBXGroup;
 			children = (
 				3F57753825828C6400E0B0C8 /* FirstView */,
-				3F6CB6CB2582979700DFFA01 /* ModalView */,
-				3F6CB6CC2582979C00DFFA01 /* NavView */,
+				3F6CB6CB2582979700DFFA01 /* MyModalView */,
+				3F52A9C825891A23001A76FE /* MyModalChildView */,
+				3F6CB6CC2582979C00DFFA01 /* MyNavView */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -216,20 +224,20 @@
 			path = FirstView;
 			sourceTree = "<group>";
 		};
-		3F6CB6CB2582979700DFFA01 /* ModalView */ = {
+		3F6CB6CB2582979700DFFA01 /* MyModalView */ = {
 			isa = PBXGroup;
 			children = (
 				3F6CB6CD2582A12D00DFFA01 /* MyModalCoordinatorTests.swift */,
 			);
-			path = ModalView;
+			path = MyModalView;
 			sourceTree = "<group>";
 		};
-		3F6CB6CC2582979C00DFFA01 /* NavView */ = {
+		3F6CB6CC2582979C00DFFA01 /* MyNavView */ = {
 			isa = PBXGroup;
 			children = (
 				3F52A9C325890B32001A76FE /* MyNavCoordinatorTests.swift */,
 			);
-			path = NavView;
+			path = MyNavView;
 			sourceTree = "<group>";
 		};
 		3F81A06A252F4EE3009D2950 = {
