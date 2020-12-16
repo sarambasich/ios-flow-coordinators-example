@@ -12,9 +12,10 @@ class MyModalChildViewController: ViewController<MyModalChildViewModel> {
 
     static let identifier = "MyModalChildViewController"
 
+    // MARK: - Event handlers
+
     @IBAction func didSelectTriggerDismiss(_ sender: UIButton) {
-        guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
-        sceneDelegate.appCoordinator?.dismiss(animated: true)
+        viewModel.selectTriggerDismiss()
     }
 
 }

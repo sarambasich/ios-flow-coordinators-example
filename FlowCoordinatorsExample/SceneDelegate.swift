@@ -9,10 +9,31 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    // MARK: - Properties
+
     var window: UIWindow?
 
     private(set) var appCoordinator: ApplicationCoordinator?
 
+    // MARK: - Methods
+
+    /// Swap the currently presented coordinators for a new set of nav scenes.
+    func swapCurrentScenesForNavScenes() {
+        appCoordinator?.dismiss(animated: true) {
+            do {
+                let route = Route(scenes: [.navA, .navB], userIntent: nil)
+                try self.appCoordinator?.navigate(to: route, animated: true)
+            } catch let error {
+                print("Error while navigating to nav scenes: \(error)")
+            }
+        }
+    }
+
+}
+
+// MARK: - UISceneDelegate
+
+extension SceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.

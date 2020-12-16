@@ -70,20 +70,9 @@ final class ApplicationCoordinator: Coordinator {
             (myNavCoordinator != nil ? 1 : 0) +
             (myModalCoordinator != nil ? 1 : 0)
 
-        let dismissalCompletion = { [self] in
+        let dismissalCompletion = {
             dismissalCount += 1
-            if dismissalCount == expectedCount {
-                do {
-                    print("Finished! Navigating to route afterwards")
-
-                    let route = Route(scenes: [.navA, .navB], userIntent: nil)
-                    try navigate(to: route, animated: true)
-                    completion?()
-                }
-                catch let error {
-                    print("ERROR: \(error)")
-                }
-            }
+            if dismissalCount == expectedCount { completion?() }
         }
 
         ([myNavCoordinator, myModalCoordinator] as [Coordinator?]).forEach {

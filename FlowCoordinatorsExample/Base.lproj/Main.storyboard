@@ -193,10 +193,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgJ-hH-Xga">
-                                <rect key="frame" x="98.5" y="197.5" width="217" height="30"/>
-                                <state key="normal" title="Trigger app coordinator dismiss"/>
+                                <rect key="frame" x="97.5" y="197.5" width="219" height="30"/>
+                                <state key="normal" title="Trigger dismiss and new scenes"/>
                                 <connections>
-                                    <action selector="didSelectTriggerDismiss:" destination="JdG-jm-4z4" eventType="touchUpInside" id="0eV-0A-UpP"/>
+                                    <action selector="didSelectTriggerDismiss:" destination="JdG-jm-4z4" eventType="touchUpInside" id="bcN-SY-tkF"/>
                                 </connections>
                             </button>
                         </subviews>

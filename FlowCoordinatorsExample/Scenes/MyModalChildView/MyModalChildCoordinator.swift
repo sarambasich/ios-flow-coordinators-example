@@ -20,18 +20,15 @@ class MyModalChildCoordinator: NSObject, Coordinator {
 
     private let rootViewController: UIViewController
 
-    private let myModalChildViewController: MyModalChildViewController
+    private var myModalChildViewController: MyModalChildViewController?
 
     // MARK: - Initialization
 
     init(rootViewController: UIViewController, delegate: MyModalChildCoordinatorDelegate? = nil) {
         self.rootViewController = rootViewController
-        self.myModalChildViewController = getViewControllerFromStoryboard()
         self.delegate = delegate
 
         super.init()
-
-        myModalChildViewController.presentationController?.delegate = self
     }
 
     // MARK: - Coordinator
@@ -45,7 +42,9 @@ class MyModalChildCoordinator: NSObject, Coordinator {
             throw RoutingError.invalidScene
         }
 
-        rootViewController.present(myModalChildViewController, animated: animated, completion: nil)
+        myModalChildViewController = getViewControllerFromStoryboard()
+        myModalChildViewController?.presentationController?.delegate = self
+        rootViewController.present(myModalChildViewController!, animated: animated, completion: nil)
     }
 
     func start(animated: Bool) {
@@ -53,10 +52,25 @@ class MyModalChildCoordinator: NSObject, Coordinator {
     }
 
     func dismiss(animated: Bool, completion: (() -> Void)? = nil) {
-        myModalChildViewController.dismiss(animated: animated) {
+        myModalChildViewController?.dismiss(animated: animated) {
             self.delegate?.coordinatorDidFinish(self)
             completion?()
         }
+    }
+
+}
+
+// MARK: - MyModalChildViewModelFlowDelegate
+
+extension MyModalChildCoordinator: MyModalChildViewModelFlowDelegate {
+
+    func didSelectTriggerDismiss() {
+        // Makes a call to scene delegate to swap the current view hierarchy for a new set of scenes.
+        // This tests the dismiss-then-present functionality of thse coordinators.
+        // Calling this will ultimately dismiss this coordinator and each of its ancestor coordinators.
+        // That way, we do not have to manually invoked a call to self's `dismiss` here.
+        guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
+        sceneDelegate.swapCurrentScenesForNavScenes()
     }
 
 }
@@ -71,16 +85,20 @@ extension MyModalChildCoordinator: UIAdaptivePresentationControllerDelegate {
 
 }
 
+// MARK: - Private
+
+private extension MyModalChildCoordinator {
+
+    func getViewControllerFromStoryboard() -> MyModalChildViewController {
+        let sb = UIStoryboard(name: "Main", bundle: .main)
+        return sb.instantiateViewController(identifier: MyModalChildViewController.identifier) { (coder) -> MyModalChildViewController? in
+            let vm = MyModalChildViewModel(flowDelegate: self)
+            return MyModalChildViewController(coder: coder, viewModel: vm)
+        }
+    }
+
+}
+
 // MARK: - Delegate
 
 protocol MyModalChildCoordinatorDelegate: CoordinatorDelegate { }
-
-// MARK: - Private
-
-private func getViewControllerFromStoryboard() -> MyModalChildViewController {
-    let sb = UIStoryboard(name: "Main", bundle: .main)
-    return sb.instantiateViewController(identifier: MyModalChildViewController.identifier) { (coder) -> MyModalChildViewController? in
-        let vm = MyModalChildViewModel()
-        return MyModalChildViewController(coder: coder, viewModel: vm)
-    }
-}
