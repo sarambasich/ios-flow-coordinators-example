@@ -12,9 +12,7 @@ class MyModalViewController: ViewController<MyModalViewModel> {
 
     static let identifier = "MyModalViewController"
 
-}
-
-private extension MyModalViewController {
+    // MARK: - Event handlers
 
     @IBAction func didSelectGoToModalChildButton(_ sender: UIButton) {
         viewModel.selectGoToModalChildButton()
