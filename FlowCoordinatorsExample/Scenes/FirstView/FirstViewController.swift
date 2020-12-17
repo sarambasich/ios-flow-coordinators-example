@@ -24,11 +24,7 @@ class FirstViewController: UIViewController {
         setupView()
     }
 
-}
-
-// MARK: - Event handlers
-
-private extension FirstViewController {
+    // MARK: - Event handlers
 
     @IBAction func didSelectPresentNavButton(_ sender: UIButton) {
         viewModel?.selectNavButton()

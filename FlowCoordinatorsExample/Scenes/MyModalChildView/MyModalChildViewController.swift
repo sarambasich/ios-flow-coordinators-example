@@ -12,4 +12,10 @@ class MyModalChildViewController: ViewController<MyModalChildViewModel> {
 
     static let identifier = "MyModalChildViewController"
 
+    // MARK: - Event handlers
+
+    @IBAction func didSelectTriggerDismiss(_ sender: UIButton) {
+        viewModel.selectTriggerDismiss()
+    }
+
 }
