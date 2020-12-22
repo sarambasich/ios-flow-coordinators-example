@@ -53,6 +53,7 @@
 		3F98860425925A1D005B1521 /* MockLoginViewModelFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98860325925A1D005B1521 /* MockLoginViewModelFlowDelegate.swift */; };
 		3F98860F25925ABF005B1521 /* LoginChallengeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98860E25925ABF005B1521 /* LoginChallengeViewControllerTests.swift */; };
 		3F98861425925B0C005B1521 /* MockLoginChallengeViewModelFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98861325925B0C005B1521 /* MockLoginChallengeViewModelFlowDelegate.swift */; };
+		3F98861925925CEB005B1521 /* LoginChallengeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98861825925CEB005B1521 /* LoginChallengeViewModelTests.swift */; };
 		3FBEA154257FEE4A00FCE6F6 /* NavAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA153257FEE4A00FCE6F6 /* NavAViewController.swift */; };
 		3FBEA159257FEE7000FCE6F6 /* NavAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA158257FEE7000FCE6F6 /* NavAViewModel.swift */; };
 		3FBEA161257FF0D400FCE6F6 /* NavBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA15D257FF0D300FCE6F6 /* NavBViewModel.swift */; };
@@ -141,6 +142,7 @@
 		3F98860325925A1D005B1521 /* MockLoginViewModelFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewModelFlowDelegate.swift; sourceTree = "<group>"; };
 		3F98860E25925ABF005B1521 /* LoginChallengeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginChallengeViewControllerTests.swift; sourceTree = "<group>"; };
 		3F98861325925B0C005B1521 /* MockLoginChallengeViewModelFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginChallengeViewModelFlowDelegate.swift; sourceTree = "<group>"; };
+		3F98861825925CEB005B1521 /* LoginChallengeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginChallengeViewModelTests.swift; sourceTree = "<group>"; };
 		3FBEA153257FEE4A00FCE6F6 /* NavAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavAViewController.swift; sourceTree = "<group>"; };
 		3FBEA158257FEE7000FCE6F6 /* NavAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavAViewModel.swift; sourceTree = "<group>"; };
 		3FBEA15D257FF0D300FCE6F6 /* NavBViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBViewModel.swift; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 				3F9885F925925789005B1521 /* LoginViewControllerTests.swift */,
 				3F9885FE25925925005B1521 /* LoginViewModelTests.swift */,
 				3F98860E25925ABF005B1521 /* LoginChallengeViewControllerTests.swift */,
+				3F98861825925CEB005B1521 /* LoginChallengeViewModelTests.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 				3F98861425925B0C005B1521 /* MockLoginChallengeViewModelFlowDelegate.swift in Sources */,
 				3F52A9E62589211F001A76FE /* NavCViewControllerTests.swift in Sources */,
 				3F52A9E22589211F001A76FE /* NavBViewModelTests.swift in Sources */,
+				3F98861925925CEB005B1521 /* LoginChallengeViewModelTests.swift in Sources */,
 				3F52A9E72589211F001A76FE /* NavAViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
