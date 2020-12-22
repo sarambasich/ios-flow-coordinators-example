@@ -49,6 +49,8 @@
 		3F81A0B1252F4F58009D2950 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A0AD252F4F58009D2950 /* Coordinator.swift */; };
 		3F9885F22592473F005B1521 /* LoginCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9885F12592473F005B1521 /* LoginCoordinatorTests.swift */; };
 		3F9885FA25925789005B1521 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9885F925925789005B1521 /* LoginViewControllerTests.swift */; };
+		3F9885FF25925925005B1521 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9885FE25925925005B1521 /* LoginViewModelTests.swift */; };
+		3F98860425925A1D005B1521 /* MockLoginViewModelFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98860325925A1D005B1521 /* MockLoginViewModelFlowDelegate.swift */; };
 		3FBEA154257FEE4A00FCE6F6 /* NavAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA153257FEE4A00FCE6F6 /* NavAViewController.swift */; };
 		3FBEA159257FEE7000FCE6F6 /* NavAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA158257FEE7000FCE6F6 /* NavAViewModel.swift */; };
 		3FBEA161257FF0D400FCE6F6 /* NavBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA15D257FF0D300FCE6F6 /* NavBViewModel.swift */; };
@@ -133,6 +135,8 @@
 		3F81A0AD252F4F58009D2950 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		3F9885F12592473F005B1521 /* LoginCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinatorTests.swift; sourceTree = "<group>"; };
 		3F9885F925925789005B1521 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
+		3F9885FE25925925005B1521 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		3F98860325925A1D005B1521 /* MockLoginViewModelFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewModelFlowDelegate.swift; sourceTree = "<group>"; };
 		3FBEA153257FEE4A00FCE6F6 /* NavAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavAViewController.swift; sourceTree = "<group>"; };
 		3FBEA158257FEE7000FCE6F6 /* NavAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavAViewModel.swift; sourceTree = "<group>"; };
 		3FBEA15D257FF0D300FCE6F6 /* NavBViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBViewModel.swift; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				3F5775472582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift */,
+				3F98860325925A1D005B1521 /* MockLoginViewModelFlowDelegate.swift */,
 				3F52A9EE25892D8B001A76FE /* MockNavAViewModelFlowDelegate.swift */,
 				3F52A9F325892DBF001A76FE /* MockNavBViewModelFlowDelegate.swift */,
 				3F52A9F825892E2C001A76FE /* MockNavCViewModelFlowDelegate.swift */,
@@ -383,6 +388,7 @@
 			children = (
 				3F9885F12592473F005B1521 /* LoginCoordinatorTests.swift */,
 				3F9885F925925789005B1521 /* LoginViewControllerTests.swift */,
+				3F9885FE25925925005B1521 /* LoginViewModelTests.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -606,12 +612,14 @@
 				3F9885FA25925789005B1521 /* LoginViewControllerTests.swift in Sources */,
 				3F5775482582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift in Sources */,
 				3F5775292582844E00E0B0C8 /* ApplicationCoordinatorTests.swift in Sources */,
+				3F98860425925A1D005B1521 /* MockLoginViewModelFlowDelegate.swift in Sources */,
 				3F5775202582827800E0B0C8 /* RouteTests.swift in Sources */,
 				3F52A9EF25892D8B001A76FE /* MockNavAViewModelFlowDelegate.swift in Sources */,
 				3F52A9E52589211F001A76FE /* NavBViewControllerTests.swift in Sources */,
 				3F52A9C425890B32001A76FE /* MyNavCoordinatorTests.swift in Sources */,
 				3F52A9E42589211F001A76FE /* NavCViewModelTests.swift in Sources */,
 				3F9885F22592473F005B1521 /* LoginCoordinatorTests.swift in Sources */,
+				3F9885FF25925925005B1521 /* LoginViewModelTests.swift in Sources */,
 				3F5BFF0F258A70160058A67A /* MyModalChildViewModelTests.swift in Sources */,
 				3F6CB6CE2582A12D00DFFA01 /* MyModalCoordinatorTests.swift in Sources */,
 				3F577542258290BE00E0B0C8 /* FirstViewControllerTests.swift in Sources */,

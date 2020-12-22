@@ -1,5 +1,5 @@
 //
-//  LoginViewControllerTests.swift
+//  LoginViewModelTests.swift
 //  FlowCoordinatorsExampleTests
 //
 //  Created by Stefan Arambasich on 12/22/20.
@@ -9,28 +9,27 @@ import XCTest
 @testable import FlowCoordinatorsExample
 
 
-class LoginViewControllerTests: XCTestCase {
+class LoginViewModelTests: XCTestCase {
 
     // MARK: - Properties
 
-    private var subject: LoginViewController!
+    private var subject: LoginViewModel!
 
     private let testApp = MyTestApplication()
 
     // MARK: - Test setup
 
-    override func tearDown() {
+    override func setUp() {
         subject = nil
     }
 
     // MARK: - Test cases
 
-    func testDidselectLogIn_callsToViewModel_callsToFlowDelegate() {
+    func testLogInCallsFlowDelegate() {
         let delegate = MockLoginViewModelFlowDelegate()
-        subject = LoginViewController()
-        subject.viewModel = LoginViewModel(application: testApp, flowDelegate: delegate)
+        subject = LoginViewModel(application: testApp, flowDelegate: delegate)
 
-        subject.didSelectLogIn(UIButton())
+        subject.logIn()
 
         XCTAssertTrue(delegate.didLogInWasCalled)
     }
