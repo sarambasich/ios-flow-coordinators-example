@@ -120,16 +120,25 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3Z-Kf-M0T">
+                                <rect key="frame" x="339" y="44" width="55" height="30"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="didSelectLogOutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i0n-WE-obh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eFp-qr-hpG" firstAttribute="top" secondItem="gqf-Mj-Sjm" secondAttribute="bottom" constant="32" id="I0b-T5-MHA"/>
+                            <constraint firstItem="s3Z-Kf-M0T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Iew-Yp-hi4"/>
                             <constraint firstItem="wlh-fO-ZOQ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="LQZ-q8-RXh"/>
                             <constraint firstItem="gqf-Mj-Sjm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="dFP-ef-fTK"/>
                             <constraint firstItem="eFp-qr-hpG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hmm-qD-Xvb"/>
                             <constraint firstItem="wlh-fO-ZOQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qK1-25-L6Z"/>
                             <constraint firstItem="gqf-Mj-Sjm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="t8T-nq-6Ju"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s3Z-Kf-M0T" secondAttribute="trailing" constant="20" id="xL1-M1-snV"/>
                         </constraints>
                     </view>
                     <connections>
