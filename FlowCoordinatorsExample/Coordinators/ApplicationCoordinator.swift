@@ -96,6 +96,12 @@ extension ApplicationCoordinator: LoginCoordinatorDelegate, FirstCoordinatorDele
         try! navigate(to: Route(scenes: [.first], userIntent: nil), animated: true)
     }
 
+    // MARK: FirstCoordinatorDelegate
+
+    func didSelectLogOut() {
+        loginCoordinator.dismiss(animated: false)
+    }
+
     // MARK: ChildCoordinatorDelegate
 
     func coordinatorDidFinish(_ coordinator: Coordinator) {

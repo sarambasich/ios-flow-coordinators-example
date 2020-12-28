@@ -142,6 +142,7 @@ extension FirstCoordinator: FirstViewModelFlowDelegate {
     }
 
     func didSelectLogOut() {
+        delegate?.didSelectLogOut()
         dismiss(animated: true)
     }
 
@@ -203,4 +204,9 @@ extension FirstCoordinator: MyNavCoordinatorDelegate, MyModalCoordinatorDelegate
 
 // MARK: - Delegate
 
-protocol FirstCoordinatorDelegate: CoordinatorDelegate { }
+protocol FirstCoordinatorDelegate: CoordinatorDelegate {
+
+    /// Called when the user selects the log out button.
+    func didSelectLogOut()
+
+}

@@ -27,6 +27,7 @@ final class LoginChallengeViewModel: ViewModel {
 
     /// Call this when the user submits their challenge answer.
     func submitChallenge() {
+        application.logIn()
         flowDelegate?.didSelectSubmitChallenge()
     }
 

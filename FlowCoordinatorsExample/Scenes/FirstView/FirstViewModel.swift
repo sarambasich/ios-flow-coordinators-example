@@ -70,6 +70,7 @@ class FirstViewModel {
 
     /// Call this when the user selects the log out button.
     func selectLogOut() {
+        application.logOut()
         flowDelegate?.didSelectLogOut()
     }
 

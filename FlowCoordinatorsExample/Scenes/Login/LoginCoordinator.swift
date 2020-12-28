@@ -64,7 +64,7 @@ final class LoginCoordinator: Coordinator {
     }
 
     func dismiss(animated: Bool, completion: (() -> Void)? = nil) {
-        rootViewController.popToRootViewController(animated: animated)
+        rootViewController.setViewControllers([loginViewController], animated: animated)
         completion?()
     }
     
