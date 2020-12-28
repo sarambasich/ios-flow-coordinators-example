@@ -95,7 +95,7 @@ final class FirstCoordinator: Coordinator {
 
     func start(animated: Bool) {
         let route = Route(scenes: [.first], userIntent: nil)
-        try! navigate(to: route, animated: true)
+        try! navigate(to: route, animated: animated)
     }
 
     func dismiss(animated: Bool, completion: (() -> Void)? = nil) {

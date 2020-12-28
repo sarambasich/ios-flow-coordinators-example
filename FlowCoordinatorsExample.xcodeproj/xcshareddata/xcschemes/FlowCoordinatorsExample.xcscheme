@@ -42,6 +42,12 @@
                <Test
                   Identifier = "ApplicationCoordinatorTests/testNavigateWithInvalidScene()">
                </Test>
+               <Test
+                  Identifier = "FirstCoordinatorTests/testNavigateToModalViewSucceeds()">
+               </Test>
+               <Test
+                  Identifier = "FirstCoordinatorTests/testNavigateToNavViewSucceeds()">
+               </Test>
             </SkippedTests>
          </TestableReference>
          <TestableReference

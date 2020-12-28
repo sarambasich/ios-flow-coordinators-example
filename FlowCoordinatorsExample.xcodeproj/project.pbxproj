@@ -54,6 +54,7 @@
 		3F98860F25925ABF005B1521 /* LoginChallengeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98860E25925ABF005B1521 /* LoginChallengeViewControllerTests.swift */; };
 		3F98861425925B0C005B1521 /* MockLoginChallengeViewModelFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98861325925B0C005B1521 /* MockLoginChallengeViewModelFlowDelegate.swift */; };
 		3F98861925925CEB005B1521 /* LoginChallengeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98861825925CEB005B1521 /* LoginChallengeViewModelTests.swift */; };
+		3F98861E259260AE005B1521 /* FirstCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98861D259260AE005B1521 /* FirstCoordinatorTests.swift */; };
 		3FBEA154257FEE4A00FCE6F6 /* NavAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA153257FEE4A00FCE6F6 /* NavAViewController.swift */; };
 		3FBEA159257FEE7000FCE6F6 /* NavAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA158257FEE7000FCE6F6 /* NavAViewModel.swift */; };
 		3FBEA161257FF0D400FCE6F6 /* NavBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA15D257FF0D300FCE6F6 /* NavBViewModel.swift */; };
@@ -143,6 +144,7 @@
 		3F98860E25925ABF005B1521 /* LoginChallengeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginChallengeViewControllerTests.swift; sourceTree = "<group>"; };
 		3F98861325925B0C005B1521 /* MockLoginChallengeViewModelFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginChallengeViewModelFlowDelegate.swift; sourceTree = "<group>"; };
 		3F98861825925CEB005B1521 /* LoginChallengeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginChallengeViewModelTests.swift; sourceTree = "<group>"; };
+		3F98861D259260AE005B1521 /* FirstCoordinatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCoordinatorTests.swift; sourceTree = "<group>"; };
 		3FBEA153257FEE4A00FCE6F6 /* NavAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavAViewController.swift; sourceTree = "<group>"; };
 		3FBEA158257FEE7000FCE6F6 /* NavAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavAViewModel.swift; sourceTree = "<group>"; };
 		3FBEA15D257FF0D300FCE6F6 /* NavBViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBViewModel.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 		3F57753825828C6400E0B0C8 /* FirstView */ = {
 			isa = PBXGroup;
 			children = (
+				3F98861D259260AE005B1521 /* FirstCoordinatorTests.swift */,
 				3F57753925828C9900E0B0C8 /* FirstViewModelTests.swift */,
 				3F577541258290BE00E0B0C8 /* FirstViewControllerTests.swift */,
 			);
@@ -292,9 +295,9 @@
 		3F690531252F61CE00AA6B1F /* FirstView */ = {
 			isa = PBXGroup;
 			children = (
+				3F4E3CBA259126BF002A6052 /* FirstCoordinator.swift */,
 				3F81A0AA252F4F58009D2950 /* FirstViewModel.swift */,
 				3F81A07A252F4EE3009D2950 /* FirstViewController.swift */,
-				3F4E3CBA259126BF002A6052 /* FirstCoordinator.swift */,
 			);
 			path = FirstView;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 			files = (
 				3F52A9D825891F24001A76FE /* MyModalViewModelTests.swift in Sources */,
 				3F57753A25828C9900E0B0C8 /* FirstViewModelTests.swift in Sources */,
+				3F98861E259260AE005B1521 /* FirstCoordinatorTests.swift in Sources */,
 				3F52A9F425892DBF001A76FE /* MockNavBViewModelFlowDelegate.swift in Sources */,
 				3F9885FA25925789005B1521 /* LoginViewControllerTests.swift in Sources */,
 				3F5775482582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift in Sources */,

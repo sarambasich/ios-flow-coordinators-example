@@ -23,15 +23,22 @@ class FirstViewControllerTests: XCTestCase {
         subject = nil
     }
 
+    // MARK: - Helpers
+
+    private func makeFirstViewController(with flowDelegate: FirstViewModelFlowDelegate? = nil) -> FirstViewController {
+        let sb = UIStoryboard(name: "Main", bundle: .main)
+        return sb.instantiateViewController(identifier: FirstViewController.identifier, creator: { (coder) -> FirstViewController? in
+            let vm = FirstViewModel(application: self.testApp, flowDelegate: flowDelegate)
+            return FirstViewController(coder: coder, viewModel: vm)
+        })
+    }
+
     // MARK: - Test cases
 
-    func testSetViewModelSetsUpView() {
-        subject = FirstViewController()
+    func testViewDidLoadSetsUpView() {
+        subject = makeFirstViewController()
 
-        XCTAssertNil(subject.title)
-
-        let vm = FirstViewModel(application: testApp, flowDelegate: nil)
-        subject.viewModel = vm
+        subject.viewDidLoad()
 
         XCTAssertEqual(subject.title, "First View Controller")
     }
