@@ -85,7 +85,7 @@ extension LoginCoordinator: LoginViewModelFlowDelegate {
 extension LoginCoordinator: LoginChallengeViewModelFlowDelegate {
 
     func didSelectSubmitChallenge() {
-        delegate?.didCompleteLoginFlowSuccessfully()
+        delegate?.coordinatorDidFinish(self)
     }
 
 }
@@ -106,9 +106,4 @@ private extension LoginCoordinator {
 
 // MARK: - Delegate
 
-protocol LoginCoordinatorDelegate: CoordinatorDelegate {
-
-    /// Called when the user completes the log in flow sucessfully.
-    func didCompleteLoginFlowSuccessfully()
-
-}
+protocol LoginCoordinatorDelegate: CoordinatorDelegate { }

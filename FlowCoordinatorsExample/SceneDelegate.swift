@@ -11,6 +11,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     // MARK: - Properties
 
+    static var shared: SceneDelegate {
+        return UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+    }
+
     var window: UIWindow?
 
     private(set) var appCoordinator: ApplicationCoordinator?

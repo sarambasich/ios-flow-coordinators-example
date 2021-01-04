@@ -111,11 +111,13 @@ class LoginCoordinatorTests: XCTestCase {
 
     func testDidSelectSubmitChallenge_callsDelegate() {
         let delegate = MockLoginCoordinatorDelegate()
+        delegate.coordinatorDidFinishWasCalled = { (coordinator) in
+            XCTAssertTrue(coordinator === self.subject)
+        }
+
         subject = LoginCoordinator(application: testApp, window: window, delegate: delegate)
 
         subject.didSelectSubmitChallenge()
-
-        XCTAssertTrue(delegate.didCompleteLoginFlowSuccessfullyWasCalled)
     }
 
 }
@@ -126,14 +128,8 @@ private final class MockLoginCoordinatorDelegate: LoginCoordinatorDelegate {
 
     var coordinatorDidFinishWasCalled: ((Coordinator) -> Void)?
 
-    private(set) var didCompleteLoginFlowSuccessfullyWasCalled = false
-
     func coordinatorDidFinish(_ coordinator: Coordinator) {
         coordinatorDidFinishWasCalled?(coordinator)
-    }
-
-    func didCompleteLoginFlowSuccessfully() {
-        didCompleteLoginFlowSuccessfullyWasCalled = true
     }
 
 }

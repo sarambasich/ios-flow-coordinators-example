@@ -36,6 +36,9 @@ final class ApplicationCoordinator: Coordinator {
 
     private var firstCoordinator: FirstCoordinator?
 
+    /// A route to follow after log in in response to an action such as a deep link
+    private var pendingRoute: Route?
+
     // MARK: - Initialization
 
     init(application: MyTestApplication, window: UIWindow) {
@@ -90,12 +93,6 @@ final class ApplicationCoordinator: Coordinator {
 
 extension ApplicationCoordinator: LoginCoordinatorDelegate, FirstCoordinatorDelegate {
 
-    // MARK: LoginCoordinatorDelegate
-
-    func didCompleteLoginFlowSuccessfully() {
-        try! navigate(to: Route(scenes: [.first], userIntent: nil), animated: true)
-    }
-
     // MARK: FirstCoordinatorDelegate
 
     func didSelectLogOut() {
@@ -105,8 +102,8 @@ extension ApplicationCoordinator: LoginCoordinatorDelegate, FirstCoordinatorDele
     // MARK: ChildCoordinatorDelegate
 
     func coordinatorDidFinish(_ coordinator: Coordinator) {
-        if coordinator === firstCoordinator {
-            firstCoordinator = nil
+        if coordinator === loginCoordinator {
+            try! navigate(to: pendingRoute ?? Route(scenes: [.first], userIntent: nil), animated: true)
         }
     }
 
