@@ -25,6 +25,8 @@ final class MockFirstViewModelFlowDelegate: FirstViewModelFlowDelegate {
 
     private(set) var didSelectNavCButtonOutOfOrderWasCalled = false
 
+    private(set) var didSelectLogOutWasCalled = false
+
 
     // MARK: - FirstViewModelFlowDelegate
 
@@ -54,6 +56,10 @@ final class MockFirstViewModelFlowDelegate: FirstViewModelFlowDelegate {
 
     func didSelectNavCButtonOutOfOrder() {
         didSelectNavCButtonOutOfOrderWasCalled = true
+    }
+
+    func didSelectLogOut() {
+        didSelectLogOutWasCalled = true
     }
 
 }

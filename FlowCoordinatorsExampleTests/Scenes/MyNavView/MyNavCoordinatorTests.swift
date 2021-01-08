@@ -21,7 +21,7 @@ class MyNavCoordinatorTests: XCTestCase {
 
     override func setUp() {
         let sceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
-        sceneDelegate.window?.rootViewController = FirstViewController()
+        sceneDelegate.window?.rootViewController = UINavigationController()
         rootViewController = sceneDelegate.window!.rootViewController
     }
 

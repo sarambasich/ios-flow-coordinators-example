@@ -11,6 +11,10 @@
 		3F36A91125798A660080BB34 /* DeepLinkConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A91025798A660080BB34 /* DeepLinkConvertible.swift */; };
 		3F36A91725798CD30080BB34 /* DeepLinkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A91625798CD30080BB34 /* DeepLinkParser.swift */; };
 		3F36A94C257A8A150080BB34 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F36A94B257A8A150080BB34 /* Route.swift */; };
+		3F4E3CBB259126C0002A6052 /* FirstCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E3CBA259126BF002A6052 /* FirstCoordinator.swift */; };
+		3F4E3CC3259129F2002A6052 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E3CC2259129F2002A6052 /* LoginCoordinator.swift */; };
+		3F4E3CC825912ACD002A6052 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E3CC725912ACD002A6052 /* LoginViewModel.swift */; };
+		3F4E3CCD25912B04002A6052 /* LoginChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E3CCC25912B04002A6052 /* LoginChallengeViewModel.swift */; };
 		3F52A9C425890B32001A76FE /* MyNavCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9C325890B32001A76FE /* MyNavCoordinatorTests.swift */; };
 		3F52A9D325891A6B001A76FE /* MyModalChildCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9D225891A6B001A76FE /* MyModalChildCoordinatorTests.swift */; };
 		3F52A9D825891F24001A76FE /* MyModalViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52A9D725891F24001A76FE /* MyModalViewModelTests.swift */; };
@@ -29,7 +33,10 @@
 		3F577542258290BE00E0B0C8 /* FirstViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F577541258290BE00E0B0C8 /* FirstViewControllerTests.swift */; };
 		3F5775482582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775472582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift */; };
 		3F5BFF0F258A70160058A67A /* MyModalChildViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BFF0E258A70160058A67A /* MyModalChildViewModelTests.swift */; };
+		3F5BFF15258AB76B0058A67A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BFF14258AB76B0058A67A /* Login.storyboard */; };
+		3F5BFF1A258AB96D0058A67A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BFF19258AB96D0058A67A /* LoginViewController.swift */; };
 		3F6CB6CE2582A12D00DFFA01 /* MyModalCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CB6CD2582A12D00DFFA01 /* MyModalCoordinatorTests.swift */; };
+		3F798B95259A3D3100588FAA /* MyTestApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F798B94259A3D3100588FAA /* MyTestApplicationTests.swift */; };
 		3F81A077252F4EE3009D2950 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A076252F4EE3009D2950 /* AppDelegate.swift */; };
 		3F81A079252F4EE3009D2950 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A078252F4EE3009D2950 /* SceneDelegate.swift */; };
 		3F81A07B252F4EE3009D2950 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A07A252F4EE3009D2950 /* FirstViewController.swift */; };
@@ -41,6 +48,14 @@
 		3F81A0AF252F4F58009D2950 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A0AA252F4F58009D2950 /* FirstViewModel.swift */; };
 		3F81A0B0252F4F58009D2950 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A0AC252F4F58009D2950 /* ApplicationCoordinator.swift */; };
 		3F81A0B1252F4F58009D2950 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A0AD252F4F58009D2950 /* Coordinator.swift */; };
+		3F9885F22592473F005B1521 /* LoginCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9885F12592473F005B1521 /* LoginCoordinatorTests.swift */; };
+		3F9885FA25925789005B1521 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9885F925925789005B1521 /* LoginViewControllerTests.swift */; };
+		3F9885FF25925925005B1521 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9885FE25925925005B1521 /* LoginViewModelTests.swift */; };
+		3F98860425925A1D005B1521 /* MockLoginViewModelFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98860325925A1D005B1521 /* MockLoginViewModelFlowDelegate.swift */; };
+		3F98860F25925ABF005B1521 /* LoginChallengeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98860E25925ABF005B1521 /* LoginChallengeViewControllerTests.swift */; };
+		3F98861425925B0C005B1521 /* MockLoginChallengeViewModelFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98861325925B0C005B1521 /* MockLoginChallengeViewModelFlowDelegate.swift */; };
+		3F98861925925CEB005B1521 /* LoginChallengeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98861825925CEB005B1521 /* LoginChallengeViewModelTests.swift */; };
+		3F98861E259260AE005B1521 /* FirstCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98861D259260AE005B1521 /* FirstCoordinatorTests.swift */; };
 		3FBEA154257FEE4A00FCE6F6 /* NavAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA153257FEE4A00FCE6F6 /* NavAViewController.swift */; };
 		3FBEA159257FEE7000FCE6F6 /* NavAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA158257FEE7000FCE6F6 /* NavAViewModel.swift */; };
 		3FBEA161257FF0D400FCE6F6 /* NavBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA15D257FF0D300FCE6F6 /* NavBViewModel.swift */; };
@@ -50,6 +65,7 @@
 		3FBEA1AA258017A200FCE6F6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA1A9258017A200FCE6F6 /* ViewModel.swift */; };
 		3FBEA1B2258018DF00FCE6F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA1B1258018DF00FCE6F6 /* ViewController.swift */; };
 		3FBEA1C025801D4C00FCE6F6 /* MyModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEA1BF25801D4C00FCE6F6 /* MyModalViewModel.swift */; };
+		3FD91490258BC093006143EF /* LoginChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD9148F258BC093006143EF /* LoginChallengeViewController.swift */; };
 		3FDC7FF92587F97C00F043F4 /* MyModalChildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC7FF62587F97C00F043F4 /* MyModalChildViewModel.swift */; };
 		3FDC7FFA2587F97C00F043F4 /* MyModalChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC7FF72587F97C00F043F4 /* MyModalChildViewController.swift */; };
 		3FDC7FFB2587F97C00F043F4 /* MyModalChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC7FF82587F97C00F043F4 /* MyModalChildCoordinator.swift */; };
@@ -80,6 +96,10 @@
 		3F36A91025798A660080BB34 /* DeepLinkConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkConvertible.swift; sourceTree = "<group>"; };
 		3F36A91625798CD30080BB34 /* DeepLinkParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkParser.swift; sourceTree = "<group>"; };
 		3F36A94B257A8A150080BB34 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		3F4E3CBA259126BF002A6052 /* FirstCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCoordinator.swift; sourceTree = "<group>"; };
+		3F4E3CC2259129F2002A6052 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		3F4E3CC725912ACD002A6052 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		3F4E3CCC25912B04002A6052 /* LoginChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginChallengeViewModel.swift; sourceTree = "<group>"; };
 		3F52A9C325890B32001A76FE /* MyNavCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavCoordinatorTests.swift; sourceTree = "<group>"; };
 		3F52A9D225891A6B001A76FE /* MyModalChildCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModalChildCoordinatorTests.swift; sourceTree = "<group>"; };
 		3F52A9D725891F24001A76FE /* MyModalViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModalViewModelTests.swift; sourceTree = "<group>"; };
@@ -98,7 +118,10 @@
 		3F577541258290BE00E0B0C8 /* FirstViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewControllerTests.swift; sourceTree = "<group>"; };
 		3F5775472582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFirstViewModelFlowDelegate.swift; sourceTree = "<group>"; };
 		3F5BFF0E258A70160058A67A /* MyModalChildViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModalChildViewModelTests.swift; sourceTree = "<group>"; };
+		3F5BFF14258AB76B0058A67A /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		3F5BFF19258AB96D0058A67A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F6CB6CD2582A12D00DFFA01 /* MyModalCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModalCoordinatorTests.swift; sourceTree = "<group>"; };
+		3F798B94259A3D3100588FAA /* MyTestApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTestApplicationTests.swift; sourceTree = "<group>"; };
 		3F81A073252F4EE3009D2950 /* FlowCoordinatorsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowCoordinatorsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F81A076252F4EE3009D2950 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F81A078252F4EE3009D2950 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +139,14 @@
 		3F81A0AA252F4F58009D2950 /* FirstViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
 		3F81A0AC252F4F58009D2950 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		3F81A0AD252F4F58009D2950 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		3F9885F12592473F005B1521 /* LoginCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinatorTests.swift; sourceTree = "<group>"; };
+		3F9885F925925789005B1521 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
+		3F9885FE25925925005B1521 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		3F98860325925A1D005B1521 /* MockLoginViewModelFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewModelFlowDelegate.swift; sourceTree = "<group>"; };
+		3F98860E25925ABF005B1521 /* LoginChallengeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginChallengeViewControllerTests.swift; sourceTree = "<group>"; };
+		3F98861325925B0C005B1521 /* MockLoginChallengeViewModelFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginChallengeViewModelFlowDelegate.swift; sourceTree = "<group>"; };
+		3F98861825925CEB005B1521 /* LoginChallengeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginChallengeViewModelTests.swift; sourceTree = "<group>"; };
+		3F98861D259260AE005B1521 /* FirstCoordinatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCoordinatorTests.swift; sourceTree = "<group>"; };
 		3FBEA153257FEE4A00FCE6F6 /* NavAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavAViewController.swift; sourceTree = "<group>"; };
 		3FBEA158257FEE7000FCE6F6 /* NavAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavAViewModel.swift; sourceTree = "<group>"; };
 		3FBEA15D257FF0D300FCE6F6 /* NavBViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBViewModel.swift; sourceTree = "<group>"; };
@@ -125,6 +156,7 @@
 		3FBEA1A9258017A200FCE6F6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3FBEA1B1258018DF00FCE6F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3FBEA1BF25801D4C00FCE6F6 /* MyModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModalViewModel.swift; sourceTree = "<group>"; };
+		3FD9148F258BC093006143EF /* LoginChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginChallengeViewController.swift; sourceTree = "<group>"; };
 		3FDC7FF62587F97C00F043F4 /* MyModalChildViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyModalChildViewModel.swift; sourceTree = "<group>"; };
 		3FDC7FF72587F97C00F043F4 /* MyModalChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyModalChildViewController.swift; sourceTree = "<group>"; };
 		3FDC7FF82587F97C00F043F4 /* MyModalChildCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyModalChildCoordinator.swift; sourceTree = "<group>"; };
@@ -205,6 +237,7 @@
 		3F57753325828AC500E0B0C8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3F5BFF13258AB7620058A67A /* Login */,
 				3F690531252F61CE00AA6B1F /* FirstView */,
 				3FE8FCE3252F639400C82BF9 /* MyModalView */,
 				3FDC7FF52587F97C00F043F4 /* MyModalChildView */,
@@ -216,6 +249,7 @@
 		3F57753725828B4000E0B0C8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3F9885F025924733005B1521 /* Login */,
 				3F57753825828C6400E0B0C8 /* FirstView */,
 				3F6CB6CB2582979700DFFA01 /* MyModalView */,
 				3F52A9C825891A23001A76FE /* MyModalChildView */,
@@ -227,6 +261,7 @@
 		3F57753825828C6400E0B0C8 /* FirstView */ = {
 			isa = PBXGroup;
 			children = (
+				3F98861D259260AE005B1521 /* FirstCoordinatorTests.swift */,
 				3F57753925828C9900E0B0C8 /* FirstViewModelTests.swift */,
 				3F577541258290BE00E0B0C8 /* FirstViewControllerTests.swift */,
 			);
@@ -237,16 +272,32 @@
 			isa = PBXGroup;
 			children = (
 				3F5775472582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift */,
+				3F98860325925A1D005B1521 /* MockLoginViewModelFlowDelegate.swift */,
 				3F52A9EE25892D8B001A76FE /* MockNavAViewModelFlowDelegate.swift */,
 				3F52A9F325892DBF001A76FE /* MockNavBViewModelFlowDelegate.swift */,
 				3F52A9F825892E2C001A76FE /* MockNavCViewModelFlowDelegate.swift */,
+				3F98861325925B0C005B1521 /* MockLoginChallengeViewModelFlowDelegate.swift */,
 			);
 			path = "Test Helpers";
+			sourceTree = "<group>";
+		};
+		3F5BFF13258AB7620058A67A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3F5BFF14258AB76B0058A67A /* Login.storyboard */,
+				3F4E3CC2259129F2002A6052 /* LoginCoordinator.swift */,
+				3F5BFF19258AB96D0058A67A /* LoginViewController.swift */,
+				3F4E3CC725912ACD002A6052 /* LoginViewModel.swift */,
+				3FD9148F258BC093006143EF /* LoginChallengeViewController.swift */,
+				3F4E3CCC25912B04002A6052 /* LoginChallengeViewModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		3F690531252F61CE00AA6B1F /* FirstView */ = {
 			isa = PBXGroup;
 			children = (
+				3F4E3CBA259126BF002A6052 /* FirstCoordinator.swift */,
 				3F81A0AA252F4F58009D2950 /* FirstViewModel.swift */,
 				3F81A07A252F4EE3009D2950 /* FirstViewController.swift */,
 			);
@@ -322,6 +373,7 @@
 				3F57751E2582826900E0B0C8 /* Routing */,
 				3F57753725828B4000E0B0C8 /* Scenes */,
 				3F81A08F252F4EE4009D2950 /* Info.plist */,
+				3F798B94259A3D3100588FAA /* MyTestApplicationTests.swift */,
 			);
 			path = FlowCoordinatorsExampleTests;
 			sourceTree = "<group>";
@@ -342,6 +394,18 @@
 				3F81A0AC252F4F58009D2950 /* ApplicationCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		3F9885F025924733005B1521 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3F9885F12592473F005B1521 /* LoginCoordinatorTests.swift */,
+				3F9885F925925789005B1521 /* LoginViewControllerTests.swift */,
+				3F9885FE25925925005B1521 /* LoginViewModelTests.swift */,
+				3F98860E25925ABF005B1521 /* LoginChallengeViewControllerTests.swift */,
+				3F98861825925CEB005B1521 /* LoginChallengeViewModelTests.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		3FBEA1A82580179B00FCE6F6 /* Utility */ = {
@@ -490,6 +554,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F5BFF15258AB76B0058A67A /* Login.storyboard in Resources */,
 				3F81A083252F4EE4009D2950 /* LaunchScreen.storyboard in Resources */,
 				3F81A080252F4EE4009D2950 /* Assets.xcassets in Resources */,
 				3F81A07E252F4EE3009D2950 /* Main.storyboard in Resources */,
@@ -517,19 +582,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F4E3CCD25912B04002A6052 /* LoginChallengeViewModel.swift in Sources */,
+				3F5BFF1A258AB96D0058A67A /* LoginViewController.swift in Sources */,
 				3FE8FCE5252F63A700C82BF9 /* MyModalViewController.swift in Sources */,
 				3FDC7FF92587F97C00F043F4 /* MyModalChildViewModel.swift in Sources */,
 				3FBEA1AA258017A200FCE6F6 /* ViewModel.swift in Sources */,
+				3F4E3CBB259126C0002A6052 /* FirstCoordinator.swift in Sources */,
 				3FBEA1B2258018DF00FCE6F6 /* ViewController.swift in Sources */,
 				3F81A0AE252F4F58009D2950 /* MyTestApplication.swift in Sources */,
 				3F81A0AF252F4F58009D2950 /* FirstViewModel.swift in Sources */,
 				3F36A94C257A8A150080BB34 /* Route.swift in Sources */,
+				3FD91490258BC093006143EF /* LoginChallengeViewController.swift in Sources */,
 				3F81A07B252F4EE3009D2950 /* FirstViewController.swift in Sources */,
 				3FBEA1C025801D4C00FCE6F6 /* MyModalViewModel.swift in Sources */,
+				3F4E3CC3259129F2002A6052 /* LoginCoordinator.swift in Sources */,
 				3F36A91725798CD30080BB34 /* DeepLinkParser.swift in Sources */,
 				3F81A077252F4EE3009D2950 /* AppDelegate.swift in Sources */,
 				3FBEA164257FF0D400FCE6F6 /* NavCViewModel.swift in Sources */,
 				3FBEA154257FEE4A00FCE6F6 /* NavAViewController.swift in Sources */,
+				3F4E3CC825912ACD002A6052 /* LoginViewModel.swift in Sources */,
 				3FBEA163257FF0D400FCE6F6 /* NavBViewController.swift in Sources */,
 				3F81A079252F4EE3009D2950 /* SceneDelegate.swift in Sources */,
 				3FE8FCF4252F6F8900C82BF9 /* MyNavCoordinator.swift in Sources */,
@@ -552,22 +623,31 @@
 			files = (
 				3F52A9D825891F24001A76FE /* MyModalViewModelTests.swift in Sources */,
 				3F57753A25828C9900E0B0C8 /* FirstViewModelTests.swift in Sources */,
+				3F98861E259260AE005B1521 /* FirstCoordinatorTests.swift in Sources */,
 				3F52A9F425892DBF001A76FE /* MockNavBViewModelFlowDelegate.swift in Sources */,
+				3F9885FA25925789005B1521 /* LoginViewControllerTests.swift in Sources */,
 				3F5775482582913C00E0B0C8 /* MockFirstViewModelFlowDelegate.swift in Sources */,
 				3F5775292582844E00E0B0C8 /* ApplicationCoordinatorTests.swift in Sources */,
+				3F98860425925A1D005B1521 /* MockLoginViewModelFlowDelegate.swift in Sources */,
+				3F798B95259A3D3100588FAA /* MyTestApplicationTests.swift in Sources */,
 				3F5775202582827800E0B0C8 /* RouteTests.swift in Sources */,
 				3F52A9EF25892D8B001A76FE /* MockNavAViewModelFlowDelegate.swift in Sources */,
 				3F52A9E52589211F001A76FE /* NavBViewControllerTests.swift in Sources */,
 				3F52A9C425890B32001A76FE /* MyNavCoordinatorTests.swift in Sources */,
 				3F52A9E42589211F001A76FE /* NavCViewModelTests.swift in Sources */,
+				3F9885F22592473F005B1521 /* LoginCoordinatorTests.swift in Sources */,
+				3F9885FF25925925005B1521 /* LoginViewModelTests.swift in Sources */,
 				3F5BFF0F258A70160058A67A /* MyModalChildViewModelTests.swift in Sources */,
 				3F6CB6CE2582A12D00DFFA01 /* MyModalCoordinatorTests.swift in Sources */,
+				3F98860F25925ABF005B1521 /* LoginChallengeViewControllerTests.swift in Sources */,
 				3F577542258290BE00E0B0C8 /* FirstViewControllerTests.swift in Sources */,
 				3F52A9D325891A6B001A76FE /* MyModalChildCoordinatorTests.swift in Sources */,
 				3F52A9F925892E2C001A76FE /* MockNavCViewModelFlowDelegate.swift in Sources */,
 				3F52A9E32589211F001A76FE /* NavAViewControllerTests.swift in Sources */,
+				3F98861425925B0C005B1521 /* MockLoginChallengeViewModelFlowDelegate.swift in Sources */,
 				3F52A9E62589211F001A76FE /* NavCViewControllerTests.swift in Sources */,
 				3F52A9E22589211F001A76FE /* NavBViewModelTests.swift in Sources */,
+				3F98861925925CEB005B1521 /* LoginChallengeViewModelTests.swift in Sources */,
 				3F52A9E72589211F001A76FE /* NavAViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

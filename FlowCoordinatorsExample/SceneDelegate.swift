@@ -11,6 +11,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     // MARK: - Properties
 
+    static var shared: SceneDelegate {
+        return UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+    }
+
     var window: UIWindow?
 
     private(set) var appCoordinator: ApplicationCoordinator?
@@ -19,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     /// Swap the currently presented coordinators for a new set of nav scenes.
     func swapCurrentScenesForNavScenes() {
-        appCoordinator?.dismiss(animated: true) {
+        appCoordinator?.resetFirstCoordinatorToRoot(animated: true) {
             do {
                 let route = Route(scenes: [.navA, .navB], userIntent: nil)
                 try self.appCoordinator?.navigate(to: route, animated: true)

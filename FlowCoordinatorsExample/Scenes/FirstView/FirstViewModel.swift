@@ -68,6 +68,12 @@ class FirstViewModel {
         flowDelegate?.didSelectNavCButtonOutOfOrder()
     }
 
+    /// Call this when the user selects the log out button.
+    func selectLogOut() {
+        application.logOut()
+        flowDelegate?.didSelectLogOut()
+    }
+
 }
 
 
@@ -95,5 +101,8 @@ protocol FirstViewModelFlowDelegate: AnyObject {
 
     /// Called when the user selects the button to navigate to the C scene in the nav flow, out of order.
     func didSelectNavCButtonOutOfOrder()
+
+    /// Called when the user selects the log out button.
+    func didSelectLogOut()
 
 }

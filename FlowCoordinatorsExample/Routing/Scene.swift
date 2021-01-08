@@ -16,6 +16,10 @@ enum Scene: String {
 
     // MARK: - Cases
 
+    case login
+
+    case loginChallenge = "login_challenge"
+
     case first
 
     case myModal = "my_modal"
