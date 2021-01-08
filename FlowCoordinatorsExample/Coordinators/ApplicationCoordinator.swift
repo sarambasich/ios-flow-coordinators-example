@@ -96,7 +96,7 @@ extension ApplicationCoordinator: LoginCoordinatorDelegate, FirstCoordinatorDele
     // MARK: FirstCoordinatorDelegate
 
     func didSelectLogOut() {
-        loginCoordinator.dismiss(animated: false)
+        loginCoordinator.resetToRoot(animated: true)
     }
 
     // MARK: ChildCoordinatorDelegate

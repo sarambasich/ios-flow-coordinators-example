@@ -64,8 +64,16 @@ final class LoginCoordinator: Coordinator {
     }
 
     func dismiss(animated: Bool, completion: (() -> Void)? = nil) {
+        loginViewController.viewModel = LoginViewModel(application: application, flowDelegate: self)
         rootViewController.setViewControllers([loginViewController], animated: animated)
         completion?()
+    }
+
+    // MARK: - Methods
+
+    /// Resets the login coordinator to the initial view to initiate another login session.
+    func resetToRoot(animated: Bool) {
+        self.dismiss(animated: animated, completion: nil)
     }
     
 }
