@@ -43,4 +43,20 @@ class RouteTests: XCTestCase {
         XCTAssertNil(subject.remainingRoute())
     }
 
+    // MARK: Route2 Tests
+
+    func testRoute2_instantiate() {
+        let instances: [SceneInstance<SceneDependencyType>] = [
+            SceneInstance(
+                scene: .navA,
+                dependencies: NavADependencies(text: "hi", intValue: 42)
+            ),
+            SceneInstance(
+                scene: .navB,
+                dependencies: NavBDependencies(floatValue: 1337.9)
+            )
+        ]
+        let r2 = Route2(scenes: instances, userIntent: nil)
+    }
+
 }

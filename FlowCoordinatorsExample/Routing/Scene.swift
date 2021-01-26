@@ -12,25 +12,39 @@ import Foundation
 /// This could also be represented using a struct for more dynamic behavior such as hot swapping screens and to facilitate
 /// (de-)serialization for representation on disk for example. This would have the advantage of de-coupling the exhaustive list of
 /// screens from a hard-coded enumeration, which may not be desirable or scalable for large apps.
-enum Scene: String {
+enum Scene {
 
     // MARK: - Cases
 
     case login
 
-    case loginChallenge = "login_challenge"
+    case loginChallenge
 
     case first
 
-    case myModal = "my_modal"
+    case myModal
 
-    case myModalChild = "my_modal_child"
+    case myModalChild
 
-    case navA = "nav_a"
+    case navA
 
-    case navB = "nav_b"
+    case navB
 
-    case navC = "nav_c"
+    case navC
+
+    // MARK: - Methods
+
+    func getDependencyType<T: SceneDependencyType>() -> T.Type? {
+        let dependencyType: T.Type
+
+        switch self {
+        case .navA: dependencyType = NavADependencies.self as! T.Type
+        case .navB: dependencyType = NavBDependencies.self as! T.Type
+        default: return nil
+        }
+
+        return dependencyType
+    }
 
 }
 
@@ -39,11 +53,28 @@ extension Scene: DeepLinkConvertible {
     /// Attempts to convert the given path component to a known scene value. Throws
     /// `DeepLinkConversionError.unknownScene` if unable to transform.
     static func convertToScene(from pathComponent: String) throws -> Scene {
-        guard let scene = Scene(rawValue: pathComponent) else {
-            throw DeepLinkConversionError.unknownScene
-        }
-
-        return scene
+        fatalError("Not implemented")
+//        guard let scene = Scene(rawValue: pathComponent) else {
+//            throw DeepLinkConversionError.unknownScene
+//        }
+//
+//        return scene
     }
+
+}
+
+protocol SceneDependencyType { }
+
+struct NavADependencies: SceneDependencyType {
+
+    let text: String
+
+    let intValue: Int
+
+}
+
+struct NavBDependencies: SceneDependencyType {
+
+    let floatValue: Float
 
 }
