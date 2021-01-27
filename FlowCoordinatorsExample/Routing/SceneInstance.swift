@@ -8,23 +8,30 @@
 import Foundation
 
 
-struct SceneInstance {
+protocol AnySceneInstance { }
 
-    typealias T = SceneDependencyType
 
-    let scene: Scene
+protocol SceneInstance: AnySceneInstance {
 
-    let dependencies: T
+    associatedtype DependencyType = SceneDependencyType
+
+    var scene: Scene { get }
+
+    var dependencies: DependencyType { get }
 
 }
 
-func freeform() {
-    let s = (Scene.navB, NavBDependencies(floatValue: 32.0))
+struct NavAScene: SceneInstance {
 
-    switch s {
-    case (.navB, _):
-        break
-    default:
-        break
-    }
+    let scene: Scene = .navA
+
+    let dependencies: NavADependencies
 }
+
+struct NavBScene: SceneInstance {
+
+    let scene: Scene = .navB
+
+    let dependencies: NavBDependencies
+}
+

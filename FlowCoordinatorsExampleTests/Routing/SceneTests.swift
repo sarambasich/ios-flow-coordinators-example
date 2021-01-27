@@ -23,10 +23,8 @@ class SceneTests: XCTestCase {
 
     // MARK: - Test cases
 
-    func testGetDepencyType_returnsCorrectType() {
-        let dependencyType: NavADependencies.Type = Scene.navA.getDependencyType()!
-        let navADep = dependencyType.init(text: "Hi", intValue: 42)
-        XCTAssertTrue(navADep is NavADependencies)
-    }
+//    func testGetDepencyType_returnsCorrectType() {
+//
+//    }
 
 }

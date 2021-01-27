@@ -46,17 +46,17 @@ class RouteTests: XCTestCase {
     // MARK: Route2 Tests
 
     func testRoute2_instantiate() {
-        let instances: [SceneInstance<SceneDependencyType>] = [
-            SceneInstance(
-                scene: .navA,
-                dependencies: NavADependencies(text: "hi", intValue: 42)
-            ),
-            SceneInstance(
-                scene: .navB,
-                dependencies: NavBDependencies(floatValue: 1337.9)
-            )
-        ]
-        let r2 = Route2(scenes: instances, userIntent: nil)
+        let a = NavAScene(dependencies: NavADependencies(text: "Hi", intValue: 42))
+        let b = NavBScene(dependencies: NavBDependencies(floatValue: 13.45))
+        let rt = Route2(sceneInstances: [a, b], userIntent: nil)
+        let inst = rt.firstSceneInstance
+
+        switch inst {
+        case let a as NavAScene:
+            print(a)
+        default:
+            break
+        }
     }
 
 }

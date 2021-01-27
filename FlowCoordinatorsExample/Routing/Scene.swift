@@ -32,20 +32,6 @@ enum Scene {
 
     case navC
 
-    // MARK: - Methods
-
-    func getDependencyType<T: SceneDependencyType>() -> T.Type? {
-        let dependencyType: T.Type
-
-        switch self {
-        case .navA: dependencyType = NavADependencies.self as! T.Type
-        case .navB: dependencyType = NavBDependencies.self as! T.Type
-        default: return nil
-        }
-
-        return dependencyType
-    }
-
 }
 
 extension Scene: DeepLinkConvertible {
