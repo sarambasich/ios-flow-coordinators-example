@@ -17,28 +17,28 @@ struct DeepLinkParser {
         self.URL = URL
     }
 
-    /// Parse the URL into a `Route`.
-    func parse() throws -> Route {
-        let pathComponents = URL.pathComponents
-
-        guard pathComponents.isEmpty == false else {
-            throw DeepLinkParserError.emptyPath
-        }
-
-        guard URL.host == "mydomain.com" else {
-            throw DeepLinkParserError.invalidHost
-        }
-
-        let scenes: [Scene] = try pathComponents.map { (pathComponent) in
-            do {
-                return try Scene.convertToScene(from: pathComponent)
-            } catch DeepLinkConversionError.unknownScene {
-                throw DeepLinkParserError.invalidPath
-            }
-        }
-
-        return Route(scenes: scenes, userIntent: URL)
-    }
+//    /// Parse the URL into a `Route`.
+//    func parse() throws -> Route {
+//        let pathComponents = URL.pathComponents
+//
+//        guard pathComponents.isEmpty == false else {
+//            throw DeepLinkParserError.emptyPath
+//        }
+//
+//        guard URL.host == "mydomain.com" else {
+//            throw DeepLinkParserError.invalidHost
+//        }
+//
+//        let scenes: [Scene] = try pathComponents.map { (pathComponent) in
+//            do {
+//                return try Scene.convertToScene(from: pathComponent)
+//            } catch DeepLinkConversionError.unknownScene {
+//                throw DeepLinkParserError.invalidPath
+//            }
+//        }
+//
+//        return Route(scenes: scenes, userIntent: URL)
+//    }
 
 }
 

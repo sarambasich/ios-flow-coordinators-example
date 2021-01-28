@@ -10,8 +10,9 @@ import Foundation
 
 protocol Coordinator: AnyObject {
 
-    /// The scenes associated with this `Routable` type.
-    static var associatedScenes: [Scene] { get }
+    /// Determines whether a given scene is supported by this coordinator.
+    /// - Parameter scene: The scene to check
+    static func canHandle(scene: Scene) -> Bool
 
     /// Start the coordinator and navigate to the provided route, if possible.
     /// - Parameter route: The route to navigate.

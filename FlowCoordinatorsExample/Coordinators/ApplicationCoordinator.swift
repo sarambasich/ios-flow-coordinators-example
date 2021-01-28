@@ -55,15 +55,24 @@ final class ApplicationCoordinator: Coordinator {
     }
 
     // MARK: - Coordinator
+    
+    static func canHandle(scene: Scene) -> Bool {
+        switch scene {
+        case .login, .first:
+            return true
+        default:
+            return false
+        }
+    }
 
     func navigate(to route: Route, animated: Bool) throws {
         guard let scene = route.firstScene else { return }
 
         switch scene {
-        case _ where LoginCoordinator.associatedScenes.contains(scene):
+        case _ where LoginCoordinator.canHandle(scene: scene):
             try loginCoordinator.navigate(to: route, animated: animated)
             return
-        case _ where FirstCoordinator.associatedScenes.contains(scene):
+        case _ where FirstCoordinator.canHandle(scene: scene):
             if firstCoordinator == nil {
                 firstCoordinator = FirstCoordinator(
                     application: application,
@@ -78,7 +87,7 @@ final class ApplicationCoordinator: Coordinator {
     }
 
     func start(animated: Bool) {
-        let route = Route(scenes: [.login], userIntent: nil)
+        let route = Route(scenes: [.login(data: LoginData(username: "sarambasch"))], userIntent: nil)
         try! navigate(to: route, animated: true)
     }
 

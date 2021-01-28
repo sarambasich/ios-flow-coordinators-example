@@ -10,9 +10,9 @@ import UIKit
 
 final class LoginCoordinator: Coordinator {
 
-    static var associatedScenes: [Scene] {
-        [.login, .loginChallenge]
-    }
+//    static var associatedScenes: [Scene] {
+//        [.login, .loginChallenge]
+//    }
 
     // MARK: - Properties
 
@@ -38,6 +38,15 @@ final class LoginCoordinator: Coordinator {
 
     // MARK: - Coordinator
 
+    static func canHandle(scene: Scene) -> Bool {
+        switch scene {
+        case .login, .loginChallenge:
+            return true
+        default:
+            return false
+        }
+    }
+
     func navigate(to route: Route, animated: Bool) throws {
         guard let scene = route.firstScene else {
             throw RoutingError.unsupportedRoute
@@ -59,7 +68,7 @@ final class LoginCoordinator: Coordinator {
     }
 
     func start(animated: Bool) {
-        let route = Route(scenes: [.login], userIntent: nil)
+        let route = Route(scenes: [.login(data: LoginData(username: "sarambasich"))], userIntent: nil)
         try! navigate(to: route, animated: animated)
     }
 

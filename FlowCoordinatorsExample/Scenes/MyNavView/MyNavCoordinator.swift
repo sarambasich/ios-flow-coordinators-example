@@ -10,9 +10,9 @@ import UIKit
 
 class MyNavCoordinator: NSObject, Coordinator {
 
-    static var associatedScenes: [Scene] {
-        [.navA, .navB, .navC]
-    }
+//    static var associatedScenes: [Scene] {
+//        [.navA, .navB, .navC]
+//    }
 
     weak var delegate: MyNavCoordinatorDelegate?
 
@@ -36,12 +36,21 @@ class MyNavCoordinator: NSObject, Coordinator {
 
     // MARK: - Coordinator
 
+    static func canHandle(scene: Scene) -> Bool {
+        switch scene {
+        case .navA, .navB, .navC:
+            return true
+        default:
+            return false
+        }
+    }
+
     func navigate(to route: Route, animated: Bool) throws {
         guard let scene = route.firstScene else {
             throw RoutingError.unsupportedRoute
         }
 
-        guard MyNavCoordinator.associatedScenes.contains(scene) else {
+        guard MyNavCoordinator.canHandle(scene: scene) else {
             throw RoutingError.invalidScene
         }
 

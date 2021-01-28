@@ -10,9 +10,9 @@ import UIKit
 
 class MyModalCoordinator: NSObject, Coordinator {
 
-    static var associatedScenes: [Scene] {
-        [.myModal]
-    }
+//    static var associatedScenes: [Scene] {
+//        [.myModal]
+//    }
 
     weak var delegate: MyModalCoordinatorDelegate?
 
@@ -35,6 +35,11 @@ class MyModalCoordinator: NSObject, Coordinator {
 
     // MARK: - Coordinator
 
+    static func canHandle(scene: Scene) -> Bool {
+        guard case .myModal = scene else { return false }
+        return true
+    }
+
     func navigate(to route: Route, animated: Bool) throws {
         guard let scene = route.firstScene else {
             throw RoutingError.unsupportedRoute
@@ -45,7 +50,7 @@ class MyModalCoordinator: NSObject, Coordinator {
             myModalViewController = getModalViewControllerFromStoryboard()
             myModalViewController?.presentationController?.delegate = self
             rootViewController.present(myModalViewController!, animated: animated && route.scenes.count == 1, completion: nil)
-        case _ where MyModalChildCoordinator.associatedScenes.contains(scene):
+        case _ where MyModalChildCoordinator.canHandle(scene: scene):
             guard myModalViewController != nil && rootViewController.presentedViewController == myModalViewController else {
                 throw RoutingError.unsupportedRoute
             }

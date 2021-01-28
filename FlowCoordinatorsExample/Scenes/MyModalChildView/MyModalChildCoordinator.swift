@@ -10,9 +10,9 @@ import UIKit
 
 class MyModalChildCoordinator: NSObject, Coordinator {
 
-    static var associatedScenes: [Scene] {
-        [.myModalChild]
-    }
+//    static var associatedScenes: [Scene] {
+//        [.myModalChild]
+//    }
 
     weak var delegate: MyModalChildCoordinatorDelegate?
 
@@ -33,12 +33,17 @@ class MyModalChildCoordinator: NSObject, Coordinator {
 
     // MARK: - Coordinator
 
+    static func canHandle(scene: Scene) -> Bool {
+        guard case .myModalChild = scene else { return false }
+        return true
+    }
+
     func navigate(to route: Route, animated: Bool) throws {
         guard let scene = route.firstScene else {
             throw RoutingError.unsupportedRoute
         }
 
-        guard scene == MyModalChildCoordinator.associatedScenes.first else {
+        guard case .myModalChild = scene else {
             throw RoutingError.invalidScene
         }
 

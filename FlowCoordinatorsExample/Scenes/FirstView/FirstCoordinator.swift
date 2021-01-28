@@ -67,6 +67,12 @@ final class FirstCoordinator: Coordinator {
 
     // MARK: - Coordinator
 
+    static func canHandle(scene: Scene) -> Bool {
+        guard case .first = scene else { return false }
+
+        return true
+    }
+
     func navigate(to route: Route, animated: Bool) throws {
         guard let scene = route.firstScene else {
             throw RoutingError.unsupportedRoute
@@ -77,11 +83,11 @@ final class FirstCoordinator: Coordinator {
             firstViewController.viewModel.flowDelegate = self
             firstViewController.modalPresentationStyle = .fullScreen
             rootViewController.present(firstViewController, animated: animated, completion: nil)
-        case _ where MyNavCoordinator.associatedScenes.contains(scene):
+        case _ where MyNavCoordinator.canHandle(scene: scene):
             myNavCoordinator = MyNavCoordinator(rootViewController: firstViewController, delegate: self)
             try myNavCoordinator?.navigate(to: route, animated: animated)
             return
-        case _ where MyModalCoordinator.associatedScenes.contains(scene):
+        case _ where MyModalCoordinator.canHandle(scene: scene):
             myModalCoordinator = MyModalCoordinator(rootViewController: firstViewController, delegate: self)
             try myModalCoordinator?.navigate(to: route, animated: animated)
             return
